@@ -30,7 +30,7 @@ Todos los archivos tienen que estar en la misma carpeta para que carguen los est
 
 ## Qué aprendí
 
-(Escribe aquí 2 o 3 cosas concretas que has aprendido haciendo este proyecto. Por ejemplo: qué fue lo más difícil, qué arreglaste y cómo, qué harías distinto.)
+Lo que más me costó fue el CSS y el JavaScript. Aprendí a organizar una web de varias páginas, a usar variables CSS y diseño adaptable para móvil y escritorio, y a hacer con JavaScript un menú móvil y una ventana de producto. También aprendí a buscar y corregir errores, y a subir el proyecto a GitHub con su README.
 
 ## Pendiente
 
