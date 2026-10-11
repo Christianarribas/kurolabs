@@ -1,0 +1,93 @@
+<!--
+  KURO LABS - noticias.html
+  El aspecto esta en style.css y la logica (menu, modal...) en
+  app.js. Las clases y los ids estan en castellano y coinciden
+  en los tres sitios: si cambias un nombre, cambialo en todos.
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kuro Labs — Figuras 3D de estética oni futurista.">
+  <title>Kuro Labs — Noticias</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="ruido-fondo" aria-hidden="true"></div>
+
+<!-- CABECERA: barra fija de arriba con logo, menu y boton.
+     Es igual en las 5 paginas; si la cambias, cambiala en todas. -->
+<header class="cabecera">
+  <a class="marca" href="index.html" aria-label="Kuro Labs, inicio">
+    <span class="marca-logo" aria-hidden="true"><span></span><span></span></span>
+    <span class="marca-nombre">KURO <em>LABS</em></span>
+  </a>
+
+  <nav class="nav-principal" id="nav-principal" aria-label="Navegación principal">
+    <a href="index.html">Inicio</a>
+    <a href="catalogo.html">Catálogo</a>
+    <a href="colecciones.html">Colecciones</a>
+    <a href="kuro-labs.html">Kuro Labs</a>
+    <a href="noticias.html">Noticias</a>
+  </nav>
+
+  <a class="boton-cabecera" href="catalogo.html">Explorar</a>
+
+    <!-- Boton hamburguesa: solo se ve en pantallas pequeñas
+       (en ordenador el CSS lo esconde con display: none). -->
+<button class="boton-menu" type="button" aria-label="Abrir menú"
+    aria-expanded="false" aria-controls="nav-principal">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<main>
+<!-- NOTICIAS: tarjetas pendientes para futuras novedades. -->
+<section class="seccion" aria-labelledby="titulo-noticias">
+  <div class="seccion-encabezado">
+    <div><p class="antetitulo"><span class="antetitulo-linea"></span>UPDATES</p><h1 id="titulo-noticias">NOTICIAS</h1></div>
+    <p class="seccion-intro">Espacio preparado para futuras noticias y novedades de Kuro Labs.</p>
+  </div>
+
+  <div class="rejilla-productos">
+    <article class="tarjeta-producto tarjeta-pendiente">
+      <div class="imagen-producto"><span class="numero-producto">01</span><div class="marca-pendiente" aria-hidden="true"></div><span class="estado-producto">IMAGEN PENDIENTE</span></div>
+      <div class="info-producto"><div><span class="etiqueta-producto">NEWS / 01</span><h3>Noticia pendiente</h3></div></div>
+    </article>
+    <article class="tarjeta-producto tarjeta-pendiente">
+      <div class="imagen-producto"><span class="numero-producto">02</span><div class="marca-pendiente" aria-hidden="true"></div><span class="estado-producto">IMAGEN PENDIENTE</span></div>
+      <div class="info-producto"><div><span class="etiqueta-producto">NEWS / 02</span><h3>Noticia pendiente</h3></div></div>
+    </article>
+    <article class="tarjeta-producto tarjeta-pendiente">
+      <div class="imagen-producto"><span class="numero-producto">03</span><div class="marca-pendiente" aria-hidden="true"></div><span class="estado-producto">IMAGEN PENDIENTE</span></div>
+      <div class="info-producto"><div><span class="etiqueta-producto">NEWS / 03</span><h3>Noticia pendiente</h3></div></div>
+    </article>
+  </div>
+</section>
+</main>
+
+<!-- PIE: footer de la web. El año se rellena solo desde app.js
+     (busca "anio-actual" alli). Es igual en las 5 paginas. -->
+<footer class="pie">
+  <div class="pie-marca">
+    <span class="marca-nombre">KURO <em>LABS</em></span>
+    <p>FUTURE OBJECTS / ONI AESTHETICS</p>
+  </div>
+  <div class="pie-enlaces">
+    <a href="index.html">Inicio</a>
+    <a href="catalogo.html">Catálogo</a>
+    <a href="colecciones.html">Colecciones</a>
+    <a href="kuro-labs.html">Kuro Labs</a>
+    <a href="noticias.html">Noticias</a>
+  </div>
+  <div class="pie-info">
+    <span>© <span id="anio-actual"></span> KURO LABS</span>
+    <span>ALL RIGHTS RESERVED</span>
+  </div>
+</footer>
+<!-- El script va al final del body para que el HTML cargue primero
+     y la pagina se vea antes de que JavaScript empiece a trabajar. -->
+<script src="app.js"></script>
+</body>
+</html>

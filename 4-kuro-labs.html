@@ -1,0 +1,102 @@
+<!--
+  KURO LABS - kuro-labs.html (la marca)
+  El aspecto esta en style.css y la logica (menu, modal...) en
+  app.js. Las clases y los ids estan en castellano y coinciden
+  en los tres sitios: si cambias un nombre, cambialo en todos.
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kuro Labs — Figuras 3D de estética oni futurista.">
+  <title>Kuro Labs — La marca</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="ruido-fondo" aria-hidden="true"></div>
+
+<!-- CABECERA: barra fija de arriba con logo, menu y boton.
+     Es igual en las 5 paginas; si la cambias, cambiala en todas. -->
+<header class="cabecera">
+  <a class="marca" href="index.html" aria-label="Kuro Labs, inicio">
+    <span class="marca-logo" aria-hidden="true"><span></span><span></span></span>
+    <span class="marca-nombre">KURO <em>LABS</em></span>
+  </a>
+
+  <nav class="nav-principal" id="nav-principal" aria-label="Navegación principal">
+    <a href="index.html">Inicio</a>
+    <a href="catalogo.html">Catálogo</a>
+    <a href="colecciones.html">Colecciones</a>
+    <a href="kuro-labs.html">Kuro Labs</a>
+    <a href="noticias.html">Noticias</a>
+  </nav>
+
+  <a class="boton-cabecera" href="catalogo.html">Explorar</a>
+
+    <!-- Boton hamburguesa: solo se ve en pantallas pequeñas
+       (en ordenador el CSS lo esconde con display: none). -->
+<button class="boton-menu" type="button" aria-label="Abrir menú"
+    aria-expanded="false" aria-controls="nav-principal">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<main>
+<!-- LA MARCA: mascara oni dibujada solo con CSS (sin imagenes). -->
+<section class="seccion-manifiesto seccion" aria-labelledby="titulo-kuro">
+  <div class="visual-manifiesto">
+    <div class="simbolo-manifiesto" aria-hidden="true">
+      <span class="cuerno cuerno-izquierdo"></span><span class="cuerno cuerno-derecho"></span>
+      <span class="mascara"><span class="mascara-ojo mascara-ojo-izquierdo"></span><span class="mascara-ojo mascara-ojo-derecho"></span><span class="mascara-boca"></span></span>
+    </div>
+    <span class="etiqueta-visual">KURO / LABS</span>
+  </div>
+  <div class="contenido-manifiesto">
+    <p class="antetitulo"><span class="antetitulo-linea"></span>THE LAB</p>
+    <h1 id="titulo-kuro">KURO<br><span>LABS</span></h1>
+    <div class="texto-manifiesto">
+      <p>Kuro Labs nace como un espacio visual preparado para explorar la figura, la tecnología y la estética oni desde una perspectiva contemporánea.</p>
+      <p>Este espacio queda preparado para incorporar posteriormente la historia y el manifiesto oficial de la marca.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONCEPTO: caja reservada para la historia de Kuro Labs. -->
+<section class="seccion-detalle seccion" aria-labelledby="titulo-concepto">
+  <div class="seccion-encabezado">
+    <div><p class="antetitulo"><span class="antetitulo-linea"></span>OBJECT DATA</p><h2 id="titulo-concepto">CONCEPTO</h2></div>
+  </div>
+  <div class="contacto-contenedor">
+    <div class="contacto-pendiente">
+      <span>HISTORIA / FILOSOFÍA</span>
+      <p>Espacio reservado para incorporar la información oficial sobre Kuro Labs, su concepto, proceso y filosofía.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- PIE: footer de la web. El año se rellena solo desde app.js
+     (busca "anio-actual" alli). Es igual en las 5 paginas. -->
+<footer class="pie">
+  <div class="pie-marca">
+    <span class="marca-nombre">KURO <em>LABS</em></span>
+    <p>FUTURE OBJECTS / ONI AESTHETICS</p>
+  </div>
+  <div class="pie-enlaces">
+    <a href="index.html">Inicio</a>
+    <a href="catalogo.html">Catálogo</a>
+    <a href="colecciones.html">Colecciones</a>
+    <a href="kuro-labs.html">Kuro Labs</a>
+    <a href="noticias.html">Noticias</a>
+  </div>
+  <div class="pie-info">
+    <span>© <span id="anio-actual"></span> KURO LABS</span>
+    <span>ALL RIGHTS RESERVED</span>
+  </div>
+</footer>
+<!-- El script va al final del body para que el HTML cargue primero
+     y la pagina se vea antes de que JavaScript empiece a trabajar. -->
+<script src="app.js"></script>
+</body>
+</html>
