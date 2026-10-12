@@ -62,16 +62,16 @@
   </div>
   <div class="barra-catalogo">
     <span class="estado-catalogo"><i></i>CATÁLOGO / DEMOSTRACIÓN</span>
-    <span class="contador-catalogo">04 DISEÑOS</span>
+    <span class="contador-catalogo">08 DISEÑOS</span>
   </div>
   <!-- Precios y colecciones son ejemplos, no información comercial. -->
 <!-- Los filtros no borran tarjetas: JS usa hidden para mostrar solo las que coinciden. -->
 <div class="filtros-catalogo"><label class="campo-buscador" for="buscador-catalogo">Buscar diseño<input id="buscador-catalogo" type="search" placeholder="Nombre, arma o colección…" autocomplete="off"></label>
-  <label for="filtro-coleccion">Colección de ejemplo<select id="filtro-coleccion"><option value="todas">Todas</option><option value="Armadura">Armadura</option><option value="Sigilo">Sigilo</option></select></label>
+  <label for="filtro-coleccion">Colección de ejemplo<select id="filtro-coleccion"><option value="todas">Todas</option><option value="Armadura">Armadura</option><option value="Sigilo">Sigilo</option><option value="Cibernética">Cibernética</option></select></label>
   <label for="filtro-precio">Precio ficticio<select id="filtro-precio"><option value="todos">Todos los precios</option><option value="50">Hasta 50 €</option><option value="80">Hasta 80 €</option><option value="100">Hasta 100 €</option></select></label>
   <button class="boton-secundario" id="restablecer-filtros" type="button">Restablecer</button>
 </div>
-<p id="resultado-filtros" class="resultado-filtros" role="status">4 diseños de ejemplo</p>
+<p id="resultado-filtros" class="resultado-filtros" role="status">8 diseños de ejemplo</p>
 <div class="rejilla-productos">
 <article class="tarjeta-producto" data-ficha="1">
   <a class="boton-tarjeta" href="samurai.html" aria-label="Ver ficha de Samurái">
@@ -101,7 +101,22 @@
   </a>
   <div class="compra-producto"><span><strong>95,00 €</strong><small>Precio ficticio</small></span><button class="boton-anadir" type="button" data-anadir="4" aria-label="Añadir Señor de guerra al carrito">Añadir +</button></div>
 </article>
-</div>
+<!-- Estos dos conceptos comparten colección para poder filtrarlos juntos. -->
+<article class="tarjeta-producto" data-ficha="5">
+  <a class="boton-tarjeta" href="ronin-templo.html" aria-label="Ver ficha de Ronin del templo">
+    <div class="imagen-producto imagen-conceptual"><img src="5-ronin-templo.webp" width="1072" height="1072" loading="lazy" alt="Diseño conceptual de Ronin del templo en resina gris, visto desde cuatro ángulos"></div>
+    <div class="info-producto"><div><span class="etiqueta-producto">CIBERNÉTICA / DEMO</span><h3>Ronin del templo</h3></div><span class="flecha-producto" aria-hidden="true">↗</span></div>
+  </a>
+  <div class="compra-producto"><span><strong>75,00 €</strong><small>Precio ficticio</small></span><button class="boton-anadir" type="button" data-anadir="5" aria-label="Añadir Ronin del templo al carrito">Añadir +</button></div>
+</article>
+<article class="tarjeta-producto" data-ficha="6">
+  <a class="boton-tarjeta" href="oni-salvaje.html" aria-label="Ver ficha de Oni salvaje">
+    <div class="imagen-producto imagen-conceptual"><img src="6-oni-salvaje.webp" width="1072" height="1072" loading="lazy" alt="Diseño conceptual de Oni salvaje en resina gris, visto desde cuatro ángulos"></div>
+    <div class="info-producto"><div><span class="etiqueta-producto">CIBERNÉTICA / DEMO</span><h3>Oni salvaje</h3></div><span class="flecha-producto" aria-hidden="true">↗</span></div>
+  </a>
+  <div class="compra-producto"><span><strong>80,00 €</strong><small>Precio ficticio</small></span><button class="boton-anadir" type="button" data-anadir="6" aria-label="Añadir Oni salvaje al carrito">Añadir +</button></div>
+</article>
+<article class="tarjeta-producto" data-ficha="7"><a class="boton-tarjeta" href="sombra-torii.html" aria-label="Ver ficha de Sombra del torii"><div class="imagen-producto imagen-conceptual"><img src="7-sombra-torii.webp" width="1072" height="1072" loading="lazy" alt="Diseño conceptual de Sombra del torii en resina gris, visto desde cuatro ángulos"></div><div class="info-producto"><div><span class="etiqueta-producto">SIGILO / DEMO</span><h3>Sombra del torii</h3></div><span class="flecha-producto" aria-hidden="true">↗</span></div></a><div class="compra-producto"><span><strong>55,00 €</strong><small>Precio ficticio</small></span><button class="boton-anadir" type="button" data-anadir="7" aria-label="Añadir Sombra del torii al carrito">Añadir +</button></div></article><article class="tarjeta-producto" data-ficha="8"><a class="boton-tarjeta" href="titan-hierro.html" aria-label="Ver ficha de Titán de hierro"><div class="imagen-producto imagen-conceptual"><img src="8-titan-hierro.webp" width="1072" height="1072" loading="lazy" alt="Diseño conceptual de Titán de hierro en resina gris, visto desde cuatro ángulos"></div><div class="info-producto"><div><span class="etiqueta-producto">CIBERNÉTICA / DEMO</span><h3>Titán de hierro</h3></div><span class="flecha-producto" aria-hidden="true">↗</span></div></a><div class="compra-producto"><span><strong>100,00 €</strong><small>Precio ficticio</small></span><button class="boton-anadir" type="button" data-anadir="8" aria-label="Añadir Titán de hierro al carrito">Añadir +</button></div></article></div>
 <p class="sin-resultados" id="sin-resultados" hidden>No hay diseños con estos filtros. Prueba otra combinación.</p>
 <p class="nota-demo">Diseños conceptuales generados con IA. Precios y colecciones de ejemplo, sin disponibilidad comercial.</p>
 </section>
