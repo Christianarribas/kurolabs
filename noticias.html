@@ -11,6 +11,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Kuro Labs — Figuras 3D de estética oni futurista.">
   <title>Kuro Labs — Noticias</title>
+  <!-- Leer el tema antes del CSS evita un destello oscuro si elegiste el claro.
+       try/catch permite abrir la web aunque el navegador bloquee el almacenamiento. -->
+  <script>try { if (localStorage.getItem("kurolabs-tema") === "claro") document.documentElement.dataset.tema = "claro"; } catch (error) { /* Seguimos con el tema oscuro. */ }</script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -30,9 +33,13 @@
     <a href="colecciones.html">Colecciones</a>
     <a href="kuro-labs.html">Kuro Labs</a>
     <a href="noticias.html">Noticias</a>
+    <a href="kuro-labs.html#contacto">Contacto</a>
   </nav>
 
-  <a class="boton-cabecera" href="catalogo.html">Explorar</a>
+  <div class="acciones-cabecera">
+    <button class="boton-tema" id="boton-tema" type="button" aria-label="Activar modo claro" aria-pressed="false">Claro ◐</button>
+    <button class="boton-carrito" id="abrir-carrito" type="button" aria-label="Abrir carrito, 0 artículos">Cesta <span id="contador-carrito">0</span></button>
+  </div>
 
     <!-- Boton hamburguesa: solo se ve en pantallas pequeñas
        (en ordenador el CSS lo esconde con display: none). -->
@@ -80,6 +87,7 @@
     <a href="colecciones.html">Colecciones</a>
     <a href="kuro-labs.html">Kuro Labs</a>
     <a href="noticias.html">Noticias</a>
+    <a href="kuro-labs.html#contacto">Contacto</a>
   </div>
   <div class="pie-info">
     <span>© <span id="anio-actual"></span> KURO LABS</span>
@@ -88,6 +96,15 @@
 </footer>
 <!-- El script va al final del body para que el HTML cargue primero
      y la pagina se vea antes de que JavaScript empiece a trabajar. -->
+<!-- dialog aporta cierre con Escape, foco y bloqueo del fondo sin librerías. -->
+<dialog class="carrito" id="carrito" aria-labelledby="titulo-carrito">
+  <div class="carrito-cabecera"><div><p class="antetitulo">CESTA / DEMO</p><h2 id="titulo-carrito">Tu carrito</h2></div><button class="boton-secundario" id="cerrar-carrito" type="button" aria-label="Cerrar carrito">✕</button></div>
+  <p class="nota-demo">Simulación de portfolio. Precios ficticios, sin venta ni pago.</p>
+  <div id="lineas-carrito"></div>
+  <div class="carrito-total"><span>Total de ejemplo</span><strong id="total-carrito">0,00 €</strong></div>
+  <button class="boton-secundario" id="vaciar-carrito" type="button">Vaciar carrito</button>
+</dialog>
+<p class="aviso-carrito" id="aviso-carrito" role="status" aria-live="polite"></p>
 <script src="app.js"></script>
 </body>
 </html>
