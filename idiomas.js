@@ -978,6 +978,301 @@ window.idiomasKuro = (() => {
     "es": "Kuro Labs - Figuras 3D de estética oni futurista.",
     "en": "Kuro Labs - 3D figures with futuristic oni aesthetics.",
     "eu": "Kuro Labs - Oni estetika futuristako 3D figurak."
+  },
+  "Cibernética": {
+    "es": "Cibernética",
+    "en": "Cybernetics",
+    "eu": "Zibernetika"
+  },
+  "CIBERNÉTICA / DEMO": {
+    "es": "CIBERNÉTICA / DEMO",
+    "en": "CYBERNETICS / DEMO",
+    "eu": "ZIBERNETIKA / DEMO"
+  },
+  "06 DISEÑOS": {
+    "es": "06 DISEÑOS",
+    "en": "06 DESIGNS",
+    "eu": "06 DISEINU"
+  },
+  "06 DISEÑOS / SIN COLOR": {
+    "es": "06 DISEÑOS / SIN COLOR",
+    "en": "06 DESIGNS / UNPAINTED",
+    "eu": "06 DISEINU / MARGOTU GABE"
+  },
+  "6 diseños de ejemplo": {
+    "es": "6 diseños de ejemplo",
+    "en": "6 example designs",
+    "eu": "6 adibideko diseinu"
+  },
+  "Ronin del templo": {
+    "es": "Ronin del templo",
+    "en": "Temple ronin",
+    "eu": "Tenpluko ronina"
+  },
+  "Ronin del templo ↗": {
+    "es": "Ronin del templo ↗",
+    "en": "Temple ronin ↗",
+    "eu": "Tenpluko ronina ↗"
+  },
+  "Kuro Labs - Ronin del templo": {
+    "es": "Kuro Labs - Ronin del templo",
+    "en": "Kuro Labs - Temple ronin",
+    "eu": "Kuro Labs - Tenpluko ronina"
+  },
+  "Un ronin oni con katana, capa de paneles blindados y articulaciones mecánicas. El módulo del pecho y los cables de la espalda refuerzan su estética futurista.": {
+    "es": "Un ronin oni con katana, capa de paneles blindados y articulaciones mecánicas. El módulo del pecho y los cables de la espalda refuerzan su estética futurista.",
+    "en": "An oni ronin with a katana, an armored panel cape and mechanical joints. The chest module and back cables give it a futuristic look.",
+    "eu": "Katana, panel blindatuzko kapa eta artikulazio mekanikoak dituen oni ronina. Bularreko moduluak eta bizkarreko kableek itxura futurista ematen diote."
+  },
+  "Diseño conceptual con katana, capa blindada y articulaciones mecánicas.": {
+    "es": "Diseño conceptual con katana, capa blindada y articulaciones mecánicas.",
+    "en": "Concept design with a katana, armored cape and mechanical joints.",
+    "eu": "Katana, kapa blindatua eta artikulazio mekanikoak dituen diseinu kontzeptuala."
+  },
+  "Katana y capa blindada": {
+    "es": "Katana y capa blindada",
+    "en": "Katana and armored cape",
+    "eu": "Katana eta kapa blindatua"
+  },
+  "Ver ficha de Ronin del templo": {
+    "es": "Ver ficha de Ronin del templo",
+    "en": "View Temple ronin details",
+    "eu": "Tenpluko ronina: ikusi fitxa"
+  },
+  "Añadir Ronin del templo al carrito": {
+    "es": "Añadir Ronin del templo al carrito",
+    "en": "Add Temple ronin to basket",
+    "eu": "Tenpluko ronina: gehitu saskira"
+  },
+  "Ampliar vistas de Ronin del templo": {
+    "es": "Ampliar vistas de Ronin del templo",
+    "en": "Enlarge Temple ronin views",
+    "eu": "Tenpluko ronina: handitu bistak"
+  },
+  "Diseño conceptual de Ronin del templo en resina gris, visto desde cuatro ángulos": {
+    "es": "Diseño conceptual de Ronin del templo en resina gris, visto desde cuatro ángulos",
+    "en": "Temple ronin: grey-resin concept design, seen from four angles",
+    "eu": "Tenpluko ronina: erretxina griseko diseinu kontzeptuala, lau angelutatik ikusita"
+  },
+  "Ronin del templo: vistas conceptuales en resina gris": {
+    "es": "Ronin del templo: vistas conceptuales en resina gris",
+    "en": "Temple ronin: grey-resin concept views",
+    "eu": "Tenpluko ronina: erretxina griseko bista kontzeptualak"
+  },
+  "Ronin del templo: diseño oni en resina gris sin pintar, mostrado desde cuatro ángulos": {
+    "es": "Ronin del templo: diseño oni en resina gris sin pintar, mostrado desde cuatro ángulos",
+    "en": "Temple ronin: unpainted grey-resin oni concept, shown from four angles",
+    "eu": "Tenpluko ronina: margotu gabeko erretxina griseko oni diseinua, lau angelutatik ikusita"
+  },
+  "Oni salvaje": {
+    "es": "Oni salvaje",
+    "en": "Savage oni",
+    "eu": "Oni basatia"
+  },
+  "Oni salvaje ↗": {
+    "es": "Oni salvaje ↗",
+    "en": "Savage oni ↗",
+    "eu": "Oni basatia ↗"
+  },
+  "Kuro Labs - Oni salvaje": {
+    "es": "Kuro Labs - Oni salvaje",
+    "en": "Kuro Labs - Savage oni",
+    "eu": "Kuro Labs - Oni basatia"
+  },
+  "Un oni bestial sin arma, con melena, garras y torso musculoso. Su exoesqueleto dorsal, los guanteletes mecánicos y los paneles de las piernas combinan fuerza orgánica y tecnología.": {
+    "es": "Un oni bestial sin arma, con melena, garras y torso musculoso. Su exoesqueleto dorsal, los guanteletes mecánicos y los paneles de las piernas combinan fuerza orgánica y tecnología.",
+    "en": "A weaponless bestial oni with a mane, claws and a muscular torso. Its back exoskeleton, mechanical gauntlets and leg panels combine organic strength with technology.",
+    "eu": "Armarik gabeko oni basatia, ile luzea, atzaparrak eta enbor gihartsua dituena. Bizkarreko exoeskeletoak, eskularru mekanikoek eta hanken panelek indar organikoa eta teknologia uztartzen dituzte."
+  },
+  "Diseño conceptual con garras, exoesqueleto y guanteletes mecánicos.": {
+    "es": "Diseño conceptual con garras, exoesqueleto y guanteletes mecánicos.",
+    "en": "Concept design with claws, an exoskeleton and mechanical gauntlets.",
+    "eu": "Atzaparrak, exoeskeletoa eta eskularru mekanikoak dituen diseinu kontzeptuala."
+  },
+  "Garras y exoesqueleto": {
+    "es": "Garras y exoesqueleto",
+    "en": "Claws and exoskeleton",
+    "eu": "Atzaparrak eta exoeskeletoa"
+  },
+  "Ver ficha de Oni salvaje": {
+    "es": "Ver ficha de Oni salvaje",
+    "en": "View Savage oni details",
+    "eu": "Oni basatia: ikusi fitxa"
+  },
+  "Añadir Oni salvaje al carrito": {
+    "es": "Añadir Oni salvaje al carrito",
+    "en": "Add Savage oni to basket",
+    "eu": "Oni basatia: gehitu saskira"
+  },
+  "Ampliar vistas de Oni salvaje": {
+    "es": "Ampliar vistas de Oni salvaje",
+    "en": "Enlarge Savage oni views",
+    "eu": "Oni basatia: handitu bistak"
+  },
+  "Diseño conceptual de Oni salvaje en resina gris, visto desde cuatro ángulos": {
+    "es": "Diseño conceptual de Oni salvaje en resina gris, visto desde cuatro ángulos",
+    "en": "Savage oni: grey-resin concept design, seen from four angles",
+    "eu": "Oni basatia: erretxina griseko diseinu kontzeptuala, lau angelutatik ikusita"
+  },
+  "Oni salvaje: vistas conceptuales en resina gris": {
+    "es": "Oni salvaje: vistas conceptuales en resina gris",
+    "en": "Savage oni: grey-resin concept views",
+    "eu": "Oni basatia: erretxina griseko bista kontzeptualak"
+  },
+  "Oni salvaje: diseño oni en resina gris sin pintar, mostrado desde cuatro ángulos": {
+    "es": "Oni salvaje: diseño oni en resina gris sin pintar, mostrado desde cuatro ángulos",
+    "en": "Savage oni: unpainted grey-resin oni concept, shown from four angles",
+    "eu": "Oni basatia: margotu gabeko erretxina griseko oni diseinua, lau angelutatik ikusita"
+  },
+  "Sombra del torii": {
+    "es": "Sombra del torii",
+    "en": "Torii shadow",
+    "eu": "Toriiaren itzala"
+  },
+  "Sombra del torii ↗": {
+    "es": "Sombra del torii ↗",
+    "en": "Torii shadow ↗",
+    "eu": "Toriiaren itzala ↗"
+  },
+  "Kuro Labs - Sombra del torii": {
+    "es": "Kuro Labs - Sombra del torii",
+    "en": "Kuro Labs - Torii shadow",
+    "eu": "Kuro Labs - Toriiaren itzala"
+  },
+  "Un oni sigiloso de pie, con capucha, capa y dos cuchillos cortos. Las placas ligeras y la base de ruinas completan su silueta conceptual.": {
+    "es": "Un oni sigiloso de pie, con capucha, capa y dos cuchillos cortos. Las placas ligeras y la base de ruinas completan su silueta conceptual.",
+    "en": "A standing stealth oni with a hood, cape and two short blades. Light armor plates and a ruined stone base complete its concept silhouette.",
+    "eu": "Zutik dagoen oni isila, kaputxa, kapa eta bi aizto labur dituena. Armadura arineko plakek eta hondakinezko oinarriak haren silueta kontzeptuala osatzen dute."
+  },
+  "Diseño conceptual con capucha y dos cuchillos cortos.": {
+    "es": "Diseño conceptual con capucha y dos cuchillos cortos.",
+    "en": "Concept design with a hood and two short blades.",
+    "eu": "Kaputxa eta bi aizto labur dituen diseinu kontzeptuala."
+  },
+  "Capucha y dos cuchillos": {
+    "es": "Capucha y dos cuchillos",
+    "en": "Hood and two blades",
+    "eu": "Kaputxa eta bi aizto"
+  },
+  "Ver ficha de Sombra del torii": {
+    "es": "Ver ficha de Sombra del torii",
+    "en": "View Torii shadow details",
+    "eu": "Toriiaren itzala: ikusi fitxa"
+  },
+  "Añadir Sombra del torii al carrito": {
+    "es": "Añadir Sombra del torii al carrito",
+    "en": "Add Torii shadow to basket",
+    "eu": "Toriiaren itzala: gehitu saskira"
+  },
+  "Ampliar vistas de Sombra del torii": {
+    "es": "Ampliar vistas de Sombra del torii",
+    "en": "Enlarge Torii shadow views",
+    "eu": "Toriiaren itzala: handitu bistak"
+  },
+  "Diseño conceptual de Sombra del torii en resina gris, visto desde cuatro ángulos": {
+    "es": "Diseño conceptual de Sombra del torii en resina gris, visto desde cuatro ángulos",
+    "en": "Torii shadow: grey-resin concept design, seen from four angles",
+    "eu": "Toriiaren itzala: erretxina griseko diseinu kontzeptuala, lau angelutatik ikusita"
+  },
+  "Sombra del torii: vistas conceptuales en resina gris": {
+    "es": "Sombra del torii: vistas conceptuales en resina gris",
+    "en": "Torii shadow: grey-resin concept views",
+    "eu": "Toriiaren itzala: erretxina griseko bista kontzeptualak"
+  },
+  "Sombra del torii: diseño oni en resina gris sin pintar, mostrado desde cuatro ángulos": {
+    "es": "Sombra del torii: diseño oni en resina gris sin pintar, mostrado desde cuatro ángulos",
+    "en": "Torii shadow: unpainted grey-resin oni concept, shown from four angles",
+    "eu": "Toriiaren itzala: margotu gabeko erretxina griseko oni diseinua, lau angelutatik ikusita"
+  },
+  "07 DISEÑOS": {
+    "es": "07 DISEÑOS",
+    "en": "07 DESIGNS",
+    "eu": "07 DISEINU"
+  },
+  "07 DISEÑOS / SIN COLOR": {
+    "es": "07 DISEÑOS / SIN COLOR",
+    "en": "07 DESIGNS / UNPAINTED",
+    "eu": "07 DISEINU / MARGOTU GABE"
+  },
+  "7 diseños de ejemplo": {
+    "es": "7 diseños de ejemplo",
+    "en": "7 example designs",
+    "eu": "7 adibideko diseinu"
+  },
+  "Titán de hierro": {
+    "es": "Titán de hierro",
+    "en": "Iron titan",
+    "eu": "Burdinazko titana"
+  },
+  "Titán de hierro ↗": {
+    "es": "Titán de hierro ↗",
+    "en": "Iron titan ↗",
+    "eu": "Burdinazko titana ↗"
+  },
+  "Kuro Labs - Titán de hierro": {
+    "es": "Kuro Labs - Titán de hierro",
+    "en": "Kuro Labs - Iron titan",
+    "eu": "Kuro Labs - Burdinazko titana"
+  },
+  "Un oni de armadura mecánica pesada, con martillo y escudo. Los pistones y las placas blindadas definen una silueta de máquina de guerra sobre una peana de piedra.": {
+    "es": "Un oni de armadura mecánica pesada, con martillo y escudo. Los pistones y las placas blindadas definen una silueta de máquina de guerra sobre una peana de piedra.",
+    "en": "A heavily armored mechanical oni with a hammer and shield. Pistons and armored plates define its war-machine silhouette on a stone base.",
+    "eu": "Armadura mekaniko astuna duen onia, mailu eta ezkutuarekin. Pistoiek eta plaka blindatuek gerra-makinaren silueta osatzen dute harrizko oinarri baten gainean."
+  },
+  "Diseño conceptual con martillo, escudo y armadura mecánica pesada.": {
+    "es": "Diseño conceptual con martillo, escudo y armadura mecánica pesada.",
+    "en": "Concept design with a hammer, shield and heavy mechanical armor.",
+    "eu": "Mailua, ezkutua eta armadura mekaniko astuna dituen diseinu kontzeptuala."
+  },
+  "Martillo y escudo": {
+    "es": "Martillo y escudo",
+    "en": "Hammer and shield",
+    "eu": "Mailua eta ezkutua"
+  },
+  "Ver ficha de Titán de hierro": {
+    "es": "Ver ficha de Titán de hierro",
+    "en": "View Iron titan details",
+    "eu": "Burdinazko titana: ikusi fitxa"
+  },
+  "Añadir Titán de hierro al carrito": {
+    "es": "Añadir Titán de hierro al carrito",
+    "en": "Add Iron titan to basket",
+    "eu": "Burdinazko titana: gehitu saskira"
+  },
+  "Ampliar vistas de Titán de hierro": {
+    "es": "Ampliar vistas de Titán de hierro",
+    "en": "Enlarge Iron titan views",
+    "eu": "Burdinazko titana: handitu bistak"
+  },
+  "Diseño conceptual de Titán de hierro en resina gris, visto desde cuatro ángulos": {
+    "es": "Diseño conceptual de Titán de hierro en resina gris, visto desde cuatro ángulos",
+    "en": "Iron titan: grey-resin concept design, seen from four angles",
+    "eu": "Burdinazko titana: erretxina griseko diseinu kontzeptuala, lau angelutatik ikusita"
+  },
+  "Titán de hierro: vistas conceptuales en resina gris": {
+    "es": "Titán de hierro: vistas conceptuales en resina gris",
+    "en": "Iron titan: grey-resin concept views",
+    "eu": "Burdinazko titana: erretxina griseko bista kontzeptualak"
+  },
+  "Titán de hierro: diseño oni en resina gris sin pintar, mostrado desde cuatro ángulos": {
+    "es": "Titán de hierro: diseño oni en resina gris sin pintar, mostrado desde cuatro ángulos",
+    "en": "Iron titan: unpainted grey-resin oni concept, shown from four angles",
+    "eu": "Burdinazko titana: margotu gabeko erretxina griseko oni diseinua, lau angelutatik ikusita"
+  },
+  "08 DISEÑOS": {
+    "es": "08 DISEÑOS",
+    "en": "08 DESIGNS",
+    "eu": "08 DISEINU"
+  },
+  "08 DISEÑOS / SIN COLOR": {
+    "es": "08 DISEÑOS / SIN COLOR",
+    "en": "08 DESIGNS / UNPAINTED",
+    "eu": "08 DISEINU / MARGOTU GABE"
+  },
+  "8 diseños de ejemplo": {
+    "es": "8 diseños de ejemplo",
+    "en": "8 example designs",
+    "eu": "8 adibideko diseinu"
   }
 };
   const textosOriginales = new WeakMap();
