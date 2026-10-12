@@ -4,12 +4,12 @@ Maqueta web de una tienda online de figuras 3D con estética oni japonesa futuri
 
 ## Qué incluye
 
-- `index.html`: portada con el catálogo destacado (4 diseños conceptuales), manifiesto y galería con zoom.
+- `index.html`: portada con el catálogo destacado (8 diseños conceptuales), manifiesto y galería con zoom.
 - `catalogo.html`: catálogo con buscador en vivo y filtros de colección/precio.
 - `colecciones.html`: página de colecciones.
 - `noticias.html`: página de noticias.
 - `kuro-labs.html`: la marca, su concepto y formulario con validación.
-- `samurai.html`, `oni-maza.html`, `ninja.html` y `senor-guerra.html`: fichas individuales con descripción, vistas conceptuales ampliables y diseños relacionados.
+- `samurai.html`, `oni-maza.html`, `ninja.html` , `senor-guerra.html`, `ronin-templo.html` , `oni-salvaje.html` , `sombra-torii.html` y `titan-hierro.html`: fichas individuales con descripción, vistas conceptuales ampliables y diseños relacionados.
 - `404.html`: página de error con enlaces para volver al inicio o al catálogo.
 - `idiomas.js`: diccionario y selector de idioma ES / EN / EU con preferencia guardada.
 - `style.css`: estilos de todo el sitio.
@@ -47,7 +47,7 @@ Lo que más me costó fue el CSS y el JavaScript. Aprendí a organizar una web d
 - Formulario en Kuro Labs → Contacto: nombre, email y mensaje, con errores junto a cada campo. Solo valida: **no envía ni guarda datos**. Falta conectar un servicio de envío.
 - Nombres, clases, ids, variables y comentarios en castellano. Los comentarios explican el por qué de cada paso.
 
-Los cuatro diseños son imágenes conceptuales generadas con IA, no productos disponibles ni archivos STL. Los precios (45–95 €) y las agrupaciones Armadura/Sigilo son **datos ficticios para probar la web**, no información comercial.
+Los ocho diseños son imágenes conceptuales generadas con IA, no productos disponibles ni archivos STL. Los precios (45–100 €) y las agrupaciones Armadura/Sigilo/Cibernética son **datos ficticios para probar la web**, no información comercial.
 
 ### Para probarlo
 
@@ -63,3 +63,6 @@ Para persistencia consistente entre páginas, sirve la carpeta desde un servidor
 - Contenido real en colecciones y noticias.
 
 Pruebas de las nuevas funciones: busca "samurai" sin tilde y combina Hasta 50 € para ver cero resultados. Restablece, abre una figura y amplía la imagen. Pulsa Tab, Escape y vuelve al catálogo. Cambia ES/EN/EU y navega: se mantiene el idioma y la cesta. Prueba también el modo claro, un ancho de 320 px y movimiento reducido.
+
+Los dos conceptos nuevos son Ronin del templo (75 € ficticios) y Oni salvaje (80 € ficticios), en versiones futuristas. Sus imágenes WebP conservan las cuatro vistas y no son modelos 3D ni STL.
+Sombra del torii se añade en su versión original (55 € ficticios), dentro de Sigilo. Titán de hierro se añade en su versión original (100 € ficticios), dentro de Cibernética.
