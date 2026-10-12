@@ -11,6 +11,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Kuro Labs — Figuras 3D de estética oni futurista.">
   <title>Kuro Labs — Oni Future Objects</title>
+  <!-- Leer el tema antes del CSS evita un destello oscuro si elegiste el claro.
+       try/catch permite abrir la web aunque el navegador bloquee el almacenamiento. -->
+  <script>try { if (localStorage.getItem("kurolabs-tema") === "claro") document.documentElement.dataset.tema = "claro"; } catch (error) { /* Seguimos con el tema oscuro. */ }</script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -33,9 +36,13 @@
     <a href="colecciones.html">Colecciones</a>
     <a href="kuro-labs.html">Kuro Labs</a>
     <a href="noticias.html">Noticias</a>
+    <a href="kuro-labs.html#contacto">Contacto</a>
   </nav>
 
-  <a class="boton-cabecera" href="catalogo.html">Explorar</a>
+  <div class="acciones-cabecera">
+    <button class="boton-tema" id="boton-tema" type="button" aria-label="Activar modo claro" aria-pressed="false">Claro ◐</button>
+    <button class="boton-carrito" id="abrir-carrito" type="button" aria-label="Abrir carrito, 0 artículos">Cesta <span id="contador-carrito">0</span></button>
+  </div>
 
     <!-- Boton hamburguesa: solo se ve en pantallas pequeñas
        (en ordenador el CSS lo esconde con display: none). -->
@@ -92,7 +99,7 @@
 <div class="seccion-encabezado"><div><p class="antetitulo"><span class="antetitulo-linea"></span>CONCEPT SERIES / 001</p><h2 id="titulo-oni">ONI / RESINA</h2></div><p class="seccion-intro">Cuatro diseños. Cuatro miradas. Una misma esencia oni.</p></div>
 <div class="barra-catalogo"><span class="estado-catalogo"><i></i>GALERÍA CONCEPTUAL</span><span class="contador-catalogo">04 DISEÑOS / SIN COLOR</span></div><div class="rejilla-oni"><figure class="tarjeta-oni"><a href="1-samurai.webp" target="_blank" rel="noopener" aria-label="Ampliar vistas de Samurái"><img src="1-samurai.webp" width="1072" height="1072" loading="lazy" alt="Samurái: diseño oni en resina gris sin pintar, mostrado desde cuatro ángulos"></a><figcaption><div><h3>Samurái</h3><p>Dos espadas</p></div><small>01 / ONI ↗</small></figcaption></figure><figure class="tarjeta-oni"><a href="2-maza.webp" target="_blank" rel="noopener" aria-label="Ampliar vistas de Oni con maza"><img src="2-maza.webp" width="1072" height="1072" loading="lazy" alt="Oni con maza: diseño oni en resina gris sin pintar, mostrado desde cuatro ángulos"></a><figcaption><div><h3>Oni con maza</h3><p>Armadura pesada</p></div><small>02 / ONI ↗</small></figcaption></figure><figure class="tarjeta-oni"><a href="3-ninja.webp" target="_blank" rel="noopener" aria-label="Ampliar vistas de Ninja"><img src="3-ninja.webp" width="1072" height="1072" loading="lazy" alt="Ninja: diseño oni en resina gris sin pintar, mostrado desde cuatro ángulos"></a><figcaption><div><h3>Ninja</h3><p>Katana y capa</p></div><small>03 / ONI ↗</small></figcaption></figure><figure class="tarjeta-oni"><a href="4-senor-guerra.webp" target="_blank" rel="noopener" aria-label="Ampliar vistas de Señor de guerra"><img src="4-senor-guerra.webp" width="1072" height="1072" loading="lazy" alt="Señor de guerra: diseño oni en resina gris sin pintar, mostrado desde cuatro ángulos"></a><figcaption><div><h3>Señor de guerra</h3><p>Arma de asta</p></div><small>04 / ONI ↗</small></figcaption></figure></div><p class="nota-oni">Imágenes conceptuales generadas con IA. No son modelos 3D ni archivos STL imprimibles; las vistas son orientativas, no planos ortográficos. Sin precio ni disponibilidad comercial.</p></section>
 
-<!-- CATALOGO: 6 tarjetas pendientes. Al hacer clic en una, app.js
+<!-- CATALOGO: 4 diseños de demostración. Al hacer clic en una, app.js
      abre la ventana (modal) con su ficha, segun su data-producto. -->
 <section class="seccion-catalogo seccion" aria-labelledby="titulo-catalogo">
   <div class="seccion-encabezado">
@@ -100,112 +107,48 @@
       <p class="antetitulo"><span class="antetitulo-linea"></span>COLLECTION</p>
       <h2 id="titulo-catalogo">CATÁLOGO</h2>
     </div>
-    <p class="seccion-intro">Explora el espacio reservado para las futuras colecciones de Kuro Labs.</p>
+    <p class="seccion-intro">Cuatro diseños oni para probar tu cesta. Una tienda de ejemplo, sin compras reales.</p>
   </div>
 
   <div class="barra-catalogo">
-    <span class="estado-catalogo"><i></i>CATÁLOGO EN DESARROLLO</span>
+    <span class="estado-catalogo"><i></i>CATÁLOGO / DEMOSTRACIÓN</span>
     <a class="contador-catalogo" href="catalogo.html">VER CATÁLOGO ↗</a>
   </div>
 
-  <div class="rejilla-productos">
-    <article class="tarjeta-producto tarjeta-pendiente">
-  <button class="boton-tarjeta" type="button" data-producto="1" aria-label="Abrir ficha de producto">
-    <div class="imagen-producto">
-      <span class="numero-producto">01</span>
-      <div class="marca-pendiente" aria-hidden="true"></div>
-      <span class="estado-producto">IMAGEN PENDIENTE</span>
-    </div>
-    <div class="info-producto">
-      <div>
-        <span class="etiqueta-producto">PRODUCT / 01</span>
-        <h3>Nombre pendiente</h3>
-      </div>
-      <span class="flecha-producto" aria-hidden="true">↗</span>
-    </div>
+  <!-- Precios y colecciones son ejemplos, no información comercial. -->
+
+<div class="rejilla-productos">
+<article class="tarjeta-producto" data-ficha="1">
+  <button class="boton-tarjeta" type="button" data-producto="1" aria-label="Ver ficha de Samurái">
+    <div class="imagen-producto imagen-conceptual"><img src="1-samurai.webp" width="1072" height="1072" loading="lazy" alt="Diseño conceptual de Samurái en resina gris, visto desde cuatro ángulos"></div>
+    <div class="info-producto"><div><span class="etiqueta-producto">ARMADURA / DEMO</span><h3>Samurái</h3></div><span class="flecha-producto" aria-hidden="true">↗</span></div>
   </button>
+  <div class="compra-producto"><span><strong>65,00 €</strong><small>Precio ficticio</small></span><button class="boton-anadir" type="button" data-anadir="1" aria-label="Añadir Samurái al carrito">Añadir +</button></div>
 </article>
-<article class="tarjeta-producto tarjeta-pendiente">
-  <button class="boton-tarjeta" type="button" data-producto="2" aria-label="Abrir ficha de producto">
-    <div class="imagen-producto">
-      <span class="numero-producto">02</span>
-      <div class="marca-pendiente" aria-hidden="true"></div>
-      <span class="estado-producto">IMAGEN PENDIENTE</span>
-    </div>
-    <div class="info-producto">
-      <div>
-        <span class="etiqueta-producto">PRODUCT / 02</span>
-        <h3>Nombre pendiente</h3>
-      </div>
-      <span class="flecha-producto" aria-hidden="true">↗</span>
-    </div>
+<article class="tarjeta-producto" data-ficha="2">
+  <button class="boton-tarjeta" type="button" data-producto="2" aria-label="Ver ficha de Oni con maza">
+    <div class="imagen-producto imagen-conceptual"><img src="2-maza.webp" width="1072" height="1072" loading="lazy" alt="Diseño conceptual de Oni con maza en resina gris, visto desde cuatro ángulos"></div>
+    <div class="info-producto"><div><span class="etiqueta-producto">ARMADURA / DEMO</span><h3>Oni con maza</h3></div><span class="flecha-producto" aria-hidden="true">↗</span></div>
   </button>
+  <div class="compra-producto"><span><strong>85,00 €</strong><small>Precio ficticio</small></span><button class="boton-anadir" type="button" data-anadir="2" aria-label="Añadir Oni con maza al carrito">Añadir +</button></div>
 </article>
-<article class="tarjeta-producto tarjeta-pendiente">
-  <button class="boton-tarjeta" type="button" data-producto="3" aria-label="Abrir ficha de producto">
-    <div class="imagen-producto">
-      <span class="numero-producto">03</span>
-      <div class="marca-pendiente" aria-hidden="true"></div>
-      <span class="estado-producto">IMAGEN PENDIENTE</span>
-    </div>
-    <div class="info-producto">
-      <div>
-        <span class="etiqueta-producto">PRODUCT / 03</span>
-        <h3>Nombre pendiente</h3>
-      </div>
-      <span class="flecha-producto" aria-hidden="true">↗</span>
-    </div>
+<article class="tarjeta-producto" data-ficha="3">
+  <button class="boton-tarjeta" type="button" data-producto="3" aria-label="Ver ficha de Ninja">
+    <div class="imagen-producto imagen-conceptual"><img src="3-ninja.webp" width="1072" height="1072" loading="lazy" alt="Diseño conceptual de Ninja en resina gris, visto desde cuatro ángulos"></div>
+    <div class="info-producto"><div><span class="etiqueta-producto">SIGILO / DEMO</span><h3>Ninja</h3></div><span class="flecha-producto" aria-hidden="true">↗</span></div>
   </button>
+  <div class="compra-producto"><span><strong>45,00 €</strong><small>Precio ficticio</small></span><button class="boton-anadir" type="button" data-anadir="3" aria-label="Añadir Ninja al carrito">Añadir +</button></div>
 </article>
-<article class="tarjeta-producto tarjeta-pendiente">
-  <button class="boton-tarjeta" type="button" data-producto="4" aria-label="Abrir ficha de producto">
-    <div class="imagen-producto">
-      <span class="numero-producto">04</span>
-      <div class="marca-pendiente" aria-hidden="true"></div>
-      <span class="estado-producto">IMAGEN PENDIENTE</span>
-    </div>
-    <div class="info-producto">
-      <div>
-        <span class="etiqueta-producto">PRODUCT / 04</span>
-        <h3>Nombre pendiente</h3>
-      </div>
-      <span class="flecha-producto" aria-hidden="true">↗</span>
-    </div>
+<article class="tarjeta-producto" data-ficha="4">
+  <button class="boton-tarjeta" type="button" data-producto="4" aria-label="Ver ficha de Señor de guerra">
+    <div class="imagen-producto imagen-conceptual"><img src="4-senor-guerra.webp" width="1072" height="1072" loading="lazy" alt="Diseño conceptual de Señor de guerra en resina gris, visto desde cuatro ángulos"></div>
+    <div class="info-producto"><div><span class="etiqueta-producto">ARMADURA / DEMO</span><h3>Señor de guerra</h3></div><span class="flecha-producto" aria-hidden="true">↗</span></div>
   </button>
+  <div class="compra-producto"><span><strong>95,00 €</strong><small>Precio ficticio</small></span><button class="boton-anadir" type="button" data-anadir="4" aria-label="Añadir Señor de guerra al carrito">Añadir +</button></div>
 </article>
-<article class="tarjeta-producto tarjeta-pendiente">
-  <button class="boton-tarjeta" type="button" data-producto="5" aria-label="Abrir ficha de producto">
-    <div class="imagen-producto">
-      <span class="numero-producto">05</span>
-      <div class="marca-pendiente" aria-hidden="true"></div>
-      <span class="estado-producto">IMAGEN PENDIENTE</span>
-    </div>
-    <div class="info-producto">
-      <div>
-        <span class="etiqueta-producto">PRODUCT / 05</span>
-        <h3>Nombre pendiente</h3>
-      </div>
-      <span class="flecha-producto" aria-hidden="true">↗</span>
-    </div>
-  </button>
-</article>
-<article class="tarjeta-producto tarjeta-pendiente">
-  <button class="boton-tarjeta" type="button" data-producto="6" aria-label="Abrir ficha de producto">
-    <div class="imagen-producto">
-      <span class="numero-producto">06</span>
-      <div class="marca-pendiente" aria-hidden="true"></div>
-      <span class="estado-producto">IMAGEN PENDIENTE</span>
-    </div>
-    <div class="info-producto">
-      <div>
-        <span class="etiqueta-producto">PRODUCT / 06</span>
-        <h3>Nombre pendiente</h3>
-      </div>
-      <span class="flecha-producto" aria-hidden="true">↗</span>
-    </div>
-  </button>
-</article>
-  </div>
+</div>
+
+<p class="nota-demo">Diseños conceptuales generados con IA. Precios y colecciones de ejemplo, sin disponibilidad comercial.</p>
 </section>
 
 <!-- MANIFIESTO: bloque de marca. La mascara oni de la izquierda
@@ -238,13 +181,13 @@
   <div class="modal-fondo" data-cerrar-modal></div>
   <div class="modal-ventana" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
     <button class="modal-cerrar" type="button" aria-label="Cerrar" data-cerrar-modal><span></span><span></span></button>
-    <div class="modal-imagen"><span>IMAGEN DEL PRODUCTO</span><small>ESPACIO RESERVADO</small></div>
+    <div class="modal-imagen"><img id="modal-foto" src="1-samurai.webp" alt=""></div>
     <div class="modal-contenido">
       <span class="etiqueta-producto" id="modal-etiqueta">PRODUCT / —</span>
       <h2 id="modal-titulo">Nombre pendiente</h2>
       <div class="separador"></div>
-      <p>La ficha de este producto se completará cuando estén disponibles los datos definitivos.</p>
-      <div class="modal-estado"><span></span>INFORMACIÓN PENDIENTE</div>
+      <p id="modal-descripcion"></p><p class="nota-demo">Diseño conceptual. Precio ficticio, sin venta real.</p><p class="precio-modal" id="modal-precio"></p><button class="boton-anadir" id="anadir-modal" type="button">Añadir a la cesta +</button>
+      <div class="modal-estado"><span></span>DISEÑO CONCEPTUAL / DEMO</div>
     </div>
   </div>
 </div>
@@ -262,6 +205,7 @@
     <a href="colecciones.html">Colecciones</a>
     <a href="kuro-labs.html">Kuro Labs</a>
     <a href="noticias.html">Noticias</a>
+    <a href="kuro-labs.html#contacto">Contacto</a>
   </div>
   <div class="pie-info">
     <span>© <span id="anio-actual"></span> KURO LABS</span>
@@ -270,6 +214,15 @@
 </footer>
 <!-- El script va al final del body para que el HTML cargue primero
      y la pagina se vea antes de que JavaScript empiece a trabajar. -->
+<!-- dialog aporta cierre con Escape, foco y bloqueo del fondo sin librerías. -->
+<dialog class="carrito" id="carrito" aria-labelledby="titulo-carrito">
+  <div class="carrito-cabecera"><div><p class="antetitulo">CESTA / DEMO</p><h2 id="titulo-carrito">Tu carrito</h2></div><button class="boton-secundario" id="cerrar-carrito" type="button" aria-label="Cerrar carrito">✕</button></div>
+  <p class="nota-demo">Simulación de portfolio. Precios ficticios, sin venta ni pago.</p>
+  <div id="lineas-carrito"></div>
+  <div class="carrito-total"><span>Total de ejemplo</span><strong id="total-carrito">0,00 €</strong></div>
+  <button class="boton-secundario" id="vaciar-carrito" type="button">Vaciar carrito</button>
+</dialog>
+<p class="aviso-carrito" id="aviso-carrito" role="status" aria-live="polite"></p>
 <script src="app.js"></script>
 </body>
 </html>
