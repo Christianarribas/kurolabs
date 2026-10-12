@@ -3,17 +3,20 @@
 /* ============================================================
    KURO LABS - app.js
    Todo el JavaScript de la web esta en este unico archivo.
-   Se encarga de 9 cosas (cada una tiene su seccion abajo):
+   Se encarga de las funciones principales (cada una tiene su seccion abajo):
 
      1. La cabecera cambia de aspecto al bajar por la pagina.
      2. El menu hamburguesa se abre y se cierra en el movil.
-     3. Las tarjetas de producto abren una ventana (modal).
+     3. Las tarjetas de producto enlazan a sus propias páginas.
      4. Las miniaturas de la galeria se marcan al hacer clic.
      5. El footer muestra siempre el año actual.
      6. Tema claro y oscuro con preferencia guardada.
      7. Carrito de ejemplo, cantidades y total.
      8. Filtros combinados del catálogo.
      9. Formulario con validación, sin envío real.
+    10. Zoom de imágenes accesible.
+    11. Aparición de tarjetas al hacer scroll.
+    Los idiomas se gestionan desde idiomas.js para separar sus textos.
 
    Las clases y los ids estan en castellano y coinciden con
    los del HTML y del CSS (por ejemplo ".cabecera" es la
@@ -35,11 +38,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const botonMenu = document.querySelector(".boton-menu");
   const navPrincipal = document.querySelector(".nav-principal");
   const enlacesNav = document.querySelectorAll(".nav-principal a");
-  const botonesProducto = document.querySelectorAll(".boton-tarjeta");
-  const modal = document.querySelector("#modal-producto");
-  const tituloModal = document.querySelector("#modal-titulo");
-  const etiquetaModal = document.querySelector("#modal-etiqueta");
-  const botonesCerrarModal = document.querySelectorAll("[data-cerrar-modal]");
   const miniaturas = document.querySelectorAll(".miniatura");
   const anioActual = document.querySelector("#anio-actual");
 
@@ -56,6 +54,14 @@ document.addEventListener("DOMContentLoaded", () => {
     4: { etiqueta: "ONI / 04", nombre: "Señor de guerra", descripcion: "Diseño conceptual con arma de asta.", imagen: "4-senor-guerra.webp", precio: 9500, coleccion: "Armadura" }
   };
 
+  // Los datos originales permiten cambiar de idioma sin perder los textos españoles.
+  const productosOriginales = JSON.parse(JSON.stringify(productos));
+  const traducir = (texto) => window.idiomasKuro.traducir(texto);
+  const actualizarProductos = () => Object.keys(productos).forEach((id) => {
+    productos[id].nombre = traducir(productosOriginales[id].nombre);
+    productos[id].descripcion = traducir(productosOriginales[id].descripcion);
+  });
+  actualizarProductos();
   /* ---------- 1. Cabecera al hacer scroll ----------
      Al bajar mas de 20 píxeles añadimos la clase "con-scroll",
      y el CSS (busca ".cabecera.con-scroll" en style.css) le pone
@@ -89,7 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
     /* aria-expanded y aria-label informan a los lectores de
        pantalla (accesibilidad) de si el menu esta abierto. */
     botonMenu.setAttribute("aria-expanded", "false");
-    botonMenu.setAttribute("aria-label", "Abrir menú");
+    botonMenu.setAttribute("aria-label", traducir("Abrir menú"));
   };
 
   if (botonMenu && navPrincipal) {
@@ -102,7 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
       botonMenu.setAttribute("aria-expanded", String(estaAbierto));
       botonMenu.setAttribute(
         "aria-label",
-        estaAbierto ? "Cerrar menú" : "Abrir menú"
+        estaAbierto ? traducir("Cerrar menú") : traducir("Abrir menú")
       );
     });
   }
@@ -113,82 +119,9 @@ document.addEventListener("DOMContentLoaded", () => {
     enlace.addEventListener("click", cerrarMenu);
   });
 
-  /* ---------- 3. Ventana (modal) de cada producto ----------
-     Cada tarjeta del catalogo es un boton con data-producto="1",
-     "2"... Ese numero nos dice que producto enseñar en el modal. */
-  let ultimoBotonProducto;
-  const abrirModalProducto = (idProducto) => {
-    const producto = productos[idProducto];
-
-    /* Si falta el producto o algun elemento del modal, salimos
-       sin hacer nada en vez de romper la pagina con un error. */
-    if (!producto || !modal || !etiquetaModal || !tituloModal) {
-      return;
-    }
-
-    etiquetaModal.textContent = producto.etiqueta;
-    tituloModal.textContent = producto.nombre;
-    document.querySelector("#modal-foto").src = producto.imagen;
-    document.querySelector("#modal-foto").alt = producto.nombre + ": diseño conceptual en resina gris";
-    document.querySelector("#modal-descripcion").textContent = producto.descripcion;
-    document.querySelector("#modal-precio").textContent = formatoEuros(producto.precio) + " / precio ficticio";
-    document.querySelector("#anadir-modal").dataset.anadir = idProducto;
-    ultimoBotonProducto = document.activeElement;
-
-    /* La clase "abierto" hace visible el modal (mirar ".modal.abierto"
-       en el CSS). "modal-abierto" en el body quita el scroll de
-       fondo para que solo se mueva la ventana. */
-    modal.classList.add("abierto");
-    modal.setAttribute("aria-hidden", "false");
-    document.body.classList.add("modal-abierto");
-
-    /* Llevamos el foco al boton de cerrar para que quien navega
-       con teclado pueda salir de la ventana facilmente. */
-    const botonCerrar = modal.querySelector(".modal-cerrar");
-    if (botonCerrar) {
-      botonCerrar.focus();
-    }
-  };
-
-  const cerrarModalProducto = () => {
-    if (!modal) return;
-    modal.classList.remove("abierto");
-    modal.setAttribute("aria-hidden", "true");
-    document.body.classList.remove("modal-abierto");
-    if (ultimoBotonProducto) ultimoBotonProducto.focus();
-  };
-
-  /* dataset.producto lee el atributo data-producto del boton
-     (el HTML tiene data-producto="1", "2"...). */
-  botonesProducto.forEach((boton) => {
-    boton.addEventListener("click", () => {
-      abrirModalProducto(boton.dataset.producto);
-    });
-  });
-
-  /* Todo lo que lleva data-cerrar-modal cierra la ventana:
-     la X de arriba y el fondo oscuro de detras. */
-  botonesCerrarModal.forEach((boton) => {
-    boton.addEventListener("click", cerrarModalProducto);
-  });
-
-  // El foco no debe escapar a la página de detrás del modal.
-  modal?.addEventListener("keydown", (evento) => {
-    if (evento.key !== "Tab") return;
-    const controles = [...modal.querySelectorAll("button, a[href], input, select, textarea")];
-    const primero = controles[0];
-    const ultimo = controles[controles.length - 1];
-    if (evento.shiftKey && document.activeElement === primero) { evento.preventDefault(); ultimo.focus(); }
-    else if (!evento.shiftKey && document.activeElement === ultimo) { evento.preventDefault(); primero.focus(); }
-  });
-
-  /* La tecla Escape tambien cierra la ventana, como en
-     cualquier programa. */
-  document.addEventListener("keydown", (evento) => {
-    if (evento.key === "Escape" && modal && modal.classList.contains("abierto")) {
-      cerrarModalProducto();
-    }
-  });
+  /* ---------- 3. Fichas de producto ----------
+     Las tarjetas usan enlaces HTML a páginas reales: funcionan con teclado,
+     permiten compartir cada figura y siguen navegando aunque JavaScript falle. */
 
   /* ---------- 4. Miniaturas de la galeria ----------
      Preparado para cuando el detalle de producto tenga varias
@@ -224,9 +157,9 @@ document.addEventListener("DOMContentLoaded", () => {
   };
   const actualizarTema = () => {
     const esClaro = document.documentElement.dataset.tema === "claro";
-    botonTema.textContent = esClaro ? "Oscuro ◑" : "Claro ◐";
+    botonTema.textContent = traducir(esClaro ? "Oscuro ◑" : "Claro ◐");
     botonTema.setAttribute("aria-pressed", String(esClaro));
-    botonTema.setAttribute("aria-label", esClaro ? "Activar modo oscuro" : "Activar modo claro");
+    botonTema.setAttribute("aria-label", traducir(esClaro ? "Activar modo oscuro" : "Activar modo claro"));
   };
   if (botonTema) {
     actualizarTema();
@@ -249,7 +182,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const botonAbrirCarrito = document.querySelector("#abrir-carrito");
   const avisoCarrito = document.querySelector("#aviso-carrito");
   const botonVaciarCarrito = document.querySelector("#vaciar-carrito");
-  const formatoEuros = (centimos) => (centimos / 100).toLocaleString("es-ES", { style: "currency", currency: "EUR" });
+  const formatoEuros = (centimos) => (centimos / 100).toLocaleString({es: "es-ES", en: "en-IE", eu: "eu-ES"}[window.idiomasKuro.actual()], { style: "currency", currency: "EUR" });
   let cesta = {};
   let temporizadorAviso;
   const recuperarCesta = () => {
@@ -279,19 +212,20 @@ document.addEventListener("DOMContentLoaded", () => {
       linea.className = "linea-carrito";
       /* Esta plantilla usa SOLO nuestro catálogo fijo, nunca datos
          escritos por un visitante. El formulario usa textContent. */
-      linea.innerHTML = `<img src="${producto.imagen}" alt="${producto.nombre}"><div><h3>${producto.nombre}</h3><p class="datos-linea">${formatoEuros(producto.precio)} / ud. · ${formatoEuros(producto.precio * cantidad)}</p><div class="controles-cantidad"><button class="boton-secundario" type="button" data-cambiar="${id}" data-paso="-1" aria-label="Restar una unidad de ${producto.nombre}">−</button><span aria-label="Cantidad">${cantidad}</span><button class="boton-secundario" type="button" data-cambiar="${id}" data-paso="1" aria-label="Añadir una unidad de ${producto.nombre}" ${cantidad >= 99 ? "disabled" : ""}>+</button><button class="boton-secundario" type="button" data-quitar="${id}" aria-label="Quitar ${producto.nombre} de la cesta">Quitar</button></div></div>`;
+      linea.innerHTML = `<img src="${producto.imagen}" alt="${producto.nombre}"><div><h3>${producto.nombre}</h3><p class="datos-linea">${formatoEuros(producto.precio)} / ${traducir("ud.")} · ${formatoEuros(producto.precio * cantidad)}</p><div class="controles-cantidad"><button class="boton-secundario" type="button" data-cambiar="${id}" data-paso="-1" aria-label="${traducir("Restar una unidad")}: ${producto.nombre}">−</button><span aria-label="${traducir("Cantidad")}">${cantidad}</span><button class="boton-secundario" type="button" data-cambiar="${id}" data-paso="1" aria-label="${traducir("Añadir una unidad")}: ${producto.nombre}" ${cantidad >= 99 ? "disabled" : ""}>+</button><button class="boton-secundario" type="button" data-quitar="${id}" aria-label="${traducir("Quitar")}: ${producto.nombre}">${traducir("Quitar")}</button></div></div>`;
       lineasCarrito.append(linea);
     });
     if (!unidades) {
       const vacio = document.createElement("p");
       vacio.className = "nota-demo";
-      vacio.textContent = "Tu cesta está vacía. Añade un diseño desde el catálogo.";
+      vacio.textContent = traducir("Tu cesta está vacía. Añade un diseño desde el catálogo.");
       lineasCarrito.append(vacio);
     }
     contadorCarrito.textContent = unidades;
-    botonAbrirCarrito.setAttribute("aria-label", `Abrir carrito, ${unidades} artículos`);
+    botonAbrirCarrito.setAttribute("aria-label", `${traducir("Abrir carrito")}: ${unidades} ${traducir("artículos")}`);
     totalCarrito.textContent = formatoEuros(total);
     botonVaciarCarrito.disabled = unidades === 0;
+    window.idiomasKuro.aplicar(lineasCarrito);
   };
   const guardarCesta = () => {
     guardar("kurolabs-cesta", JSON.stringify(cesta));
@@ -299,10 +233,10 @@ document.addEventListener("DOMContentLoaded", () => {
   };
   const anadirProducto = (id) => {
     if (!productos[id]) return;
-    if ((cesta[id] || 0) >= 99) { avisar("Máximo de 99 unidades por diseño."); return; }
+    if ((cesta[id] || 0) >= 99) { avisar(traducir("Máximo de 99 unidades por diseño.")); return; }
     cesta[id] = (cesta[id] || 0) + 1;
     guardarCesta();
-    avisar(`${productos[id].nombre} añadido a tu cesta`);
+    avisar(`${productos[id].nombre}: ${traducir("Añadido a tu cesta")}`);
   };
   if (ventanaCarrito) {
     recuperarCesta();
@@ -310,11 +244,8 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll("[data-anadir]").forEach((boton) => {
       boton.addEventListener("click", () => anadirProducto(boton.dataset.anadir));
     });
-    const botonAnadirModal = document.querySelector("#anadir-modal");
-    if (botonAnadirModal) botonAnadirModal.addEventListener("click", () => anadirProducto(botonAnadirModal.dataset.anadir));
     botonAbrirCarrito.addEventListener("click", () => {
       cerrarMenu();
-      cerrarModalProducto();
       ventanaCarrito.showModal();
       document.body.classList.add("modal-abierto");
     });
@@ -361,22 +292,30 @@ document.addEventListener("DOMContentLoaded", () => {
      sus botones, así no hay que reconstruirlas al cambiar filtros. */
   const filtroColeccion = document.querySelector("#filtro-coleccion");
   const filtroPrecio = document.querySelector("#filtro-precio");
+  const buscadorCatalogo = document.querySelector("#buscador-catalogo");
+  const normalizar = (texto) => texto.toLocaleLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  let filtrar = () => {};
   if (filtroColeccion && filtroPrecio) {
-    const filtrar = () => {
+    filtrar = () => {
       let visibles = 0;
       document.querySelectorAll("[data-ficha]").forEach((tarjeta) => {
         const producto = productos[tarjeta.dataset.ficha];
         const coincideColeccion = filtroColeccion.value === "todas" || producto.coleccion === filtroColeccion.value;
         const coincidePrecio = filtroPrecio.value === "todos" || producto.precio <= Number(filtroPrecio.value) * 100;
-        tarjeta.hidden = !(coincideColeccion && coincidePrecio);
+        const original = productosOriginales[tarjeta.dataset.ficha];
+        const textoBusqueda = [original.nombre, producto.nombre, original.descripcion, traducir(original.descripcion), original.coleccion, traducir(original.coleccion)].join(" ");
+        const coincideTexto = normalizar(textoBusqueda).includes(normalizar(buscadorCatalogo.value.trim()));
+        tarjeta.hidden = !(coincideColeccion && coincidePrecio && coincideTexto);
         if (!tarjeta.hidden) visibles++;
       });
-      document.querySelector("#resultado-filtros").textContent = `${visibles} de 4 diseños de ejemplo`;
+      document.querySelector("#resultado-filtros").textContent = `${visibles} / 4 ${traducir("diseños de ejemplo")}`;
       document.querySelector("#sin-resultados").hidden = visibles !== 0;
     };
+    buscadorCatalogo.addEventListener("input", filtrar);
     filtroColeccion.addEventListener("change", filtrar);
     filtroPrecio.addEventListener("change", filtrar);
     document.querySelector("#restablecer-filtros").addEventListener("click", () => {
+      buscadorCatalogo.value = "";
       filtroColeccion.value = "todas";
       filtroPrecio.value = "todos";
       filtrar();
@@ -398,10 +337,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const validarCampo = (campo) => {
       const valor = campo.value.trim();
       let error = "";
-      if (!valor) error = "Este campo es obligatorio.";
-      else if (campo === nombreContacto && valor.length < 2) error = "Escribe al menos 2 caracteres.";
-      else if (campo === correoContacto && (!campo.validity.valid || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(valor))) error = "Escribe un email válido, por ejemplo nombre@dominio.com.";
-      else if (campo === mensajeContacto && valor.length < 10) error = "Escribe un mensaje de al menos 10 caracteres.";
+      if (!valor) error = traducir("Este campo es obligatorio.");
+      else if (campo === nombreContacto && valor.length < 2) error = traducir("Escribe al menos 2 caracteres.");
+      else if (campo === correoContacto && (!campo.validity.valid || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(valor))) error = traducir("Escribe un email válido, por ejemplo nombre@dominio.com.");
+      else if (campo === mensajeContacto && valor.length < 10) error = traducir("Escribe un mensaje de al menos 10 caracteres.");
       campo.setAttribute("aria-invalid", String(Boolean(error)));
       document.querySelector(`#${campo.getAttribute("aria-describedby").split(" ")[0]}`).textContent = error;
       return !error;
@@ -417,12 +356,78 @@ document.addEventListener("DOMContentLoaded", () => {
       const resultados = campos.map(validarCampo);
       const primerError = resultados.indexOf(false);
       if (primerError !== -1) {
-        estadoFormulario.textContent = "Revisa los campos marcados antes de continuar.";
+        estadoFormulario.textContent = traducir("Revisa los campos marcados antes de continuar.");
         campos[primerError].focus();
       } else {
-        estadoFormulario.textContent = "Campos correctos. Esta demo no envía el mensaje: falta conectar un servicio de envío.";
+        estadoFormulario.textContent = traducir("Campos correctos. Esta demo no envía el mensaje: falta conectar un servicio de envío.");
       }
     });
   }
 
+  /* ---------- 10. Zoom accesible ----------
+     Reutilizamos una sola ventana: no duplicamos imágenes ni cambiamos de pestaña.
+     showModal deja el fondo inerte y el navegador gestiona Tab y Escape. */
+  const visorImagen = document.querySelector("#visor-imagen");
+  const imagenVisor = document.querySelector("#imagen-visor");
+  let origenVisor;
+  document.querySelectorAll("[data-ampliar]").forEach((control) => {
+    control.addEventListener("click", (evento) => {
+      evento.preventDefault();
+      origenVisor = control;
+      imagenVisor.src = control.dataset.ampliar;
+      imagenVisor.alt = control.querySelector("img").alt;
+      visorImagen.showModal();
+      document.querySelector("#cerrar-visor").focus();
+      document.body.classList.add("modal-abierto");
+    });
+  });
+  document.querySelector("#cerrar-visor").addEventListener("click", () => visorImagen.close());
+  visorImagen.addEventListener("click", (evento) => {
+    const limites = visorImagen.getBoundingClientRect();
+    if (evento.target === visorImagen && (evento.clientX < limites.left || evento.clientX > limites.right || evento.clientY < limites.top || evento.clientY > limites.bottom)) visorImagen.close();
+  });
+  // Solo hay un control en el visor. Tab permanece en él en ambos sentidos.
+  visorImagen.addEventListener("keydown", (evento) => {
+    if (evento.key === "Tab") {
+      evento.preventDefault();
+      document.querySelector("#cerrar-visor").focus();
+    }
+  });
+  visorImagen.addEventListener("close", () => {
+    document.body.classList.remove("modal-abierto");
+    origenVisor?.focus();
+  });
+
+  /* ---------- 11. Aparición al entrar en pantalla ----------
+     Sin JS las tarjetas siguen visibles. Solo activamos el efecto si el navegador
+     lo permite y la persona no ha pedido reducir movimiento. */
+  const movimientoReducido = window.matchMedia("(prefers-reduced-motion: reduce)");
+  if (!movimientoReducido.matches && "IntersectionObserver" in window) {
+    const observadorTarjetas = new IntersectionObserver((entradas) => {
+      entradas.forEach((entrada) => {
+        if (entrada.isIntersecting) {
+          entrada.target.classList.add("visible");
+          observadorTarjetas.unobserve(entrada.target);
+        }
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll(".tarjeta-producto, .tarjeta-oni, .tarjeta-relacionada").forEach((tarjeta) => {
+      tarjeta.classList.add("aparece-scroll");
+      observadorTarjetas.observe(tarjeta);
+    });
+  }
+
+  // Cambiar idioma no borra la cesta ni los filtros; solo vuelve a dibujar sus textos.
+  document.addEventListener("idioma-cambiado", () => {
+    actualizarProductos();
+    cerrarMenu();
+    actualizarTema();
+    dibujarCesta();
+    filtrar();
+    avisoCarrito.textContent = "";
+    if (formularioContacto) {
+      document.querySelector("#estado-formulario").textContent = "";
+      formularioContacto.querySelectorAll(".error-campo").forEach((campo) => { campo.textContent = ""; });
+    }
+  });
 });
