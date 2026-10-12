@@ -40,6 +40,8 @@
   </nav>
 
   <div class="acciones-cabecera">
+    <!-- El idioma usa códigos estables: traducir la etiqueta no cambia la selección. -->
+    <label class="control-idioma" for="selector-idioma"><span class="solo-lectores">Idioma</span><select id="selector-idioma" aria-label="Idioma"><option value="es" lang="es">ES</option><option value="en" lang="en">EN</option><option value="eu" lang="eu">EU</option></select></label>
     <button class="boton-tema" id="boton-tema" type="button" aria-label="Activar modo claro" aria-pressed="false">Claro ◐</button>
     <button class="boton-carrito" id="abrir-carrito" type="button" aria-label="Abrir carrito, 0 artículos">Cesta <span id="contador-carrito">0</span></button>
   </div>
@@ -94,13 +96,13 @@
 </section>
 
 <!-- GALERIA ONI: las 4 figuras de resina. Cada tarjeta es una
-     imagen que se abre grande al hacer clic (target="_blank"). -->
+     imagen que se amplía sin salir de la página. -->
 <section class="seccion-oni seccion" id="galeria-oni" aria-labelledby="titulo-oni">
 <div class="seccion-encabezado"><div><p class="antetitulo"><span class="antetitulo-linea"></span>CONCEPT SERIES / 001</p><h2 id="titulo-oni">ONI / RESINA</h2></div><p class="seccion-intro">Cuatro diseños. Cuatro miradas. Una misma esencia oni.</p></div>
-<div class="barra-catalogo"><span class="estado-catalogo"><i></i>GALERÍA CONCEPTUAL</span><span class="contador-catalogo">04 DISEÑOS / SIN COLOR</span></div><div class="rejilla-oni"><figure class="tarjeta-oni"><a href="1-samurai.webp" target="_blank" rel="noopener" aria-label="Ampliar vistas de Samurái"><img src="1-samurai.webp" width="1072" height="1072" loading="lazy" alt="Samurái: diseño oni en resina gris sin pintar, mostrado desde cuatro ángulos"></a><figcaption><div><h3>Samurái</h3><p>Dos espadas</p></div><small>01 / ONI ↗</small></figcaption></figure><figure class="tarjeta-oni"><a href="2-maza.webp" target="_blank" rel="noopener" aria-label="Ampliar vistas de Oni con maza"><img src="2-maza.webp" width="1072" height="1072" loading="lazy" alt="Oni con maza: diseño oni en resina gris sin pintar, mostrado desde cuatro ángulos"></a><figcaption><div><h3>Oni con maza</h3><p>Armadura pesada</p></div><small>02 / ONI ↗</small></figcaption></figure><figure class="tarjeta-oni"><a href="3-ninja.webp" target="_blank" rel="noopener" aria-label="Ampliar vistas de Ninja"><img src="3-ninja.webp" width="1072" height="1072" loading="lazy" alt="Ninja: diseño oni en resina gris sin pintar, mostrado desde cuatro ángulos"></a><figcaption><div><h3>Ninja</h3><p>Katana y capa</p></div><small>03 / ONI ↗</small></figcaption></figure><figure class="tarjeta-oni"><a href="4-senor-guerra.webp" target="_blank" rel="noopener" aria-label="Ampliar vistas de Señor de guerra"><img src="4-senor-guerra.webp" width="1072" height="1072" loading="lazy" alt="Señor de guerra: diseño oni en resina gris sin pintar, mostrado desde cuatro ángulos"></a><figcaption><div><h3>Señor de guerra</h3><p>Arma de asta</p></div><small>04 / ONI ↗</small></figcaption></figure></div><p class="nota-oni">Imágenes conceptuales generadas con IA. No son modelos 3D ni archivos STL imprimibles; las vistas son orientativas, no planos ortográficos. Sin precio ni disponibilidad comercial.</p></section>
+<div class="barra-catalogo"><span class="estado-catalogo"><i></i>GALERÍA CONCEPTUAL</span><span class="contador-catalogo">04 DISEÑOS / SIN COLOR</span></div><div class="rejilla-oni"><figure class="tarjeta-oni"><a href="1-samurai.webp" data-ampliar="1-samurai.webp" aria-label="Ampliar vistas de Samurái"><img src="1-samurai.webp" width="1072" height="1072" loading="lazy" alt="Samurái: diseño oni en resina gris sin pintar, mostrado desde cuatro ángulos"></a><figcaption><div><h3>Samurái</h3><p>Dos espadas</p></div><small>01 / ONI ↗</small></figcaption></figure><figure class="tarjeta-oni"><a href="2-maza.webp" data-ampliar="2-maza.webp" aria-label="Ampliar vistas de Oni con maza"><img src="2-maza.webp" width="1072" height="1072" loading="lazy" alt="Oni con maza: diseño oni en resina gris sin pintar, mostrado desde cuatro ángulos"></a><figcaption><div><h3>Oni con maza</h3><p>Armadura pesada</p></div><small>02 / ONI ↗</small></figcaption></figure><figure class="tarjeta-oni"><a href="3-ninja.webp" data-ampliar="3-ninja.webp" aria-label="Ampliar vistas de Ninja"><img src="3-ninja.webp" width="1072" height="1072" loading="lazy" alt="Ninja: diseño oni en resina gris sin pintar, mostrado desde cuatro ángulos"></a><figcaption><div><h3>Ninja</h3><p>Katana y capa</p></div><small>03 / ONI ↗</small></figcaption></figure><figure class="tarjeta-oni"><a href="4-senor-guerra.webp" data-ampliar="4-senor-guerra.webp" aria-label="Ampliar vistas de Señor de guerra"><img src="4-senor-guerra.webp" width="1072" height="1072" loading="lazy" alt="Señor de guerra: diseño oni en resina gris sin pintar, mostrado desde cuatro ángulos"></a><figcaption><div><h3>Señor de guerra</h3><p>Arma de asta</p></div><small>04 / ONI ↗</small></figcaption></figure></div><p class="nota-oni">Imágenes conceptuales generadas con IA. No son modelos 3D ni archivos STL imprimibles; las vistas son orientativas, no planos ortográficos. Sin precio ni disponibilidad comercial.</p></section>
 
 <!-- CATALOGO: 4 diseños de demostración. Al hacer clic en una, app.js
-     abre la ventana (modal) con su ficha, segun su data-producto. -->
+     enlaza a su página de detalle. -->
 <section class="seccion-catalogo seccion" aria-labelledby="titulo-catalogo">
   <div class="seccion-encabezado">
     <div>
@@ -119,31 +121,31 @@
 
 <div class="rejilla-productos">
 <article class="tarjeta-producto" data-ficha="1">
-  <button class="boton-tarjeta" type="button" data-producto="1" aria-label="Ver ficha de Samurái">
+  <a class="boton-tarjeta" href="samurai.html" aria-label="Ver ficha de Samurái">
     <div class="imagen-producto imagen-conceptual"><img src="1-samurai.webp" width="1072" height="1072" loading="lazy" alt="Diseño conceptual de Samurái en resina gris, visto desde cuatro ángulos"></div>
     <div class="info-producto"><div><span class="etiqueta-producto">ARMADURA / DEMO</span><h3>Samurái</h3></div><span class="flecha-producto" aria-hidden="true">↗</span></div>
-  </button>
+  </a>
   <div class="compra-producto"><span><strong>65,00 €</strong><small>Precio ficticio</small></span><button class="boton-anadir" type="button" data-anadir="1" aria-label="Añadir Samurái al carrito">Añadir +</button></div>
 </article>
 <article class="tarjeta-producto" data-ficha="2">
-  <button class="boton-tarjeta" type="button" data-producto="2" aria-label="Ver ficha de Oni con maza">
+  <a class="boton-tarjeta" href="oni-maza.html" aria-label="Ver ficha de Oni con maza">
     <div class="imagen-producto imagen-conceptual"><img src="2-maza.webp" width="1072" height="1072" loading="lazy" alt="Diseño conceptual de Oni con maza en resina gris, visto desde cuatro ángulos"></div>
     <div class="info-producto"><div><span class="etiqueta-producto">ARMADURA / DEMO</span><h3>Oni con maza</h3></div><span class="flecha-producto" aria-hidden="true">↗</span></div>
-  </button>
+  </a>
   <div class="compra-producto"><span><strong>85,00 €</strong><small>Precio ficticio</small></span><button class="boton-anadir" type="button" data-anadir="2" aria-label="Añadir Oni con maza al carrito">Añadir +</button></div>
 </article>
 <article class="tarjeta-producto" data-ficha="3">
-  <button class="boton-tarjeta" type="button" data-producto="3" aria-label="Ver ficha de Ninja">
+  <a class="boton-tarjeta" href="ninja.html" aria-label="Ver ficha de Ninja">
     <div class="imagen-producto imagen-conceptual"><img src="3-ninja.webp" width="1072" height="1072" loading="lazy" alt="Diseño conceptual de Ninja en resina gris, visto desde cuatro ángulos"></div>
     <div class="info-producto"><div><span class="etiqueta-producto">SIGILO / DEMO</span><h3>Ninja</h3></div><span class="flecha-producto" aria-hidden="true">↗</span></div>
-  </button>
+  </a>
   <div class="compra-producto"><span><strong>45,00 €</strong><small>Precio ficticio</small></span><button class="boton-anadir" type="button" data-anadir="3" aria-label="Añadir Ninja al carrito">Añadir +</button></div>
 </article>
 <article class="tarjeta-producto" data-ficha="4">
-  <button class="boton-tarjeta" type="button" data-producto="4" aria-label="Ver ficha de Señor de guerra">
+  <a class="boton-tarjeta" href="senor-guerra.html" aria-label="Ver ficha de Señor de guerra">
     <div class="imagen-producto imagen-conceptual"><img src="4-senor-guerra.webp" width="1072" height="1072" loading="lazy" alt="Diseño conceptual de Señor de guerra en resina gris, visto desde cuatro ángulos"></div>
     <div class="info-producto"><div><span class="etiqueta-producto">ARMADURA / DEMO</span><h3>Señor de guerra</h3></div><span class="flecha-producto" aria-hidden="true">↗</span></div>
-  </button>
+  </a>
   <div class="compra-producto"><span><strong>95,00 €</strong><small>Precio ficticio</small></span><button class="boton-anadir" type="button" data-anadir="4" aria-label="Añadir Señor de guerra al carrito">Añadir +</button></div>
 </article>
 </div>
@@ -177,20 +179,6 @@
 
 <!-- MODAL: ventana de producto. Siempre esta en el HTML pero
      escondida; app.js le pone la clase "abierto" para enseñarla. -->
-<div class="modal" id="modal-producto" aria-hidden="true">
-  <div class="modal-fondo" data-cerrar-modal></div>
-  <div class="modal-ventana" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
-    <button class="modal-cerrar" type="button" aria-label="Cerrar" data-cerrar-modal><span></span><span></span></button>
-    <div class="modal-imagen"><img id="modal-foto" src="1-samurai.webp" alt=""></div>
-    <div class="modal-contenido">
-      <span class="etiqueta-producto" id="modal-etiqueta">PRODUCT / —</span>
-      <h2 id="modal-titulo">Nombre pendiente</h2>
-      <div class="separador"></div>
-      <p id="modal-descripcion"></p><p class="nota-demo">Diseño conceptual. Precio ficticio, sin venta real.</p><p class="precio-modal" id="modal-precio"></p><button class="boton-anadir" id="anadir-modal" type="button">Añadir a la cesta +</button>
-      <div class="modal-estado"><span></span>DISEÑO CONCEPTUAL / DEMO</div>
-    </div>
-  </div>
-</div>
 
 <!-- PIE: footer de la web. El año se rellena solo desde app.js
      (busca "anio-actual" alli). Es igual en las 5 paginas. -->
@@ -223,6 +211,8 @@
   <button class="boton-secundario" id="vaciar-carrito" type="button">Vaciar carrito</button>
 </dialog>
 <p class="aviso-carrito" id="aviso-carrito" role="status" aria-live="polite"></p>
-<script src="app.js"></script>
+<!-- dialog conserva el foco y permite salir con Escape sin programar una trampa de teclado. -->
+<dialog class="visor-imagen" id="visor-imagen" aria-labelledby="titulo-visor"><div class="visor-barra"><h2 id="titulo-visor">Vista ampliada</h2><button class="boton-secundario" id="cerrar-visor" type="button" aria-label="Cerrar imagen">✕</button></div><img id="imagen-visor" alt=""><p class="nota-demo">Imagen conceptual generada con IA. Vistas orientativas, no planos para impresión 3D.</p></dialog>
+<script src="idiomas.js"></script><script src="app.js"></script>
 </body>
 </html>
