@@ -51,7 +51,12 @@ document.addEventListener("DOMContentLoaded", () => {
     1: { etiqueta: "ONI / 01", nombre: "Samurái", descripcion: "Diseño conceptual con dos espadas.", imagen: "1-samurai.webp", precio: 6500, coleccion: "Armadura" },
     2: { etiqueta: "ONI / 02", nombre: "Oni con maza", descripcion: "Diseño conceptual con armadura pesada y maza.", imagen: "2-maza.webp", precio: 8500, coleccion: "Armadura" },
     3: { etiqueta: "ONI / 03", nombre: "Ninja", descripcion: "Diseño conceptual con katana y capa.", imagen: "3-ninja.webp", precio: 4500, coleccion: "Sigilo" },
-    4: { etiqueta: "ONI / 04", nombre: "Señor de guerra", descripcion: "Diseño conceptual con arma de asta.", imagen: "4-senor-guerra.webp", precio: 9500, coleccion: "Armadura" }
+    4: { etiqueta: "ONI / 04", nombre: "Señor de guerra", descripcion: "Diseño conceptual con arma de asta.", imagen: "4-senor-guerra.webp", precio: 9500, coleccion: "Armadura" },
+    // Los ids nuevos no cambian los antiguos: así conservamos las cestas guardadas.
+    5: { etiqueta: "ONI / 05", nombre: "Ronin del templo", descripcion: "Diseño conceptual con katana, capa blindada y articulaciones mecánicas.", imagen: "5-ronin-templo.webp", precio: 7500, coleccion: "Cibernética" },
+    6: { etiqueta: "ONI / 06", nombre: "Oni salvaje", descripcion: "Diseño conceptual con garras, exoesqueleto y guanteletes mecánicos.", imagen: "6-oni-salvaje.webp", precio: 8000, coleccion: "Cibernética" },
+    7: { etiqueta: "ONI / 07", nombre: "Sombra del torii", descripcion: "Diseño conceptual con capucha y dos cuchillos cortos.", imagen: "7-sombra-torii.webp", precio: 5500, coleccion: "Sigilo" },
+    8: { etiqueta: "ONI / 08", nombre: "Titán de hierro", descripcion: "Diseño conceptual con martillo, escudo y armadura mecánica pesada.", imagen: "8-titan-hierro.webp", precio: 10000, coleccion: "Cibernética" }
   };
 
   // Los datos originales permiten cambiar de idioma sin perder los textos españoles.
@@ -308,7 +313,7 @@ document.addEventListener("DOMContentLoaded", () => {
         tarjeta.hidden = !(coincideColeccion && coincidePrecio && coincideTexto);
         if (!tarjeta.hidden) visibles++;
       });
-      document.querySelector("#resultado-filtros").textContent = `${visibles} / 4 ${traducir("diseños de ejemplo")}`;
+      document.querySelector("#resultado-filtros").textContent = `${visibles} / ${Object.keys(productos).length} ${traducir("diseños de ejemplo")}`;
       document.querySelector("#sin-resultados").hidden = visibles !== 0;
     };
     buscadorCatalogo.addEventListener("input", filtrar);
