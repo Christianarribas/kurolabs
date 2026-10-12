@@ -37,6 +37,8 @@
   </nav>
 
   <div class="acciones-cabecera">
+    <!-- El idioma usa códigos estables: traducir la etiqueta no cambia la selección. -->
+    <label class="control-idioma" for="selector-idioma"><span class="solo-lectores">Idioma</span><select id="selector-idioma" aria-label="Idioma"><option value="es" lang="es">ES</option><option value="en" lang="en">EN</option><option value="eu" lang="eu">EU</option></select></label>
     <button class="boton-tema" id="boton-tema" type="button" aria-label="Activar modo claro" aria-pressed="false">Claro ◐</button>
     <button class="boton-carrito" id="abrir-carrito" type="button" aria-label="Abrir carrito, 0 artículos">Cesta <span id="contador-carrito">0</span></button>
   </div>
@@ -106,6 +108,8 @@
   <button class="boton-secundario" id="vaciar-carrito" type="button">Vaciar carrito</button>
 </dialog>
 <p class="aviso-carrito" id="aviso-carrito" role="status" aria-live="polite"></p>
-<script src="app.js"></script>
+<!-- dialog conserva el foco y permite salir con Escape sin programar una trampa de teclado. -->
+<dialog class="visor-imagen" id="visor-imagen" aria-labelledby="titulo-visor"><div class="visor-barra"><h2 id="titulo-visor">Vista ampliada</h2><button class="boton-secundario" id="cerrar-visor" type="button" aria-label="Cerrar imagen">✕</button></div><img id="imagen-visor" alt=""><p class="nota-demo">Imagen conceptual generada con IA. Vistas orientativas, no planos para impresión 3D.</p></dialog>
+<script src="idiomas.js"></script><script src="app.js"></script>
 </body>
 </html>
