@@ -4,15 +4,18 @@ Maqueta web de una tienda online de figuras 3D con estética oni japonesa futuri
 
 ## Qué incluye
 
-- `index.html`: portada con el catálogo destacado (4 diseños conceptuales), manifiesto y ficha de producto en ventana modal.
-- `catalogo.html`: catálogo con filtros de colección y precio, y ficha de producto.
+- `index.html`: portada con el catálogo destacado (4 diseños conceptuales), manifiesto y galería con zoom.
+- `catalogo.html`: catálogo con buscador en vivo y filtros de colección/precio.
 - `colecciones.html`: página de colecciones.
 - `noticias.html`: página de noticias.
 - `kuro-labs.html`: la marca, su concepto y formulario con validación.
+- `samurai.html`, `oni-maza.html`, `ninja.html` y `senor-guerra.html`: fichas individuales con descripción, vistas conceptuales ampliables y diseños relacionados.
+- `404.html`: página de error con enlaces para volver al inicio o al catálogo.
+- `idiomas.js`: diccionario y selector de idioma ES / EN / EU con preferencia guardada.
 - `style.css`: estilos de todo el sitio.
 - `app.js`: comportamiento compartido (ver abajo).
 
-Qué hace `app.js`: cambia el aspecto del encabezado al hacer scroll, abre y cierra el menú en móvil, abre la ficha de producto al pulsar una tarjeta pone el año en el pie de página, gestiona el carrito de ejemplo con cantidades y total, guarda el tema claro/oscuro, combina filtros y valida el formulario.
+Qué hace `app.js`: cambia el aspecto del encabezado al hacer scroll, abre y cierra el menú en móvil, amplía las imágenes en un visor accesible, anima las tarjetas al entrar en pantalla, pone el año en el pie de página, gestiona el carrito de ejemplo con cantidades y total, guarda el tema claro/oscuro, combina buscador/filtros y valida el formulario. Las tarjetas navegan a su ficha mediante enlaces HTML, también sin JavaScript.
 
 ## Tecnologías
 
@@ -35,7 +38,11 @@ Lo que más me costó fue el CSS y el JavaScript. Aprendí a organizar una web d
 ## Funciones de demostración
 
 - Carrito con añadir, sumar/restar unidades, quitar diseños, vaciar y total en euros. Se guarda en `localStorage` para conservarlo entre páginas y al recargar, cuando el navegador lo permite. No hay pago ni pedidos reales.
-- Filtros combinados por colección de ejemplo y precio ficticio, contador de resultados y botón para restablecer.
+- Buscador sin distinción de mayúsculas ni tildes, combinado con filtros por colección de ejemplo y precio ficticio. Contador de resultados y botón para restablecer los tres controles.
+- Interfaz completa en español, inglés y euskera, incluidos avisos, errores y etiquetas accesibles. La preferencia se guarda en `localStorage`; nombres de clases, ids y variables siguen en castellano.
+- Zoom en galería y fichas con foco controlado, cierre por Escape, botón o clic en el fondo.
+- Animaciones de entrada con `IntersectionObserver`, desactivadas con `prefers-reduced-motion`. Sin JavaScript el contenido permanece visible.
+- 404 de estética oni. Se puede abrir `404.html` directamente. Para errores de URL reales, el alojamiento debe servir ese archivo como página 404; GitHub Pages lo reconoce si algún día se activa. Este cambio no activa Pages.
 - Modo oscuro por defecto y modo claro que conserva la identidad rojo/oni. Se guarda la preferencia.
 - Formulario en Kuro Labs → Contacto: nombre, email y mensaje, con errores junto a cada campo. Solo valida: **no envía ni guarda datos**. Falta conectar un servicio de envío.
 - Nombres, clases, ids, variables y comentarios en castellano. Los comentarios explican el por qué de cada paso.
@@ -54,3 +61,5 @@ Para persistencia consistente entre páginas, sirve la carpeta desde un servidor
 - Conectar el formulario a un servicio de envío (y validación en servidor).
 - Pagos y pedidos reales, si se decide convertir la maqueta en una tienda.
 - Contenido real en colecciones y noticias.
+
+Pruebas de las nuevas funciones: busca "samurai" sin tilde y combina Hasta 50 € para ver cero resultados. Restablece, abre una figura y amplía la imagen. Pulsa Tab, Escape y vuelve al catálogo. Cambia ES/EN/EU y navega: se mantiene el idioma y la cesta. Prueba también el modo claro, un ancho de 320 px y movimiento reducido.
