@@ -1997,3 +1997,64 @@ select, .campo-contacto input, .campo-contacto textarea { width:100%; border:1px
 #contacto { scroll-margin-top:calc(var(--alto-cabecera) + 24px); }
 .formulario-contacto .boton-rojo { background:var(--rojo); color:#fff; border:1px solid var(--rojo); }
 .formulario-contacto .boton-rojo:hover { background:var(--rojo-oscuro); }
+
+/* Las ampliaciones mantienen la imagen completa, sin recortar las vistas del diseño. */
+.boton-tarjeta { display: block; text-decoration: none; color: inherit; }
+.control-idioma select { background: var(--fondo, #141418); color: var(--texto, #f2f2f2); border: 1px solid #777; border-radius: 4px; min-height: 44px; padding: 0 8px; font: inherit; font-size: .8rem; }
+.solo-lectores { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.campo-buscador { flex: 2; min-width: 180px; }
+.campo-buscador input { min-height: 44px; width: 100%; padding: 10px 12px; border: 1px solid var(--borde); background: var(--superficie); color: var(--texto); font: inherit; border-radius: 4px; }
+.campo-buscador input::placeholder { color: var(--texto-suave); }
+.volver-catalogo { display: inline-block; margin-bottom: 32px; color: var(--texto-suave); text-decoration: none; padding: 12px 0; }
+.detalle-distribucion { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 48px; align-items: start; }
+.foto-ampliable { width: 100%; border: 1px solid var(--borde); padding: 0; background: #111; cursor: zoom-in; }
+.foto-ampliable img { width: 100%; height: auto; display: block; }
+.ayuda-foto { font-size: .85rem; color: var(--texto-suave); margin-top: 12px; }
+.detalle-contenido h1 { font-size: clamp(2.1rem, 4vw, 4rem); line-height: 1.08; margin: 14px 0 24px; overflow-wrap: anywhere; }
+.detalle-descripcion { font-size: 1.05rem; line-height: 1.8; color: var(--texto-suave); }
+.detalle-precio { font-size: 2rem; margin: 24px 0; }
+.detalle-precio small { display: block; color: var(--texto-suave); font-size: .8rem; margin-top: 6px; }
+.detalle-datos { margin: 30px 0; }
+.detalle-datos div { display: flex; justify-content: space-between; gap: 20px; border-bottom: 1px solid var(--borde); padding: 12px 0; }
+.detalle-datos dt { color: var(--texto-suave); }
+.detalle-datos dd { margin: 0; text-align: right; }
+.otros-disenos { margin-top: 64px; }
+.otros-disenos h2 { font-size: 1.5rem; margin-bottom: 24px; }
+.enlaces-disenos { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 24px; }
+.tarjeta-relacionada { color: var(--texto); text-decoration: none; background: var(--superficie); border: 1px solid var(--borde); }
+.tarjeta-relacionada img { width: 100%; height: auto; display: block; }
+.tarjeta-relacionada span { display: block; padding: 18px; }
+.visor-imagen { width: min(96vw, 1080px); height: 94dvh; max-height: 94dvh; border: 1px solid var(--borde); background: var(--fondo); color: var(--texto); padding: 16px; }
+.visor-imagen[open] { display: flex; flex-direction: column; }
+.visor-imagen::backdrop { background: rgb(0 0 0 / .9); }
+.visor-barra { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex: 0 0 auto; margin-bottom: 12px; }
+.visor-barra h2 { font-size: 1rem; }
+.visor-imagen > img { display: block; object-fit: contain; flex: 1; min-height: 0; width: 100%; }
+.visor-imagen .nota-demo { flex: 0 0 auto; margin: 12px 0 0; }
+.pagina-error { min-height: 80vh; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.simbolo-error { font-size: 7rem; color: var(--rojo); line-height: 1; }
+.pagina-error h1 { font-size: clamp(2rem, 5vw, 4rem); margin: 24px 0; }
+.pagina-error > p { max-width: 600px; line-height: 1.8; }
+.pagina-error .portada-botones { justify-content: center; margin: 24px 0; }
+/* Nunca escondemos contenido si el usuario pide menos movimiento. */
+.aparece-scroll { opacity: 0; transform: translateY(20px); transition: opacity .55s ease, transform .55s ease; }
+.aparece-scroll.visible { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .aparece-scroll { opacity: 1; transform: none; transition: none; } *, *::before, *::after { scroll-behavior: auto !important; animation: none !important; transition: none !important; } }
+@media (max-width: 800px) { .detalle-distribucion { grid-template-columns: 1fr; gap: 28px; } .enlaces-disenos { gap: 12px; } .tarjeta-relacionada span { padding: 10px; font-size: .8rem; } }
+@media (max-width: 480px) { .cabecera { padding-left: 12px; padding-right: 12px; gap: 8px; } .acciones-cabecera { gap: 6px; } .marca-nombre { font-size: .95rem; } .boton-tema, .boton-carrito { padding: 8px; font-size: .7rem; } .control-idioma select { padding: 0 4px; font-size: .75rem; } .detalle-datos div { flex-direction: column; gap: 4px; } .detalle-datos dd { text-align: left; } .enlaces-disenos { grid-template-columns: 1fr; } .tarjeta-relacionada { display: flex; align-items: center; } .tarjeta-relacionada img { width: 90px; } }
+/* Las palabras largas del euskera necesitan poder partirse en pantallas estrechas. */
+h1, h2, h3, .antetitulo { overflow-wrap: anywhere; }
+.contacto-distribucion > *, .portada-contenido, .contenido-manifiesto { min-width: 0; }
+.detalle-contenido .boton, .pagina-error .boton-primario { background: var(--rojo); color: #fff; }
+.control-idioma select { background: var(--superficie); color: var(--texto); }
+@media (max-width: 380px) { .marca-nombre { font-size: .8rem; letter-spacing: .05em; } .marca-logo { width: 20px; } .acciones-cabecera { gap: 4px; } .boton-menu { flex-shrink: 0; } .boton-carrito, .boton-tema { min-height: 44px; padding: 6px; font-size: .65rem; } }
+/* El reset global pone margin:0; dialog necesita auto para quedar centrado. */
+.visor-imagen { margin: auto; }
+@media (max-width: 380px) {
+  .cabecera { gap: 4px; }
+  .marca { gap: 5px; }
+  .marca-nombre { font-size: .7rem; }
+  .marca-logo { display: none; }
+  .boton-menu { width: 32px; min-width: 32px; margin-left: 0; }
+  :lang(eu) .seccion-encabezado h1, :lang(eu) .seccion-encabezado h2, :lang(eu) .seccion-contacto h2 { font-size: 32px; }
+}
