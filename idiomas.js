@@ -4,6 +4,215 @@
    WeakMap conserva los originales sin añadir datos personales al almacenamiento. */
 window.idiomasKuro = (() => {
   const traducciones = {
+"CIBERNÉTICA": {"es": "CIBERNÉTICA", "en": "CYBERNETICS", "eu": "ZIBERNETIKA"}, "ARMADURA": {"es": "ARMADURA", "en": "ARMOR", "eu": "ARMADURA"}, "SIGILO": {"es": "SIGILO", "en": "STEALTH", "eu": "ISILPEA"},
+  /* Inicio y colecciones: textos de los dos diseños nuevos. */
+
+  "KURO LABS / ONI FUTURISTA": {
+    "es": "KURO LABS / ONI FUTURISTA",
+    "en": "KURO LABS / FUTURISTIC ONI",
+    "eu": "KURO LABS / ONI FUTURISTA"
+  },
+  "LEYENDA.": {
+    "es": "LEYENDA.",
+    "en": "LEGEND.",
+    "eu": "KONDAIRA."
+  },
+  "ACERO.": {
+    "es": "ACERO.",
+    "en": "STEEL.",
+    "eu": "ALTZAIRUA."
+  },
+  "FUTURO.": {
+    "es": "FUTURO.",
+    "en": "FUTURE.",
+    "eu": "ETORKIZUNA."
+  },
+  "El espíritu de los oni.": {
+    "es": "El espíritu de los oni.",
+    "en": "The spirit of the oni.",
+    "eu": "Onien espiritua."
+  },
+  "La forma del mañana.": {
+    "es": "La forma del mañana.",
+    "en": "The shape of tomorrow.",
+    "eu": "Biharko forma."
+  },
+  "Explorar figuras ↗": {
+    "es": "Explorar figuras ↗",
+    "en": "Explore figures ↗",
+    "eu": "Arakatu figurak ↗"
+  },
+  "Ver las vistas": {
+    "es": "Ver las vistas",
+    "en": "Explore the views",
+    "eu": "Ikusi bistak"
+  },
+  "Diseños conceptuales de figuras de resina.": {
+    "es": "Diseños conceptuales de figuras de resina.",
+    "en": "Concept designs for resin figures.",
+    "eu": "Erretxinazko figuren diseinu kontzeptualak."
+  },
+  "Portfolio de demostración, sin venta real.": {
+    "es": "Portfolio de demostración, sin venta real.",
+    "en": "Demo portfolio. No real sales.",
+    "eu": "Erakustaldiko portfolioa. Ez dago benetako salmentarik."
+  },
+  "DISEÑO / 005": {
+    "es": "DISEÑO / 005",
+    "en": "DESIGN / 005",
+    "eu": "DISEINUA / 005"
+  },
+  "IMAGEN CONCEPTUAL / IA": {
+    "es": "IMAGEN CONCEPTUAL / IA",
+    "en": "CONCEPT IMAGE / AI",
+    "eu": "IRUDI KONTZEPTUALA / AA"
+  },
+  "01 / EXPLORA": {
+    "es": "01 / EXPLORA",
+    "en": "01 / EXPLORE",
+    "eu": "01 / ARAKATU"
+  },
+  "18 figuras.": {
+    "es": "18 figuras.",
+    "en": "18 figures.",
+    "eu": "18 figura."
+  },
+  "Un universo.": {
+    "es": "Un universo.",
+    "en": "One universe.",
+    "eu": "Unibertso bat."
+  },
+  "Ver catálogo ↗": {
+    "es": "Ver catálogo ↗",
+    "en": "View catalogue ↗",
+    "eu": "Ikusi katalogoa ↗"
+  },
+  "02 / DESCUBRE": {
+    "es": "02 / DESCUBRE",
+    "en": "02 / DISCOVER",
+    "eu": "02 / EZAGUTU"
+  },
+  "Cada detalle": {
+    "es": "Cada detalle",
+    "en": "Every detail",
+    "eu": "Xehetasun bakoitzak"
+  },
+  "cuenta.": {
+    "es": "cuenta.",
+    "en": "matters.",
+    "eu": "garrantzia du."
+  },
+  "Ver galería ↗": {
+    "es": "Ver galería ↗",
+    "en": "View gallery ↗",
+    "eu": "Ikusi galeria ↗"
+  },
+  "03 / LA MARCA": {
+    "es": "03 / LA MARCA",
+    "en": "03 / THE BRAND",
+    "eu": "03 / MARKA"
+  },
+  "Entre la leyenda": {
+    "es": "Entre la leyenda",
+    "en": "Between legend",
+    "eu": "Kondairaren"
+  },
+  "y el futuro.": {
+    "es": "y el futuro.",
+    "en": "and the future.",
+    "eu": "eta etorkizunaren artean."
+  },
+  "Entrar en el lab ↗": {
+    "es": "Entrar en el lab ↗",
+    "en": "Enter the lab ↗",
+    "eu": "Sartu laborategian ↗"
+  },
+  "COLECCIONES / KURO LABS": {
+    "es": "COLECCIONES / KURO LABS",
+    "en": "COLLECTIONS / KURO LABS",
+    "eu": "BILDUMAK / KURO LABS"
+  },
+  "NO SON": {
+    "es": "NO SON",
+    "en": "THEY ARE",
+    "eu": "EZ DIRA"
+  },
+  "SOLO": {
+    "es": "SOLO",
+    "en": "MORE THAN",
+    "eu": "SOILIK"
+  },
+  "MITOS.": {
+    "es": "MITOS.",
+    "en": "MYTHS.",
+    "eu": "MITOAK."
+  },
+  "Oni, resina y tecnología.": {
+    "es": "Oni, resina y tecnología.",
+    "en": "Oni, resin and technology.",
+    "eu": "Oniak, erretxina eta teknologia."
+  },
+  "Explora nuestra visión del": {
+    "es": "Explora nuestra visión del",
+    "en": "Explore our vision of",
+    "eu": "Ezagutu etorkizuneko"
+  },
+  "folclore japonés del futuro.": {
+    "es": "folclore japonés del futuro.",
+    "en": "Japanese folklore of the future.",
+    "eu": "Japoniako folkloreari buruzko gure ikuspegia."
+  },
+  "Entrar al catálogo ↗": {
+    "es": "Entrar al catálogo ↗",
+    "en": "Enter the catalogue ↗",
+    "eu": "Sartu katalogoan ↗"
+  },
+  "ARMADURA / CIBERNÉTICA / SIGILO": {
+    "es": "ARMADURA / CIBERNÉTICA / SIGILO",
+    "en": "ARMOR / CYBERNETICS / STEALTH",
+    "eu": "ARMADURA / ZIBERNETIKA / ISILPEA"
+  },
+  "03 / 18 DISEÑOS": {
+    "es": "03 / 18 DISEÑOS",
+    "en": "03 / 18 DESIGNS",
+    "eu": "03 / 18 DISEINU"
+  },
+  "Diseños conceptuales generados con IA. Portfolio de demostración, sin venta real.": {
+    "es": "Diseños conceptuales generados con IA. Portfolio de demostración, sin venta real.",
+    "en": "AI-generated concept designs. Demo portfolio. No real sales.",
+    "eu": "AA bidez sortutako diseinu kontzeptualak. Erakustaldiko portfolioa. Ez dago benetako salmentarik."
+  },
+  "Explorar todas las vistas ↗": {
+    "es": "Explorar todas las vistas ↗",
+    "en": "Explore all views ↗",
+    "eu": "Arakatu bista guztiak ↗"
+  },
+  "EL PASADO INSPIRA.": {
+    "es": "EL PASADO INSPIRA.",
+    "en": "THE PAST INSPIRES.",
+    "eu": "IRAGANAK INSPIRATZEN DU."
+  },
+  "EL FUTURO TOMA FORMA.": {
+    "es": "EL FUTURO TOMA FORMA.",
+    "en": "THE FUTURE TAKES SHAPE.",
+    "eu": "ETORKIZUNAK FORMA HARTZEN DU."
+  },
+  "Conoce Kuro Labs ↗": {
+    "es": "Conoce Kuro Labs ↗",
+    "en": "Discover Kuro Labs ↗",
+    "eu": "Ezagutu Kuro Labs ↗"
+  },
+  "Ver Ronin del templo": {
+    "es": "Ver Ronin del templo",
+    "en": "View Temple ronin",
+    "eu": "Ikusi tenpluko ronina"
+  },
+  "Ronin del templo: figura gris con armadura y katana": {
+    "es": "Ronin del templo: figura gris con armadura y katana",
+    "en": "Temple ronin: grey figure with armor and katana",
+    "eu": "Tenpluko ronina: figura grisa, armadurarekin eta katanarekin"
+  }
+,
   /* Figuras 9 a 18: textos nuevos en castellano, inglés y euskera. */
   "Kitsune con katana": {
     "es": "Kitsune con katana",

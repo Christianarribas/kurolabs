@@ -2527,3 +2527,102 @@ contorno, grises y rojo, y damos a la imagen de portada un fondo claro.
 .estrellas-tarjeta { font-size: 18px; letter-spacing: 3px; line-height: 1.3; }
 .compra-producto strong { font-size: 24px; }
 .compra-producto small { font-size: 14px; }
+
+/* 22. INICIO Y COLECCIONES: figuras protagonistas. */
+/* Inicio y colecciones: diseños aprobados para sustituir los huecos vacíos.
+   El tema hereda las variables existentes y respeta el modo claro. */
+.inicio-propuesta { padding-top:var(--alto-cabecera); }
+.indicador { color:var(--rojo-vivo); font:700 12px var(--fuente-mono); letter-spacing:.14em; }
+.escena-principal { display:grid; grid-template-columns:1.08fr 1fr; padding:56px 64px 46px; gap:56px; max-width:1440px; margin:auto; align-items:center; position:relative; }
+.escena-texto h1 { font-size:clamp(62px,7.4vw,110px); line-height:.91; letter-spacing:-.065em; margin:28px 0; font-weight:900; }
+.escena-texto h1 span { color:var(--rojo-vivo); }
+.introduccion { font-size:22px; line-height:1.45; color:var(--texto); }
+.escena-texto .boton { font-size:12px; min-height:52px; }
+.nota-concepto { font-size:12px; color:var(--texto-suave); margin-top:28px; line-height:1.7; }
+.escena-figura { position:relative; display:block; background:#282729; padding:16px; border:1px solid var(--borde-fuerte); box-shadow:22px 22px 0 rgba(198,40,61,.12); }
+.escena-figura:before { content:''; position:absolute; top:-18px; right:26px; width:84px; height:4px; background:var(--rojo-vivo); }
+.escena-figura img { width:100%; height:auto; display:block; }
+.sello-figura { position:absolute; top:32px; left:32px; font:700 11px var(--fuente-mono); letter-spacing:.1em; color:#fff; background:#17171bdc; padding:10px 12px; }
+.pie-figura { display:flex; justify-content:space-between; align-items:center; padding:20px 8px 8px; color:#fff; }
+.pie-figura small { font:11px var(--fuente-mono); color:#e4a6ae; letter-spacing:.12em; }
+.pie-figura h2 { font-size:25px; font-weight:700; margin-top:5px; }
+.flecha-figura { font-size:32px; }
+.detalle-imagen { display:block; font:9px var(--fuente-mono); color:#b6b5b8; padding:6px 8px; }
+.banda-identidad { display:flex; justify-content:space-around; gap:32px; background:var(--rojo); color:#fff; padding:17px 28px; font:700 13px var(--fuente-mono); letter-spacing:.16em; overflow:hidden; white-space:nowrap; }
+.banda-identidad i { font-size:18px; line-height:1; font-style:normal; }
+.rutas-inicio { display:grid; grid-template-columns:repeat(3,1fr); max-width:1440px; margin:auto; padding:32px 64px 42px; }
+.rutas-inicio a { padding:12px 28px; border-right:1px solid var(--borde-fuerte); }
+.rutas-inicio a:first-child { padding-left:0; }
+.rutas-inicio a:last-child { border:0; }
+.rutas-inicio small { font:11px var(--fuente-mono); color:var(--texto-suave); letter-spacing:.08em; }
+.rutas-inicio h2 { font-size:27px; line-height:1.15; letter-spacing:-.025em; margin:12px 0; }
+.rutas-inicio a>span { font-size:13px; color:var(--rojo-vivo); }
+/* El archivo presenta las figuras como fichas de un laboratorio visual. */
+.archivo-principal { max-width:1440px; margin:auto; padding:46px 64px 30px; }
+.archivo-intro { display:flex; align-items:flex-end; justify-content:space-between; gap:30px; padding-bottom:35px; }
+.archivo-intro h1 { font-size:clamp(58px,6.4vw,95px); font-weight:900; letter-spacing:-.065em; line-height:.94; margin-top:23px; }
+.archivo-intro h1 span { color:var(--rojo-vivo); }
+.archivo-entrada { padding-bottom:5px; min-width:245px; }
+.archivo-entrada p { font-size:19px; line-height:1.5; color:var(--texto-suave); margin-bottom:20px; }
+.archivo-entrada .boton { font-size:12px; }
+.archivo-cabecera { display:flex; justify-content:space-between; border-top:1px solid var(--borde-fuerte); padding:16px 0; font:11px var(--fuente-mono); letter-spacing:.1em; }
+.archivo-rejilla { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+.foto-archivo { background:#555351; position:relative; overflow:hidden; }
+.foto-archivo img { width:100%; display:block; transition:transform .35s; }
+.ficha-archivo:hover .foto-archivo img { transform:scale(1.035); }
+.numero-archivo { position:absolute; z-index:1; top:14px; left:14px; color:#fff; font:700 12px var(--fuente-mono); background:#19191cdf; padding:8px 10px; }
+.nombre-archivo { display:flex; justify-content:space-between; align-items:center; padding:16px 16px; border:1px solid var(--borde-fuerte); border-top:0; }
+.nombre-archivo small { color:var(--texto-suave); font:10px var(--fuente-mono); letter-spacing:.12em; }
+.nombre-archivo h2 { font-size:20px; margin-top:5px; line-height:1.15; }
+.nombre-archivo>span { color:var(--rojo-vivo); font-size:27px; }
+.ficha-destacada .nombre-archivo { background:var(--rojo); color:white; border-color:var(--rojo); }
+.ficha-destacada .nombre-archivo small, .ficha-destacada .nombre-archivo>span { color:white; }
+.archivo-nota { display:flex; justify-content:space-between; gap:20px; padding:20px 0 0; align-items:center; font-size:12px; color:var(--texto-suave); }
+.archivo-nota a { color:var(--texto); white-space:nowrap; }
+.archivo-manifiesto { display:flex; padding:32px 64px; background:var(--superficie); border-top:1px solid var(--borde); align-items:center; justify-content:space-between; gap:24px; }
+.archivo-manifiesto p { font-size:32px; font-weight:900; letter-spacing:-.04em; line-height:1.15; }
+.archivo-manifiesto p span { color:var(--rojo-vivo); }
+.archivo-manifiesto a { font-size:13px; }
+@media (max-width:1000px) { .escena-principal { padding:38px 30px; gap:28px; } .escena-texto h1 { font-size:70px; } .archivo-principal { padding:38px 30px 28px; } .archivo-intro h1 { font-size:65px; } .nombre-archivo h2 { font-size:17px; } .rutas-inicio { padding:26px 30px; } }
+@media (max-width:700px) {
+ .escena-principal { grid-template-columns:1fr; padding:32px 20px 34px; gap:32px; }
+ .escena-texto h1 { font-size:64px; margin:20px 0; }
+ .indicador { font-size:10px; }
+ .introduccion { font-size:19px; }
+ .escena-texto .boton { font-size:10px; padding:0 15px; min-height:48px; }
+ .escena-texto .portada-botones { gap:8px; margin-top:22px; }
+ .nota-concepto { margin-top:20px; font-size:11px; }
+ .escena-figura { box-shadow:8px 8px 0 rgba(198,40,61,.12); }
+ .banda-identidad { justify-content:flex-start; font-size:11px; gap:24px; padding:16px 20px; }
+ .rutas-inicio { grid-template-columns:1fr; padding:16px 20px 28px; }
+ .rutas-inicio a { border:0; border-bottom:1px solid var(--borde); padding:24px 0; }
+ .archivo-principal { padding:32px 20px 26px; }
+ .archivo-intro { display:block; padding-bottom:26px; }
+ .archivo-intro h1 { font-size:58px; margin-top:20px; }
+ .archivo-entrada { margin-top:24px; }
+ .archivo-entrada p { font-size:17px; }
+ .archivo-entrada p br { display:none; }
+ .archivo-rejilla { grid-template-columns:1fr; gap:24px; }
+ .archivo-cabecera { font-size:9px; }
+ .nombre-archivo h2 { font-size:22px; }
+ .archivo-nota { align-items:flex-start; flex-direction:column; font-size:11px; }
+ .archivo-manifiesto { padding:28px 20px; flex-direction:column; align-items:flex-start; }
+ .archivo-manifiesto p { font-size:26px; }
+}
+@media (prefers-reduced-motion:reduce) { .foto-archivo img { transition:none; } }
+/* En teléfonos estrechos el punto debe quedarse con su palabra. */
+@media (max-width:360px) {
+ .escena-texto h1 { font-size:54px; }
+ .pie-figura h2 { font-size:21px; }
+ .pie-figura { gap:12px; }
+ .flecha-figura { flex-shrink:0; }
+}
+/* Los lemas en inglés y euskera necesitan más ancho, no texto cortado. */
+html[lang="eu"] .escena-texto h1 { font-size:clamp(44px,5.3vw,78px); }
+html[lang="en"] .archivo-intro h1 { font-size:clamp(50px,5.7vw,82px); }
+@media (max-width:700px) {
+ html[lang="eu"] .escena-texto h1 { font-size:clamp(36px,9.6vw,60px); }
+ html[lang="en"] .archivo-intro h1 { font-size:clamp(43px,12vw,58px); }
+ .archivo-cabecera { gap:16px; align-items:center; }
+ .archivo-cabecera span:last-child { flex-shrink:0; }
+}
