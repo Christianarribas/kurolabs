@@ -1916,6 +1916,26 @@ animation-duration: 0.01ms !important;
   padding:10px 14px; cursor:pointer; font-size:13px; border-radius:2px;
 }
 .boton-carrito { white-space:nowrap; }
+/* El enlace de favoritos y el boton de la cesta comparten alineacion.
+   Flex centra el contenido en ambos e impide que el enlace quede arriba. */
+.acciones-cabecera .boton-carrito {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  text-align: center;
+  line-height: 1;
+}
+/* Conserva un area comoda para tocar el corazon en el movil. */
+.acciones-cabecera .boton-favoritos-cabecera { min-width: 44px; }
+/* Sin el hueco de 20 px, el numero y el corazon forman un grupo centrado.
+   El ancho sigue creciendo si el contador llega a dos o mas cifras. */
+.acciones-cabecera #contador-carrito,
+.acciones-cabecera #contador-favoritos {
+  min-width: 1ch;
+  text-align: center;
+  line-height: 1;
+}
 #contador-carrito { display:inline-block; min-width:20px; color:var(--rojo-vivo); font-weight:700; }
 .boton-anadir { background:var(--rojo); color:#fff; border-color:var(--rojo); }
 .boton-anadir:hover { background:var(--rojo-oscuro); }
