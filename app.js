@@ -466,10 +466,13 @@ document.addEventListener("DOMContentLoaded", () => {
         setTimeout(() => cortinaCarga.remove(), 900);
       }, espera);
     };
-    if (document.readyState === "complete") ocultarCortina();
+    /* No esperamos a "load" (que en el movil tarda mucho porque
+       espera a TODAS las imagenes): basta con que el HTML este listo
+       (DOMContentLoaded). La red de seguridad la quita a los 2,5 s. */
+    if (document.readyState !== "loading") ocultarCortina();
     else {
-      window.addEventListener("load", ocultarCortina);
-      setTimeout(ocultarCortina, 4000); // red de seguridad
+      document.addEventListener("DOMContentLoaded", ocultarCortina);
+      setTimeout(ocultarCortina, 2500); // red de seguridad
     }
   }
 
