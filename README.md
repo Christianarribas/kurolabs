@@ -4,12 +4,12 @@ Maqueta web de una tienda online de figuras 3D con estética oni japonesa futuri
 
 ## Qué incluye
 
-- `index.html`: portada con el catálogo destacado (8 diseños conceptuales), manifiesto y galería con zoom.
+- `index.html`: portada con el catálogo destacado (18 diseños conceptuales), manifiesto y galería con zoom.
 - `catalogo.html`: catálogo con buscador en vivo y filtros de colección/precio.
 - `colecciones.html`: página de colecciones.
 - `noticias.html`: página de noticias.
 - `kuro-labs.html`: la marca, su concepto y formulario con validación.
-- `samurai.html`, `oni-maza.html`, `ninja.html` , `senor-guerra.html`, `ronin-templo.html` , `oni-salvaje.html` , `sombra-torii.html` y `titan-hierro.html`: fichas individuales con descripción, vistas conceptuales ampliables y diseños relacionados.
+- `samurai.html`, `oni-maza.html`, `ninja.html` , `senor-guerra.html`, `ronin-templo.html` , `oni-salvaje.html` , `sombra-torii.html`, `titan-hierro.html` y las fichas nuevas (`kitsune.html`, `monje-yokai.html`, `tengu-arquero.html`, `oni-tambor.html`, `geisha-acero.html`, `guardian-dragon.html`, `kappa-mecanico.html`, `cazador-kusarigama.html`, `shinobi-humo.html`, `emperador-oni.html`): fichas individuales con descripción, vistas conceptuales ampliables y diseños relacionados.
 - `404.html`: página de error con enlaces para volver al inicio o al catálogo.
 - `idiomas.js`: diccionario y selector de idioma ES / EN / EU con preferencia guardada.
 - `style.css`: estilos de todo el sitio.

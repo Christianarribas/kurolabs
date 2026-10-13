@@ -4,6 +4,672 @@
    WeakMap conserva los originales sin añadir datos personales al almacenamiento. */
 window.idiomasKuro = (() => {
   const traducciones = {
+  /* Figuras 9 a 18: textos nuevos en castellano, inglés y euskera. */
+  "Kitsune con katana": {
+    "es": "Kitsune con katana",
+    "en": "Kitsune with katana",
+    "eu": "Katana duen kitsunea"
+  },
+  "Kitsune con katana ↗": {
+    "es": "Kitsune con katana ↗",
+    "en": "Kitsune with katana ↗",
+    "eu": "Katana duen kitsunea ↗"
+  },
+  "Kuro Labs - Kitsune con katana": {
+    "es": "Kuro Labs - Kitsune con katana",
+    "en": "Kuro Labs - Kitsune with katana",
+    "eu": "Kuro Labs - Katana duen kitsunea"
+  },
+  "Un espíritu zorro de pie, con armadura ligera, katana y nueve colas esculpidas en abanico. La máscara de zorro y la peana de piedra completan una silueta ceremonial.": {
+    "es": "Un espíritu zorro de pie, con armadura ligera, katana y nueve colas esculpidas en abanico. La máscara de zorro y la peana de piedra completan una silueta ceremonial.",
+    "en": "A standing fox spirit in light armor with a katana and nine tails sculpted in a fan. The fox mask and stone base complete a ceremonial silhouette.",
+    "eu": "Zutik dagoen azeri-espiritua, armadura arinarekin, katanarekin eta haizemaile moduan landutako bederatzi buztanekin. Azeri-maskarak eta harrizko oinarriak erritu-itxurako silueta osatzen dute."
+  },
+  "Diseño conceptual con katana y nueve colas.": {
+    "es": "Diseño conceptual con katana y nueve colas.",
+    "en": "Concept design with a katana and nine tails.",
+    "eu": "Katana eta bederatzi buztan dituen diseinu kontzeptuala."
+  },
+  "Katana y nueve colas": {
+    "es": "Katana y nueve colas",
+    "en": "Katana and nine tails",
+    "eu": "Katana eta bederatzi buztan"
+  },
+  "Zorro espiritual": {
+    "es": "Zorro espiritual",
+    "en": "Spirit fox",
+    "eu": "Espiritu-azeria"
+  },
+  "Ver ficha de Kitsune con katana": {
+    "es": "Ver ficha de Kitsune con katana",
+    "en": "View Kitsune with katana details",
+    "eu": "Katana duen kitsunea: ikusi fitxa"
+  },
+  "Añadir Kitsune con katana al carrito": {
+    "es": "Añadir Kitsune con katana al carrito",
+    "en": "Add Kitsune with katana to basket",
+    "eu": "Katana duen kitsunea: gehitu saskira"
+  },
+  "Ampliar vistas de Kitsune con katana": {
+    "es": "Ampliar vistas de Kitsune con katana",
+    "en": "Enlarge Kitsune with katana views",
+    "eu": "Katana duen kitsunea: handitu bistak"
+  },
+  "Diseño conceptual de Kitsune con katana en resina gris, visto desde cuatro ángulos": {
+    "es": "Diseño conceptual de Kitsune con katana en resina gris, visto desde cuatro ángulos",
+    "en": "Kitsune with katana: grey-resin concept design, seen from four angles",
+    "eu": "Katana duen kitsunea: erretxina griseko diseinu kontzeptuala, lau angelutatik ikusita"
+  },
+  "Kitsune con katana: vistas conceptuales en resina gris": {
+    "es": "Kitsune con katana: vistas conceptuales en resina gris",
+    "en": "Kitsune with katana: grey-resin concept views",
+    "eu": "Katana duen kitsunea: erretxina griseko bista kontzeptualak"
+  },
+  "Kitsune con katana: diseño oni en resina gris sin pintar, mostrado desde cuatro ángulos": {
+    "es": "Kitsune con katana: diseño oni en resina gris sin pintar, mostrado desde cuatro ángulos",
+    "en": "Kitsune with katana: unpainted grey-resin oni concept, shown from four angles",
+    "eu": "Katana duen kitsunea: margotu gabeko erretxina griseko oni diseinua, lau angelutatik ikusita"
+  },
+  "Monje yokai": {
+    "es": "Monje yokai",
+    "en": "Yokai monk",
+    "eu": "Yokai monjea"
+  },
+  "Monje yokai ↗": {
+    "es": "Monje yokai ↗",
+    "en": "Yokai monk ↗",
+    "eu": "Yokai monjea ↗"
+  },
+  "Kuro Labs - Monje yokai": {
+    "es": "Kuro Labs - Monje yokai",
+    "en": "Kuro Labs - Yokai monk",
+    "eu": "Kuro Labs - Yokai monjea"
+  },
+  "Un monje errante con sombrero de paja, hábito desgarrado y un bastón de anillos. Debajo del sombrero asoma un rostro de yokai.": {
+    "es": "Un monje errante con sombrero de paja, hábito desgarrado y un bastón de anillos. Debajo del sombrero asoma un rostro de yokai.",
+    "en": "A wandering monk with a straw hat, a tattered habit and a ringed staff. A yokai face peeks out from under the hat.",
+    "eu": "Lastozko kapela, jantzi urratua eta eraztunekin makila dituen monje ibiltaria. Kapelaren azpitik yokai baten aurpegia agertzen da."
+  },
+  "Diseño conceptual con bastón de anillos y sombrero de paja.": {
+    "es": "Diseño conceptual con bastón de anillos y sombrero de paja.",
+    "en": "Concept design with a ringed staff and a straw hat.",
+    "eu": "Eraztunekin makila eta lastozko kapela dituen diseinu kontzeptuala."
+  },
+  "Bastón y sombrero de paja": {
+    "es": "Bastón y sombrero de paja",
+    "en": "Staff and straw hat",
+    "eu": "Makila eta lastozko kapela"
+  },
+  "Monje espectral": {
+    "es": "Monje espectral",
+    "en": "Spectral monk",
+    "eu": "Monje mamu"
+  },
+  "Ver ficha de Monje yokai": {
+    "es": "Ver ficha de Monje yokai",
+    "en": "View Yokai monk details",
+    "eu": "Yokai monjea: ikusi fitxa"
+  },
+  "Añadir Monje yokai al carrito": {
+    "es": "Añadir Monje yokai al carrito",
+    "en": "Add Yokai monk to basket",
+    "eu": "Yokai monjea: gehitu saskira"
+  },
+  "Ampliar vistas de Monje yokai": {
+    "es": "Ampliar vistas de Monje yokai",
+    "en": "Enlarge Yokai monk views",
+    "eu": "Yokai monjea: handitu bistak"
+  },
+  "Diseño conceptual de Monje yokai en resina gris, visto desde cuatro ángulos": {
+    "es": "Diseño conceptual de Monje yokai en resina gris, visto desde cuatro ángulos",
+    "en": "Yokai monk: grey-resin concept design, seen from four angles",
+    "eu": "Yokai monjea: erretxina griseko diseinu kontzeptuala, lau angelutatik ikusita"
+  },
+  "Monje yokai: vistas conceptuales en resina gris": {
+    "es": "Monje yokai: vistas conceptuales en resina gris",
+    "en": "Yokai monk: grey-resin concept views",
+    "eu": "Yokai monjea: erretxina griseko bista kontzeptualak"
+  },
+  "Monje yokai: diseño oni en resina gris sin pintar, mostrado desde cuatro ángulos": {
+    "es": "Monje yokai: diseño oni en resina gris sin pintar, mostrado desde cuatro ángulos",
+    "en": "Yokai monk: unpainted grey-resin oni concept, shown from four angles",
+    "eu": "Yokai monjea: margotu gabeko erretxina griseko oni diseinua, lau angelutatik ikusita"
+  },
+  "Tengu arquero": {
+    "es": "Tengu arquero",
+    "en": "Tengu archer",
+    "eu": "Tengu arkularia"
+  },
+  "Tengu arquero ↗": {
+    "es": "Tengu arquero ↗",
+    "en": "Tengu archer ↗",
+    "eu": "Tengu arkularia ↗"
+  },
+  "Kuro Labs - Tengu arquero": {
+    "es": "Kuro Labs - Tengu arquero",
+    "en": "Kuro Labs - Tengu archer",
+    "eu": "Kuro Labs - Tengu arkularia"
+  },
+  "Un guerrero tengu con alas de plumas esculpidas y un arco largo tensado. La armadura lleva plumas y placas, y el carcaj cuelga a la espalda.": {
+    "es": "Un guerrero tengu con alas de plumas esculpidas y un arco largo tensado. La armadura lleva plumas y placas, y el carcaj cuelga a la espalda.",
+    "en": "A tengu warrior with sculpted feathered wings and a drawn longbow. The armor mixes feathers and plates, and the quiver hangs on the back.",
+    "eu": "Lumazko hegoak eta arku luze tenkatua dituen tengu gerlaria. Armadurak lumak eta plakak ditu, eta ziborioa bizkarrean zintzilik dago."
+  },
+  "Diseño conceptual con arco largo y alas de plumas.": {
+    "es": "Diseño conceptual con arco largo y alas de plumas.",
+    "en": "Concept design with a longbow and feathered wings.",
+    "eu": "Arku luzea eta lumazko hegoak dituen diseinu kontzeptuala."
+  },
+  "Arco largo y alas": {
+    "es": "Arco largo y alas",
+    "en": "Longbow and wings",
+    "eu": "Arku luzea eta hegoak"
+  },
+  "Guerrero alado": {
+    "es": "Guerrero alado",
+    "en": "Winged warrior",
+    "eu": "Gerlari hegodun"
+  },
+  "Ver ficha de Tengu arquero": {
+    "es": "Ver ficha de Tengu arquero",
+    "en": "View Tengu archer details",
+    "eu": "Tengu arkularia: ikusi fitxa"
+  },
+  "Añadir Tengu arquero al carrito": {
+    "es": "Añadir Tengu arquero al carrito",
+    "en": "Add Tengu archer to basket",
+    "eu": "Tengu arkularia: gehitu saskira"
+  },
+  "Ampliar vistas de Tengu arquero": {
+    "es": "Ampliar vistas de Tengu arquero",
+    "en": "Enlarge Tengu archer views",
+    "eu": "Tengu arkularia: handitu bistak"
+  },
+  "Diseño conceptual de Tengu arquero en resina gris, visto desde cuatro ángulos": {
+    "es": "Diseño conceptual de Tengu arquero en resina gris, visto desde cuatro ángulos",
+    "en": "Tengu archer: grey-resin concept design, seen from four angles",
+    "eu": "Tengu arkularia: erretxina griseko diseinu kontzeptuala, lau angelutatik ikusita"
+  },
+  "Tengu arquero: vistas conceptuales en resina gris": {
+    "es": "Tengu arquero: vistas conceptuales en resina gris",
+    "en": "Tengu archer: grey-resin concept views",
+    "eu": "Tengu arkularia: erretxina griseko bista kontzeptualak"
+  },
+  "Tengu arquero: diseño oni en resina gris sin pintar, mostrado desde cuatro ángulos": {
+    "es": "Tengu arquero: diseño oni en resina gris sin pintar, mostrado desde cuatro ángulos",
+    "en": "Tengu archer: unpainted grey-resin oni concept, shown from four angles",
+    "eu": "Tengu arkularia: margotu gabeko erretxina griseko oni diseinua, lau angelutatik ikusita"
+  },
+  "Oni del tambor": {
+    "es": "Oni del tambor",
+    "en": "Drummer oni",
+    "eu": "Danbor-onia"
+  },
+  "Oni del tambor ↗": {
+    "es": "Oni del tambor ↗",
+    "en": "Drummer oni ↗",
+    "eu": "Danbor-onia ↗"
+  },
+  "Kuro Labs - Oni del tambor": {
+    "es": "Kuro Labs - Oni del tambor",
+    "en": "Kuro Labs - Drummer oni",
+    "eu": "Kuro Labs - Danbor-onia"
+  },
+  "Un oni corpulento con cuernos, dos mazos enormes y un gran tambor taiko atado a la espalda. La armadura en capas refuerza su aire de guerrero ceremonial.": {
+    "es": "Un oni corpulento con cuernos, dos mazos enormes y un gran tambor taiko atado a la espalda. La armadura en capas refuerza su aire de guerrero ceremonial.",
+    "en": "A burly horned oni with two huge mallets and a large taiko drum strapped to its back. The layered armor adds to its ceremonial warrior look.",
+    "eu": "Adarrak dituen oni sendoa, bi mailu erraldoirekin eta bizkarrean lotutako taiko danbor handi batekin. Geruzazko armadurak erritu-gerlariaren itxura indartzen du."
+  },
+  "Diseño conceptual con tambor taiko y dos mazos.": {
+    "es": "Diseño conceptual con tambor taiko y dos mazos.",
+    "en": "Concept design with a taiko drum and two mallets.",
+    "eu": "Taiko danborra eta bi mailu dituen diseinu kontzeptuala."
+  },
+  "Taiko y dos mazos": {
+    "es": "Taiko y dos mazos",
+    "en": "Taiko and two mallets",
+    "eu": "Taiko eta bi mailu"
+  },
+  "Oni musical": {
+    "es": "Oni musical",
+    "en": "Musical oni",
+    "eu": "Oni musikala"
+  },
+  "Ver ficha de Oni del tambor": {
+    "es": "Ver ficha de Oni del tambor",
+    "en": "View Drummer oni details",
+    "eu": "Danbor-onia: ikusi fitxa"
+  },
+  "Añadir Oni del tambor al carrito": {
+    "es": "Añadir Oni del tambor al carrito",
+    "en": "Add Drummer oni to basket",
+    "eu": "Danbor-onia: gehitu saskira"
+  },
+  "Ampliar vistas de Oni del tambor": {
+    "es": "Ampliar vistas de Oni del tambor",
+    "en": "Enlarge Drummer oni views",
+    "eu": "Danbor-onia: handitu bistak"
+  },
+  "Diseño conceptual de Oni del tambor en resina gris, visto desde cuatro ángulos": {
+    "es": "Diseño conceptual de Oni del tambor en resina gris, visto desde cuatro ángulos",
+    "en": "Drummer oni: grey-resin concept design, seen from four angles",
+    "eu": "Danbor-onia: erretxina griseko diseinu kontzeptuala, lau angelutatik ikusita"
+  },
+  "Oni del tambor: vistas conceptuales en resina gris": {
+    "es": "Oni del tambor: vistas conceptuales en resina gris",
+    "en": "Drummer oni: grey-resin concept views",
+    "eu": "Danbor-onia: erretxina griseko bista kontzeptualak"
+  },
+  "Oni del tambor: diseño oni en resina gris sin pintar, mostrado desde cuatro ángulos": {
+    "es": "Oni del tambor: diseño oni en resina gris sin pintar, mostrado desde cuatro ángulos",
+    "en": "Drummer oni: unpainted grey-resin oni concept, shown from four angles",
+    "eu": "Danbor-onia: margotu gabeko erretxina griseko oni diseinua, lau angelutatik ikusita"
+  },
+  "Geisha de acero": {
+    "es": "Geisha de acero",
+    "en": "Steel geisha",
+    "eu": "Altzairuzko geisha"
+  },
+  "Geisha de acero ↗": {
+    "es": "Geisha de acero ↗",
+    "en": "Steel geisha ↗",
+    "eu": "Altzairuzko geisha ↗"
+  },
+  "Kuro Labs - Geisha de acero": {
+    "es": "Kuro Labs - Geisha de acero",
+    "en": "Kuro Labs - Steel geisha",
+    "eu": "Kuro Labs - Altzairuzko geisha"
+  },
+  "Una figura elegante de kimono blindado, con dos abanicos de acero y adornos colgantes en el peinado. Las articulaciones mecánicas asoman bajo la tela.": {
+    "es": "Una figura elegante de kimono blindado, con dos abanicos de acero y adornos colgantes en el peinado. Las articulaciones mecánicas asoman bajo la tela.",
+    "en": "An elegant figure in an armored kimono, with two steel fans and hanging ornaments in the hairstyle. Mechanical joints show beneath the fabric.",
+    "eu": "Kimono blindatuko figura dotorea, altzairuzko bi haizemaile eta orrazkian zintzilik dauden apaingarriekin. Giltza mekanikoak ehunaren azpian ikusten dira."
+  },
+  "Diseño conceptual con abanicos de acero y kimono blindado.": {
+    "es": "Diseño conceptual con abanicos de acero y kimono blindado.",
+    "en": "Concept design with steel fans and an armored kimono.",
+    "eu": "Altzairuzko haizemaileak eta kimono blindatua dituen diseinu kontzeptuala."
+  },
+  "Dos abanicos de acero": {
+    "es": "Dos abanicos de acero",
+    "en": "Two steel fans",
+    "eu": "Altzairuzko bi haizemaile"
+  },
+  "Oni elegante": {
+    "es": "Oni elegante",
+    "en": "Elegant oni",
+    "eu": "Oni dotorea"
+  },
+  "Ver ficha de Geisha de acero": {
+    "es": "Ver ficha de Geisha de acero",
+    "en": "View Steel geisha details",
+    "eu": "Altzairuzko geisha: ikusi fitxa"
+  },
+  "Añadir Geisha de acero al carrito": {
+    "es": "Añadir Geisha de acero al carrito",
+    "en": "Add Steel geisha to basket",
+    "eu": "Altzairuzko geisha: gehitu saskira"
+  },
+  "Ampliar vistas de Geisha de acero": {
+    "es": "Ampliar vistas de Geisha de acero",
+    "en": "Enlarge Steel geisha views",
+    "eu": "Altzairuzko geisha: handitu bistak"
+  },
+  "Diseño conceptual de Geisha de acero en resina gris, visto desde cuatro ángulos": {
+    "es": "Diseño conceptual de Geisha de acero en resina gris, visto desde cuatro ángulos",
+    "en": "Steel geisha: grey-resin concept design, seen from four angles",
+    "eu": "Altzairuzko geisha: erretxina griseko diseinu kontzeptuala, lau angelutatik ikusita"
+  },
+  "Geisha de acero: vistas conceptuales en resina gris": {
+    "es": "Geisha de acero: vistas conceptuales en resina gris",
+    "en": "Steel geisha: grey-resin concept views",
+    "eu": "Altzairuzko geisha: erretxina griseko bista kontzeptualak"
+  },
+  "Geisha de acero: diseño oni en resina gris sin pintar, mostrado desde cuatro ángulos": {
+    "es": "Geisha de acero: diseño oni en resina gris sin pintar, mostrado desde cuatro ángulos",
+    "en": "Steel geisha: unpainted grey-resin oni concept, shown from four angles",
+    "eu": "Altzairuzko geisha: margotu gabeko erretxina griseko oni diseinua, lau angelutatik ikusita"
+  },
+  "Guardián dragón": {
+    "es": "Guardián dragón",
+    "en": "Dragon guardian",
+    "eu": "Herensuge zaindaria"
+  },
+  "Guardián dragón ↗": {
+    "es": "Guardián dragón ↗",
+    "en": "Dragon guardian ↗",
+    "eu": "Herensuge zaindaria ↗"
+  },
+  "Kuro Labs - Guardián dragón": {
+    "es": "Kuro Labs - Guardián dragón",
+    "en": "Kuro Labs - Dragon guardian",
+    "eu": "Kuro Labs - Herensuge zaindaria"
+  },
+  "Un guardián con armadura de escamas y casco con cuernos, que sostiene una lanza larga mientras un dragón serpentino se enrosca en su brazo.": {
+    "es": "Un guardián con armadura de escamas y casco con cuernos, que sostiene una lanza larga mientras un dragón serpentino se enrosca en su brazo.",
+    "en": "A guardian in scale armor and a horned helmet, holding a long spear while a serpentine dragon coils around his arm.",
+    "eu": "Ezkatazko armadura eta adarrekin kaskoa dituen zaindaria, lantza luzea eskuan duela, herensuge sugetsu bat besoan kiribilduta duelarik."
+  },
+  "Diseño conceptual con lanza larga y dragón enroscado.": {
+    "es": "Diseño conceptual con lanza larga y dragón enroscado.",
+    "en": "Concept design with a long spear and a coiled dragon.",
+    "eu": "Lantza luzea eta kiribildutako herensugea dituen diseinu kontzeptuala."
+  },
+  "Lanza y dragón enroscado": {
+    "es": "Lanza y dragón enroscado",
+    "en": "Spear and coiled dragon",
+    "eu": "Lantza eta kiribildutako herensugea"
+  },
+  "Guardián legendario": {
+    "es": "Guardián legendario",
+    "en": "Legendary guardian",
+    "eu": "Zaindari legendarioa"
+  },
+  "Ver ficha de Guardián dragón": {
+    "es": "Ver ficha de Guardián dragón",
+    "en": "View Dragon guardian details",
+    "eu": "Herensuge zaindaria: ikusi fitxa"
+  },
+  "Añadir Guardián dragón al carrito": {
+    "es": "Añadir Guardián dragón al carrito",
+    "en": "Add Dragon guardian to basket",
+    "eu": "Herensuge zaindaria: gehitu saskira"
+  },
+  "Ampliar vistas de Guardián dragón": {
+    "es": "Ampliar vistas de Guardián dragón",
+    "en": "Enlarge Dragon guardian views",
+    "eu": "Herensuge zaindaria: handitu bistak"
+  },
+  "Diseño conceptual de Guardián dragón en resina gris, visto desde cuatro ángulos": {
+    "es": "Diseño conceptual de Guardián dragón en resina gris, visto desde cuatro ángulos",
+    "en": "Dragon guardian: grey-resin concept design, seen from four angles",
+    "eu": "Herensuge zaindaria: erretxina griseko diseinu kontzeptuala, lau angelutatik ikusita"
+  },
+  "Guardián dragón: vistas conceptuales en resina gris": {
+    "es": "Guardián dragón: vistas conceptuales en resina gris",
+    "en": "Dragon guardian: grey-resin concept views",
+    "eu": "Herensuge zaindaria: erretxina griseko bista kontzeptualak"
+  },
+  "Guardián dragón: diseño oni en resina gris sin pintar, mostrado desde cuatro ángulos": {
+    "es": "Guardián dragón: diseño oni en resina gris sin pintar, mostrado desde cuatro ángulos",
+    "en": "Dragon guardian: unpainted grey-resin oni concept, shown from four angles",
+    "eu": "Herensuge zaindaria: margotu gabeko erretxina griseko oni diseinua, lau angelutatik ikusita"
+  },
+  "Kappa mecánico": {
+    "es": "Kappa mecánico",
+    "en": "Mechanical kappa",
+    "eu": "Kappa mekanikoa"
+  },
+  "Kappa mecánico ↗": {
+    "es": "Kappa mecánico ↗",
+    "en": "Mechanical kappa ↗",
+    "eu": "Kappa mekanikoa ↗"
+  },
+  "Kuro Labs - Kappa mecánico": {
+    "es": "Kuro Labs - Kappa mecánico",
+    "en": "Kuro Labs - Mechanical kappa",
+    "eu": "Kuro Labs - Kappa mekanikoa"
+  },
+  "Una criatura de río con caparazón blindado, plato en la cabeza y un tridente. Las placas y los pistones la convierten en una máquina anfibia.": {
+    "es": "Una criatura de río con caparazón blindado, plato en la cabeza y un tridente. Las placas y los pistones la convierten en una máquina anfibia.",
+    "en": "A river creature with an armored shell, a dish on its head and a trident. Plates and pistons make it an amphibious machine.",
+    "eu": "Maskor blindatua, buruan plater bat eta hiruhortza dituen ibaiko izakia. Plakek eta pistoiek makina anfibio bihurtzen dute."
+  },
+  "Diseño conceptual con caparazón blindado y tridente.": {
+    "es": "Diseño conceptual con caparazón blindado y tridente.",
+    "en": "Concept design with an armored shell and a trident.",
+    "eu": "Maskor blindatua eta hiruhortza dituen diseinu kontzeptuala."
+  },
+  "Caparazón y tridente": {
+    "es": "Caparazón y tridente",
+    "en": "Shell and trident",
+    "eu": "Maskor eta hiruhortza"
+  },
+  "Criatura de río mecánica": {
+    "es": "Criatura de río mecánica",
+    "en": "Mechanical river creature",
+    "eu": "Ibaiko izaki mekanikoa"
+  },
+  "Ver ficha de Kappa mecánico": {
+    "es": "Ver ficha de Kappa mecánico",
+    "en": "View Mechanical kappa details",
+    "eu": "Kappa mekanikoa: ikusi fitxa"
+  },
+  "Añadir Kappa mecánico al carrito": {
+    "es": "Añadir Kappa mecánico al carrito",
+    "en": "Add Mechanical kappa to basket",
+    "eu": "Kappa mekanikoa: gehitu saskira"
+  },
+  "Ampliar vistas de Kappa mecánico": {
+    "es": "Ampliar vistas de Kappa mecánico",
+    "en": "Enlarge Mechanical kappa views",
+    "eu": "Kappa mekanikoa: handitu bistak"
+  },
+  "Diseño conceptual de Kappa mecánico en resina gris, visto desde cuatro ángulos": {
+    "es": "Diseño conceptual de Kappa mecánico en resina gris, visto desde cuatro ángulos",
+    "en": "Mechanical kappa: grey-resin concept design, seen from four angles",
+    "eu": "Kappa mekanikoa: erretxina griseko diseinu kontzeptuala, lau angelutatik ikusita"
+  },
+  "Kappa mecánico: vistas conceptuales en resina gris": {
+    "es": "Kappa mecánico: vistas conceptuales en resina gris",
+    "en": "Mechanical kappa: grey-resin concept views",
+    "eu": "Kappa mekanikoa: erretxina griseko bista kontzeptualak"
+  },
+  "Kappa mecánico: diseño oni en resina gris sin pintar, mostrado desde cuatro ángulos": {
+    "es": "Kappa mecánico: diseño oni en resina gris sin pintar, mostrado desde cuatro ángulos",
+    "en": "Mechanical kappa: unpainted grey-resin oni concept, shown from four angles",
+    "eu": "Kappa mekanikoa: margotu gabeko erretxina griseko oni diseinua, lau angelutatik ikusita"
+  },
+  "Cazador de kusarigama": {
+    "es": "Cazador de kusarigama",
+    "en": "Kusarigama hunter",
+    "eu": "Kusarigama ehiztaria"
+  },
+  "Cazador de kusarigama ↗": {
+    "es": "Cazador de kusarigama ↗",
+    "en": "Kusarigama hunter ↗",
+    "eu": "Kusarigama ehiztaria ↗"
+  },
+  "Kuro Labs - Cazador de kusarigama": {
+    "es": "Kuro Labs - Cazador de kusarigama",
+    "en": "Kuro Labs - Kusarigama hunter",
+    "eu": "Kuro Labs - Kusarigama ehiztaria"
+  },
+  "Un cazador encapuchado con una hoz de cadena y un peso de hierro. La capa rasgada y el equipo ligero le dan una silueta rápida y silenciosa.": {
+    "es": "Un cazador encapuchado con una hoz de cadena y un peso de hierro. La capa rasgada y el equipo ligero le dan una silueta rápida y silenciosa.",
+    "en": "A hooded hunter with a chain sickle and an iron weight. The torn cloak and light gear give it a fast, silent silhouette.",
+    "eu": "Kapuxa, kate-igitaia eta burdinazko pisua dituen ehiztaria. Kapa urratuak eta ekipo arinak silueta azkar eta isila ematen diote."
+  },
+  "Diseño conceptual con kusarigama y capa rasgada.": {
+    "es": "Diseño conceptual con kusarigama y capa rasgada.",
+    "en": "Concept design with a kusarigama and a torn cloak.",
+    "eu": "Kusarigama eta kapa urratua dituen diseinu kontzeptuala."
+  },
+  "Hoz con cadena y peso": {
+    "es": "Hoz con cadena y peso",
+    "en": "Sickle with chain and weight",
+    "eu": "Kate eta pisua duen igitaia"
+  },
+  "Cazador encapuchado": {
+    "es": "Cazador encapuchado",
+    "en": "Hooded hunter",
+    "eu": "Kapuxadun ehiztaria"
+  },
+  "Ver ficha de Cazador de kusarigama": {
+    "es": "Ver ficha de Cazador de kusarigama",
+    "en": "View Kusarigama hunter details",
+    "eu": "Kusarigama ehiztaria: ikusi fitxa"
+  },
+  "Añadir Cazador de kusarigama al carrito": {
+    "es": "Añadir Cazador de kusarigama al carrito",
+    "en": "Add Kusarigama hunter to basket",
+    "eu": "Kusarigama ehiztaria: gehitu saskira"
+  },
+  "Ampliar vistas de Cazador de kusarigama": {
+    "es": "Ampliar vistas de Cazador de kusarigama",
+    "en": "Enlarge Kusarigama hunter views",
+    "eu": "Kusarigama ehiztaria: handitu bistak"
+  },
+  "Diseño conceptual de Cazador de kusarigama en resina gris, visto desde cuatro ángulos": {
+    "es": "Diseño conceptual de Cazador de kusarigama en resina gris, visto desde cuatro ángulos",
+    "en": "Kusarigama hunter: grey-resin concept design, seen from four angles",
+    "eu": "Kusarigama ehiztaria: erretxina griseko diseinu kontzeptuala, lau angelutatik ikusita"
+  },
+  "Cazador de kusarigama: vistas conceptuales en resina gris": {
+    "es": "Cazador de kusarigama: vistas conceptuales en resina gris",
+    "en": "Kusarigama hunter: grey-resin concept views",
+    "eu": "Kusarigama ehiztaria: erretxina griseko bista kontzeptualak"
+  },
+  "Cazador de kusarigama: diseño oni en resina gris sin pintar, mostrado desde cuatro ángulos": {
+    "es": "Cazador de kusarigama: diseño oni en resina gris sin pintar, mostrado desde cuatro ángulos",
+    "en": "Kusarigama hunter: unpainted grey-resin oni concept, shown from four angles",
+    "eu": "Kusarigama ehiztaria: margotu gabeko erretxina griseko oni diseinua, lau angelutatik ikusita"
+  },
+  "Shinobi de humo": {
+    "es": "Shinobi de humo",
+    "en": "Smoke shinobi",
+    "eu": "Keazko shinobia"
+  },
+  "Shinobi de humo ↗": {
+    "es": "Shinobi de humo ↗",
+    "en": "Smoke shinobi ↗",
+    "eu": "Keazko shinobia ↗"
+  },
+  "Kuro Labs - Shinobi de humo": {
+    "es": "Kuro Labs - Shinobi de humo",
+    "en": "Kuro Labs - Smoke shinobi",
+    "eu": "Kuro Labs - Keazko shinobia"
+  },
+  "Un shinobi agachado, con bufanda al viento, dos hojas cortas y estelas de humo esculpidas alrededor de las piernas. Lleva una máscara oni en la cadera.": {
+    "es": "Un shinobi agachado, con bufanda al viento, dos hojas cortas y estelas de humo esculpidas alrededor de las piernas. Lleva una máscara oni en la cadera.",
+    "en": "A crouching shinobi with a flowing scarf, two short blades and sculpted smoke trails around the legs. An oni mask hangs at the hip.",
+    "eu": "Makurtuta dagoen shinobia, mahuka haizean, bi xafla labur eta hanketan inguruan landutako kea dituela. Oni maskara bat gerrian zintzilik dauka."
+  },
+  "Diseño conceptual con dos hojas cortas y humo esculpido.": {
+    "es": "Diseño conceptual con dos hojas cortas y humo esculpido.",
+    "en": "Concept design with two short blades and sculpted smoke.",
+    "eu": "Bi xafla labur eta landutako kea dituen diseinu kontzeptuala."
+  },
+  "Dos hojas y humo esculpido": {
+    "es": "Dos hojas y humo esculpido",
+    "en": "Two blades and sculpted smoke",
+    "eu": "Bi xafla eta landutako kea"
+  },
+  "Ninja ágil": {
+    "es": "Ninja ágil",
+    "en": "Agile ninja",
+    "eu": "Ninja arina"
+  },
+  "Ver ficha de Shinobi de humo": {
+    "es": "Ver ficha de Shinobi de humo",
+    "en": "View Smoke shinobi details",
+    "eu": "Keazko shinobia: ikusi fitxa"
+  },
+  "Añadir Shinobi de humo al carrito": {
+    "es": "Añadir Shinobi de humo al carrito",
+    "en": "Add Smoke shinobi to basket",
+    "eu": "Keazko shinobia: gehitu saskira"
+  },
+  "Ampliar vistas de Shinobi de humo": {
+    "es": "Ampliar vistas de Shinobi de humo",
+    "en": "Enlarge Smoke shinobi views",
+    "eu": "Keazko shinobia: handitu bistak"
+  },
+  "Diseño conceptual de Shinobi de humo en resina gris, visto desde cuatro ángulos": {
+    "es": "Diseño conceptual de Shinobi de humo en resina gris, visto desde cuatro ángulos",
+    "en": "Smoke shinobi: grey-resin concept design, seen from four angles",
+    "eu": "Keazko shinobia: erretxina griseko diseinu kontzeptuala, lau angelutatik ikusita"
+  },
+  "Shinobi de humo: vistas conceptuales en resina gris": {
+    "es": "Shinobi de humo: vistas conceptuales en resina gris",
+    "en": "Smoke shinobi: grey-resin concept views",
+    "eu": "Keazko shinobia: erretxina griseko bista kontzeptualak"
+  },
+  "Shinobi de humo: diseño oni en resina gris sin pintar, mostrado desde cuatro ángulos": {
+    "es": "Shinobi de humo: diseño oni en resina gris sin pintar, mostrado desde cuatro ángulos",
+    "en": "Smoke shinobi: unpainted grey-resin oni concept, shown from four angles",
+    "eu": "Keazko shinobia: margotu gabeko erretxina griseko oni diseinua, lau angelutatik ikusita"
+  },
+  "Emperador oni": {
+    "es": "Emperador oni",
+    "en": "Oni emperor",
+    "eu": "Oni enperadorea"
+  },
+  "Emperador oni ↗": {
+    "es": "Emperador oni ↗",
+    "en": "Oni emperor ↗",
+    "eu": "Oni enperadorea ↗"
+  },
+  "Kuro Labs - Emperador oni": {
+    "es": "Kuro Labs - Emperador oni",
+    "en": "Kuro Labs - Oni emperor",
+    "eu": "Kuro Labs - Oni enperadorea"
+  },
+  "Un oni de rango imperial con corona de cuernos, armadura de placas y una gran capa. Apoya las manos sobre un espadón clavado en la peana.": {
+    "es": "Un oni de rango imperial con corona de cuernos, armadura de placas y una gran capa. Apoya las manos sobre un espadón clavado en la peana.",
+    "en": "An imperial-rank oni with a crown of horns, plate armor and a great cloak. Both hands rest on a greatsword planted in the base.",
+    "eu": "Maila inperialeko onia, adar-koroa, plakazko armadura eta kapa handi batekin. Eskuak oinarrian sartutako ezpata handi baten gainean ditu."
+  },
+  "Diseño conceptual con espadón y capa imperial.": {
+    "es": "Diseño conceptual con espadón y capa imperial.",
+    "en": "Concept design with a greatsword and an imperial cloak.",
+    "eu": "Ezpata handia eta kapa inperiala dituen diseinu kontzeptuala."
+  },
+  "Espadón y capa imperial": {
+    "es": "Espadón y capa imperial",
+    "en": "Greatsword and imperial cloak",
+    "eu": "Ezpata handia eta kapa inperiala"
+  },
+  "Oni imperial": {
+    "es": "Oni imperial",
+    "en": "Imperial oni",
+    "eu": "Oni inperiala"
+  },
+  "Ver ficha de Emperador oni": {
+    "es": "Ver ficha de Emperador oni",
+    "en": "View Oni emperor details",
+    "eu": "Oni enperadorea: ikusi fitxa"
+  },
+  "Añadir Emperador oni al carrito": {
+    "es": "Añadir Emperador oni al carrito",
+    "en": "Add Oni emperor to basket",
+    "eu": "Oni enperadorea: gehitu saskira"
+  },
+  "Ampliar vistas de Emperador oni": {
+    "es": "Ampliar vistas de Emperador oni",
+    "en": "Enlarge Oni emperor views",
+    "eu": "Oni enperadorea: handitu bistak"
+  },
+  "Diseño conceptual de Emperador oni en resina gris, visto desde cuatro ángulos": {
+    "es": "Diseño conceptual de Emperador oni en resina gris, visto desde cuatro ángulos",
+    "en": "Oni emperor: grey-resin concept design, seen from four angles",
+    "eu": "Oni enperadorea: erretxina griseko diseinu kontzeptuala, lau angelutatik ikusita"
+  },
+  "Emperador oni: vistas conceptuales en resina gris": {
+    "es": "Emperador oni: vistas conceptuales en resina gris",
+    "en": "Oni emperor: grey-resin concept views",
+    "eu": "Oni enperadorea: erretxina griseko bista kontzeptualak"
+  },
+  "Emperador oni: diseño oni en resina gris sin pintar, mostrado desde cuatro ángulos": {
+    "es": "Emperador oni: diseño oni en resina gris sin pintar, mostrado desde cuatro ángulos",
+    "en": "Oni emperor: unpainted grey-resin oni concept, shown from four angles",
+    "eu": "Oni enperadorea: margotu gabeko erretxina griseko oni diseinua, lau angelutatik ikusita"
+  },
+  "18 DISEÑOS": {
+    "es": "18 DISEÑOS",
+    "en": "18 DESIGNS",
+    "eu": "18 DISEINU"
+  },
+  "18 DISEÑOS / SIN COLOR": {
+    "es": "18 DISEÑOS / SIN COLOR",
+    "en": "18 DESIGNS / UNPAINTED",
+    "eu": "18 DISEINU / MARGOTU GABE"
+  },
+  "18 diseños de ejemplo": {
+    "es": "18 diseños de ejemplo",
+    "en": "18 example designs",
+    "eu": "18 adibideko diseinu"
+  },
   "Inicio": {
     "es": "Inicio",
     "en": "Home",
@@ -369,10 +1035,10 @@ window.idiomasKuro = (() => {
     "en": "Explore the oni designs. Try the filters and build your example basket.",
     "eu": "Arakatu oni diseinuak. Probatu iragazkiak eta sortu zure adibideko saskia."
   },
-  "Cuatro diseños oni para probar tu cesta. Una tienda de ejemplo, sin compras reales.": {
-    "es": "Cuatro diseños oni para probar tu cesta. Una tienda de ejemplo, sin compras reales.",
-    "en": "Four oni designs to try your basket. A demo shop, no real purchases.",
-    "eu": "Lau oni diseinu zure saskia probatzeko. Adibideko denda, benetako erosketarik gabe."
+  "Dieciocho diseños oni para probar tu cesta. Una tienda de ejemplo, sin compras reales.": {
+    "es": "Dieciocho diseños oni para probar tu cesta. Una tienda de ejemplo, sin compras reales.",
+    "en": "Eighteen oni designs to try your basket. A demo shop, no real purchases.",
+    "eu": "Hemezortzi oni diseinu zure saskia probatzeko. Adibideko denda, benetako erosketarik gabe."
   },
   "Diseños conceptuales generados con IA. Precios y colecciones de ejemplo, sin disponibilidad comercial.": {
     "es": "Diseños conceptuales generados con IA. Precios y colecciones de ejemplo, sin disponibilidad comercial.",

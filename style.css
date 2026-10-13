@@ -2473,3 +2473,6 @@ html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
 }
+
+/* Cortina de carga: solo en la primera página de la sesión (ver app.js, sección 12). */
+.sin-cortina .cortina-carga { display: none; }

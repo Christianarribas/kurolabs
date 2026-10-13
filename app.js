@@ -61,7 +61,18 @@ document.addEventListener("DOMContentLoaded", () => {
     5: { etiqueta: "ONI / 05", nombre: "Ronin del templo", descripcion: "Diseño conceptual con katana, capa blindada y articulaciones mecánicas.", imagen: "5-ronin-templo.webp", precio: 7500, coleccion: "Cibernética", pagina: "ronin-templo.html" },
     6: { etiqueta: "ONI / 06", nombre: "Oni salvaje", descripcion: "Diseño conceptual con garras, exoesqueleto y guanteletes mecánicos.", imagen: "6-oni-salvaje.webp", precio: 8000, coleccion: "Cibernética", pagina: "oni-salvaje.html" },
     7: { etiqueta: "ONI / 07", nombre: "Sombra del torii", descripcion: "Diseño conceptual con capucha y dos cuchillos cortos.", imagen: "7-sombra-torii.webp", precio: 5500, coleccion: "Sigilo", pagina: "sombra-torii.html" },
-    8: { etiqueta: "ONI / 08", nombre: "Titán de hierro", descripcion: "Diseño conceptual con martillo, escudo y armadura mecánica pesada.", imagen: "8-titan-hierro.webp", precio: 10000, coleccion: "Cibernética", pagina: "titan-hierro.html" }
+    8: { etiqueta: "ONI / 08", nombre: "Titán de hierro", descripcion: "Diseño conceptual con martillo, escudo y armadura mecánica pesada.", imagen: "8-titan-hierro.webp", precio: 10000, coleccion: "Cibernética", pagina: "titan-hierro.html" },
+    // Figuras 9 a 18: ampliación del catálogo (demo, precios ficticios).
+    9: { etiqueta: "ONI / 09", nombre: "Kitsune con katana", descripcion: "Diseño conceptual con katana y nueve colas.", imagen: "9-kitsune.webp", precio: 7000, coleccion: "Armadura", pagina: "kitsune.html" },
+    10: { etiqueta: "ONI / 10", nombre: "Monje yokai", descripcion: "Diseño conceptual con bastón de anillos y sombrero de paja.", imagen: "10-monje-yokai.webp", precio: 5000, coleccion: "Sigilo", pagina: "monje-yokai.html" },
+    11: { etiqueta: "ONI / 11", nombre: "Tengu arquero", descripcion: "Diseño conceptual con arco largo y alas de plumas.", imagen: "11-tengu-arquero.webp", precio: 8500, coleccion: "Armadura", pagina: "tengu-arquero.html" },
+    12: { etiqueta: "ONI / 12", nombre: "Oni del tambor", descripcion: "Diseño conceptual con tambor taiko y dos mazos.", imagen: "12-oni-tambor.webp", precio: 9000, coleccion: "Armadura", pagina: "oni-tambor.html" },
+    13: { etiqueta: "ONI / 13", nombre: "Geisha de acero", descripcion: "Diseño conceptual con abanicos de acero y kimono blindado.", imagen: "13-geisha-acero.webp", precio: 6500, coleccion: "Cibernética", pagina: "geisha-acero.html" },
+    14: { etiqueta: "ONI / 14", nombre: "Guardián dragón", descripcion: "Diseño conceptual con lanza larga y dragón enroscado.", imagen: "14-guardian-dragon.webp", precio: 9500, coleccion: "Armadura", pagina: "guardian-dragon.html" },
+    15: { etiqueta: "ONI / 15", nombre: "Kappa mecánico", descripcion: "Diseño conceptual con caparazón blindado y tridente.", imagen: "15-kappa-mecanico.webp", precio: 7500, coleccion: "Cibernética", pagina: "kappa-mecanico.html" },
+    16: { etiqueta: "ONI / 16", nombre: "Cazador de kusarigama", descripcion: "Diseño conceptual con kusarigama y capa rasgada.", imagen: "16-cazador-kusarigama.webp", precio: 6000, coleccion: "Sigilo", pagina: "cazador-kusarigama.html" },
+    17: { etiqueta: "ONI / 17", nombre: "Shinobi de humo", descripcion: "Diseño conceptual con dos hojas cortas y humo esculpido.", imagen: "17-shinobi-humo.webp", precio: 5500, coleccion: "Sigilo", pagina: "shinobi-humo.html" },
+    18: { etiqueta: "ONI / 18", nombre: "Emperador oni", descripcion: "Diseño conceptual con espadón y capa imperial.", imagen: "18-emperador-oni.webp", precio: 10000, coleccion: "Armadura", pagina: "emperador-oni.html" }
   };
 
   // Los datos originales permiten cambiar de idioma sin perder los textos españoles.
@@ -450,7 +461,12 @@ document.addEventListener("DOMContentLoaded", () => {
      la desvanece. El temporizador de seguridad la quita aunque
      algo falle, para que la web nunca se quede bloqueada. */
   const cortinaCarga = document.querySelector("#cortina-carga");
-  if (cortinaCarga) {
+  /* Solo la primera página de la sesión muestra la cortina: guardamos una
+     marca en sessionStorage (se borra al cerrar la pestaña). */
+  try { sessionStorage.setItem("kurolabs-cortina-vista", "1"); } catch (error) { /* Sin almacenamiento, no pasa nada. */ }
+  if (cortinaCarga && document.documentElement.classList.contains("sin-cortina")) {
+    cortinaCarga.remove(); // ya se vio en esta sesión: no la mostramos otra vez
+  } else if (cortinaCarga) {
     let cortinaQuitada = false;
     const ocultarCortina = () => {
       if (cortinaQuitada) return; // evitamos ocultarla dos veces

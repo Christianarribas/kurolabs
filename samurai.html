@@ -14,6 +14,9 @@
   <!-- Leer el tema antes del CSS evita un destello oscuro si elegiste el claro.
        try/catch permite abrir la web aunque el navegador bloquee el almacenamiento. -->
   <script>try { if (localStorage.getItem("kurolabs-tema") === "claro") document.documentElement.dataset.tema = "claro"; } catch (error) { /* Seguimos con el tema oscuro. */ }</script>
+  <!-- La cortina de carga solo sale en la primera página de la sesión: si ya se vio,
+       marcamos <html> con "sin-cortina" antes de pintar nada para que no parpadee. -->
+  <script>try { if (sessionStorage.getItem("kurolabs-cortina-vista")) document.documentElement.classList.add("sin-cortina"); } catch (error) { /* Sin almacenamiento, la cortina sale siempre. */ }</script>
   <link rel="stylesheet" href="style.css">
   <!-- Si JavaScript no carga, escondemos la cortina para no bloquear la web. -->
   <noscript><style>.cortina-carga{display:none}</style></noscript>
