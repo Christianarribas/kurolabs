@@ -2518,3 +2518,12 @@ contorno, grises y rojo, y damos a la imagen de portada un fondo claro.
 /* CATÁLOGO: 3 figuras por fila en escritorio (antes 4). En tablet siguen
    siendo 2 y en móvil 1. Las colecciones usan la misma rejilla. */
 @media (min-width:900px) { .rejilla-productos { grid-template-columns:repeat(3,minmax(0,1fr)); } }
+
+/* TARJETAS DE CATÁLOGO: texto y valoraciones más fáciles de leer.
+   Mantiene el contenido dentro de las tres columnas de escritorio y
+   aprovecha el ancho completo de tarjeta en móvil. */
+.info-producto h3 { font-size: 1.1rem; line-height: 1.25; }
+.etiqueta-producto { font-size: 0.63rem; }
+.estrellas-tarjeta { font-size: 18px; letter-spacing: 3px; line-height: 1.3; }
+.compra-producto strong { font-size: 24px; }
+.compra-producto small { font-size: 14px; }
