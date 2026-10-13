@@ -488,7 +488,7 @@ display: block;
 
 .portada h1 strong {
 color: transparent;
--webkit-text-stroke: 1px rgba(241, 238, 232, 0.75);
+-webkit-text-stroke: 1px var(--contorno-titulo, rgba(241, 238, 232, 0.75));
 }
 
 .portada-descripcion {
@@ -2464,9 +2464,10 @@ grid-template-columns: repeat(2, 1fr);
   display: block;
   width: min(320px, 100%);
   height: auto;
-  background: #010101;
-  border: 1px solid var(--borde-fuerte);
+  /* Logo con fondo transparente: se funde con el degradado de la tarjeta
+     sin caja ni borde. */
 }
+
 
 /* Evita que el movil agrande el texto por su cuenta. */
 html {
@@ -2476,3 +2477,44 @@ html {
 
 /* Cortina de carga: solo en la primera página de la sesión (ver app.js, sección 12). */
 .sin-cortina .cortina-carga { display: none; }
+
+/* =================================
+MÓVIL: el botón del menú se salía de la pantalla
+=================================
+En pantallas de unos 390 px, logo + idioma + favoritos + tema + cesta
+ocupaban todo el ancho y el botón hamburguesa quedaba fuera, así que no
+se podía abrir el menú. Aquí encogemos la cabecera lo justo para que
+quepa todo: sin la palabra "LABS" junto al logo y con botones más
+compactos. (Va al final del archivo para que gane a las reglas anteriores.) */
+@media (max-width: 440px) {
+  .marca-nombre em { display: none; }
+  .acciones-cabecera { gap: 4px; }
+  .boton-tema, .boton-carrito { padding: 6px; }
+  .cabecera { gap: 4px; }
+}
+
+
+/* =================================
+TEMA CLARO: más contraste y portada legible
+=================================
+Antes "DEMONS" (texto hueco con contorno claro) desaparecía sobre el fondo
+blanco y los grises de los textos eran demasiado suaves. Aquí oscurecemos
+contorno, grises y rojo, y damos a la imagen de portada un fondo claro.
+(Va al final del archivo para ganar a las reglas anteriores.) */
+:root[data-tema="claro"] {
+  --contorno-titulo: #201d20;
+  --texto-suave: #3b373d;
+  --texto-apagado: #4d4850;
+  --rojo: #9a1a2d; --rojo-vivo: #a51b30;
+  --borde: rgba(25,22,23,.22);
+  --borde-fuerte: rgba(25,22,23,.38);
+}
+[data-tema="claro"] .portada h1 strong { -webkit-text-stroke-width: 2px; }
+[data-tema="claro"] .nav-principal a { font-weight: 800; }
+[data-tema="claro"] .marco-objeto { background: var(--superficie); border-color: var(--borde-fuerte); }
+[data-tema="claro"] .objeto-pendiente, [data-tema="claro"] .datos-objeto { color: var(--texto-suave); }
+[data-tema="claro"] .antetitulo, [data-tema="claro"] .etiqueta-producto { color: var(--rojo); }
+
+/* CATÁLOGO: 3 figuras por fila en escritorio (antes 4). En tablet siguen
+   siendo 2 y en móvil 1. Las colecciones usan la misma rejilla. */
+@media (min-width:900px) { .rejilla-productos { grid-template-columns:repeat(3,minmax(0,1fr)); } }

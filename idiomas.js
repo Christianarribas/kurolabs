@@ -685,6 +685,27 @@ window.idiomasKuro = (() => {
     "en": "Collections",
     "eu": "Bildumak"
   },
+  /* Páginas separadas: Galería y Próximo drop. */
+  "Galería": {
+    "es": "Galería",
+    "en": "Gallery",
+    "eu": "Galeria"
+  },
+  "Próximo drop": {
+    "es": "Próximo drop",
+    "en": "Next drop",
+    "eu": "Hurrengo dropa"
+  },
+  "Kuro Labs — Galería oni": {
+    "es": "Kuro Labs — Galería oni",
+    "en": "Kuro Labs - Oni gallery",
+    "eu": "Kuro Labs - Oni galeria"
+  },
+  "Kuro Labs — Próximo drop": {
+    "es": "Kuro Labs — Próximo drop",
+    "en": "Kuro Labs - Next drop",
+    "eu": "Kuro Labs - Hurrengo dropa"
+  },
   "Noticias": {
     "es": "Noticias",
     "en": "News",
@@ -1155,10 +1176,10 @@ window.idiomasKuro = (() => {
     "en": "ONI / RESIN",
     "eu": "ONI / ERRETXINA"
   },
-  "Cuatro diseños. Cuatro miradas. Una misma esencia oni.": {
-    "es": "Cuatro diseños. Cuatro miradas. Una misma esencia oni.",
-    "en": "Four designs. Four perspectives. One oni spirit.",
-    "eu": "Lau diseinu. Lau begirada. Oni esentzia bera."
+  "Dieciocho diseños. Dieciocho miradas. Una misma esencia oni.": {
+    "es": "Dieciocho diseños. Dieciocho miradas. Una misma esencia oni.",
+    "en": "Eighteen designs. Eighteen perspectives. One oni spirit.",
+    "eu": "Hemezortzi diseinu. Hemezortzi begirada. Oni esentzia bera."
   },
   "GALERÍA CONCEPTUAL": {
     "es": "GALERÍA CONCEPTUAL",
