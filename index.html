@@ -15,8 +15,21 @@
        try/catch permite abrir la web aunque el navegador bloquee el almacenamiento. -->
   <script>try { if (localStorage.getItem("kurolabs-tema") === "claro") document.documentElement.dataset.tema = "claro"; } catch (error) { /* Seguimos con el tema oscuro. */ }</script>
   <link rel="stylesheet" href="style.css">
+  <!-- Si JavaScript no carga, escondemos la cortina para no bloquear la web. -->
+  <noscript><style>.cortina-carga{display:none}</style></noscript>
 </head>
 <body>
+<!-- CORTINA DE CARGA: portada animada con la máscara oni de CSS. app.js
+     (sección 12) le pone la clase "oculta" cuando la página termina de
+     cargar; si JavaScript no funciona, el noscript del head la esconde. -->
+<div class="cortina-carga" id="cortina-carga" aria-hidden="true">
+  <div class="cortina-simbolo simbolo-manifiesto">
+    <span class="cuerno cuerno-izquierdo"></span><span class="cuerno-derecho cuerno"></span>
+    <span class="mascara"><span class="mascara-ojo mascara-ojo-izquierdo"></span><span class="mascara-ojo mascara-ojo-derecho"></span><span class="mascara-boca"></span></span>
+  </div>
+  <p class="cortina-nombre">KURO <em>LABS</em></p>
+  <span class="cortina-barra"><span></span></span>
+</div>
 <!-- Capa de textura sobre toda la pagina (definida en el CSS, seccion 3). -->
 <div class="ruido-fondo" aria-hidden="true"></div>
 
@@ -33,6 +46,7 @@
 <nav class="nav-principal" id="nav-principal" aria-label="Navegación principal">
     <a href="index.html">Inicio</a>
     <a href="catalogo.html">Catálogo</a>
+    <a href="favoritos.html">Favoritos</a>
     <a href="colecciones.html">Colecciones</a>
     <a href="kuro-labs.html">Kuro Labs</a>
     <a href="noticias.html">Noticias</a>
@@ -42,6 +56,7 @@
   <div class="acciones-cabecera">
     <!-- El idioma usa códigos estables: traducir la etiqueta no cambia la selección. -->
     <label class="control-idioma" for="selector-idioma"><span class="solo-lectores">Idioma</span><select id="selector-idioma" aria-label="Idioma"><option value="es" lang="es">ES</option><option value="en" lang="en">EN</option><option value="eu" lang="eu">EU</option></select></label>
+    <a class="boton-carrito boton-favoritos-cabecera" id="enlace-favoritos" href="favoritos.html" aria-label="Ver favoritos: 0">♥ <span id="contador-favoritos">0</span></a>
     <button class="boton-tema" id="boton-tema" type="button" aria-label="Activar modo claro" aria-pressed="false">Claro ◐</button>
     <button class="boton-carrito" id="abrir-carrito" type="button" aria-label="Abrir carrito, 0 artículos">Cesta <span id="contador-carrito">0</span></button>
   </div>
@@ -121,51 +136,85 @@
 
 <div class="rejilla-productos">
 <article class="tarjeta-producto" data-ficha="1">
+  <!-- Corazón de favoritos: app.js (sección 13) lo marca y lo guarda. -->
+  <button class="boton-favorito" type="button" data-favorito="1" aria-pressed="false" aria-label="Guardar en favoritos: Samurái"><span aria-hidden="true">♥</span></button>
   <a class="boton-tarjeta" href="samurai.html" aria-label="Ver ficha de Samurái">
     <div class="imagen-producto imagen-conceptual"><img src="1-samurai.webp" width="1072" height="1072" loading="lazy" alt="Diseño conceptual de Samurái en resina gris, visto desde cuatro ángulos"></div>
-    <div class="info-producto"><div><span class="etiqueta-producto">ARMADURA / DEMO</span><h3>Samurái</h3></div><span class="flecha-producto" aria-hidden="true">↗</span></div>
+    <div class="info-producto"><div><span class="etiqueta-producto">ARMADURA / DEMO</span><h3>Samurái</h3><span class="estrellas-tarjeta" data-estrellas="1" role="img" aria-label="Sin valorar"></span></div><span class="flecha-producto" aria-hidden="true">↗</span></div>
   </a>
   <div class="compra-producto"><span><strong>65,00 €</strong><small>Precio ficticio</small></span><button class="boton-anadir" type="button" data-anadir="1" aria-label="Añadir Samurái al carrito">Añadir +</button></div>
 </article>
 <article class="tarjeta-producto" data-ficha="2">
+  <!-- Corazón de favoritos: app.js (sección 13) lo marca y lo guarda. -->
+  <button class="boton-favorito" type="button" data-favorito="2" aria-pressed="false" aria-label="Guardar en favoritos: Oni con maza"><span aria-hidden="true">♥</span></button>
   <a class="boton-tarjeta" href="oni-maza.html" aria-label="Ver ficha de Oni con maza">
     <div class="imagen-producto imagen-conceptual"><img src="2-maza.webp" width="1072" height="1072" loading="lazy" alt="Diseño conceptual de Oni con maza en resina gris, visto desde cuatro ángulos"></div>
-    <div class="info-producto"><div><span class="etiqueta-producto">ARMADURA / DEMO</span><h3>Oni con maza</h3></div><span class="flecha-producto" aria-hidden="true">↗</span></div>
+    <div class="info-producto"><div><span class="etiqueta-producto">ARMADURA / DEMO</span><h3>Oni con maza</h3><span class="estrellas-tarjeta" data-estrellas="2" role="img" aria-label="Sin valorar"></span></div><span class="flecha-producto" aria-hidden="true">↗</span></div>
   </a>
   <div class="compra-producto"><span><strong>85,00 €</strong><small>Precio ficticio</small></span><button class="boton-anadir" type="button" data-anadir="2" aria-label="Añadir Oni con maza al carrito">Añadir +</button></div>
 </article>
 <article class="tarjeta-producto" data-ficha="3">
+  <!-- Corazón de favoritos: app.js (sección 13) lo marca y lo guarda. -->
+  <button class="boton-favorito" type="button" data-favorito="3" aria-pressed="false" aria-label="Guardar en favoritos: Ninja"><span aria-hidden="true">♥</span></button>
   <a class="boton-tarjeta" href="ninja.html" aria-label="Ver ficha de Ninja">
     <div class="imagen-producto imagen-conceptual"><img src="3-ninja.webp" width="1072" height="1072" loading="lazy" alt="Diseño conceptual de Ninja en resina gris, visto desde cuatro ángulos"></div>
-    <div class="info-producto"><div><span class="etiqueta-producto">SIGILO / DEMO</span><h3>Ninja</h3></div><span class="flecha-producto" aria-hidden="true">↗</span></div>
+    <div class="info-producto"><div><span class="etiqueta-producto">SIGILO / DEMO</span><h3>Ninja</h3><span class="estrellas-tarjeta" data-estrellas="3" role="img" aria-label="Sin valorar"></span></div><span class="flecha-producto" aria-hidden="true">↗</span></div>
   </a>
   <div class="compra-producto"><span><strong>45,00 €</strong><small>Precio ficticio</small></span><button class="boton-anadir" type="button" data-anadir="3" aria-label="Añadir Ninja al carrito">Añadir +</button></div>
 </article>
 <article class="tarjeta-producto" data-ficha="4">
+  <!-- Corazón de favoritos: app.js (sección 13) lo marca y lo guarda. -->
+  <button class="boton-favorito" type="button" data-favorito="4" aria-pressed="false" aria-label="Guardar en favoritos: Señor de guerra"><span aria-hidden="true">♥</span></button>
   <a class="boton-tarjeta" href="senor-guerra.html" aria-label="Ver ficha de Señor de guerra">
     <div class="imagen-producto imagen-conceptual"><img src="4-senor-guerra.webp" width="1072" height="1072" loading="lazy" alt="Diseño conceptual de Señor de guerra en resina gris, visto desde cuatro ángulos"></div>
-    <div class="info-producto"><div><span class="etiqueta-producto">ARMADURA / DEMO</span><h3>Señor de guerra</h3></div><span class="flecha-producto" aria-hidden="true">↗</span></div>
+    <div class="info-producto"><div><span class="etiqueta-producto">ARMADURA / DEMO</span><h3>Señor de guerra</h3><span class="estrellas-tarjeta" data-estrellas="4" role="img" aria-label="Sin valorar"></span></div><span class="flecha-producto" aria-hidden="true">↗</span></div>
   </a>
   <div class="compra-producto"><span><strong>95,00 €</strong><small>Precio ficticio</small></span><button class="boton-anadir" type="button" data-anadir="4" aria-label="Añadir Señor de guerra al carrito">Añadir +</button></div>
 </article>
 <!-- Estos dos conceptos comparten colección para poder filtrarlos juntos. -->
 <article class="tarjeta-producto" data-ficha="5">
+  <!-- Corazón de favoritos: app.js (sección 13) lo marca y lo guarda. -->
+  <button class="boton-favorito" type="button" data-favorito="5" aria-pressed="false" aria-label="Guardar en favoritos: Ronin del templo"><span aria-hidden="true">♥</span></button>
   <a class="boton-tarjeta" href="ronin-templo.html" aria-label="Ver ficha de Ronin del templo">
     <div class="imagen-producto imagen-conceptual"><img src="5-ronin-templo.webp" width="1072" height="1072" loading="lazy" alt="Diseño conceptual de Ronin del templo en resina gris, visto desde cuatro ángulos"></div>
-    <div class="info-producto"><div><span class="etiqueta-producto">CIBERNÉTICA / DEMO</span><h3>Ronin del templo</h3></div><span class="flecha-producto" aria-hidden="true">↗</span></div>
+    <div class="info-producto"><div><span class="etiqueta-producto">CIBERNÉTICA / DEMO</span><h3>Ronin del templo</h3><span class="estrellas-tarjeta" data-estrellas="5" role="img" aria-label="Sin valorar"></span></div><span class="flecha-producto" aria-hidden="true">↗</span></div>
   </a>
   <div class="compra-producto"><span><strong>75,00 €</strong><small>Precio ficticio</small></span><button class="boton-anadir" type="button" data-anadir="5" aria-label="Añadir Ronin del templo al carrito">Añadir +</button></div>
 </article>
 <article class="tarjeta-producto" data-ficha="6">
+  <!-- Corazón de favoritos: app.js (sección 13) lo marca y lo guarda. -->
+  <button class="boton-favorito" type="button" data-favorito="6" aria-pressed="false" aria-label="Guardar en favoritos: Oni salvaje"><span aria-hidden="true">♥</span></button>
   <a class="boton-tarjeta" href="oni-salvaje.html" aria-label="Ver ficha de Oni salvaje">
     <div class="imagen-producto imagen-conceptual"><img src="6-oni-salvaje.webp" width="1072" height="1072" loading="lazy" alt="Diseño conceptual de Oni salvaje en resina gris, visto desde cuatro ángulos"></div>
-    <div class="info-producto"><div><span class="etiqueta-producto">CIBERNÉTICA / DEMO</span><h3>Oni salvaje</h3></div><span class="flecha-producto" aria-hidden="true">↗</span></div>
+    <div class="info-producto"><div><span class="etiqueta-producto">CIBERNÉTICA / DEMO</span><h3>Oni salvaje</h3><span class="estrellas-tarjeta" data-estrellas="6" role="img" aria-label="Sin valorar"></span></div><span class="flecha-producto" aria-hidden="true">↗</span></div>
   </a>
   <div class="compra-producto"><span><strong>80,00 €</strong><small>Precio ficticio</small></span><button class="boton-anadir" type="button" data-anadir="6" aria-label="Añadir Oni salvaje al carrito">Añadir +</button></div>
 </article>
-<article class="tarjeta-producto" data-ficha="7"><a class="boton-tarjeta" href="sombra-torii.html" aria-label="Ver ficha de Sombra del torii"><div class="imagen-producto imagen-conceptual"><img src="7-sombra-torii.webp" width="1072" height="1072" loading="lazy" alt="Diseño conceptual de Sombra del torii en resina gris, visto desde cuatro ángulos"></div><div class="info-producto"><div><span class="etiqueta-producto">SIGILO / DEMO</span><h3>Sombra del torii</h3></div><span class="flecha-producto" aria-hidden="true">↗</span></div></a><div class="compra-producto"><span><strong>55,00 €</strong><small>Precio ficticio</small></span><button class="boton-anadir" type="button" data-anadir="7" aria-label="Añadir Sombra del torii al carrito">Añadir +</button></div></article><article class="tarjeta-producto" data-ficha="8"><a class="boton-tarjeta" href="titan-hierro.html" aria-label="Ver ficha de Titán de hierro"><div class="imagen-producto imagen-conceptual"><img src="8-titan-hierro.webp" width="1072" height="1072" loading="lazy" alt="Diseño conceptual de Titán de hierro en resina gris, visto desde cuatro ángulos"></div><div class="info-producto"><div><span class="etiqueta-producto">CIBERNÉTICA / DEMO</span><h3>Titán de hierro</h3></div><span class="flecha-producto" aria-hidden="true">↗</span></div></a><div class="compra-producto"><span><strong>100,00 €</strong><small>Precio ficticio</small></span><button class="boton-anadir" type="button" data-anadir="8" aria-label="Añadir Titán de hierro al carrito">Añadir +</button></div></article></div>
+<article class="tarjeta-producto" data-ficha="7">
+  <!-- Corazón de favoritos: app.js (sección 13) lo marca y lo guarda. -->
+  <button class="boton-favorito" type="button" data-favorito="7" aria-pressed="false" aria-label="Guardar en favoritos: Sombra del torii"><span aria-hidden="true">♥</span></button><a class="boton-tarjeta" href="sombra-torii.html" aria-label="Ver ficha de Sombra del torii"><div class="imagen-producto imagen-conceptual"><img src="7-sombra-torii.webp" width="1072" height="1072" loading="lazy" alt="Diseño conceptual de Sombra del torii en resina gris, visto desde cuatro ángulos"></div><div class="info-producto"><div><span class="etiqueta-producto">SIGILO / DEMO</span><h3>Sombra del torii</h3><span class="estrellas-tarjeta" data-estrellas="7" role="img" aria-label="Sin valorar"></span></div><span class="flecha-producto" aria-hidden="true">↗</span></div></a><div class="compra-producto"><span><strong>55,00 €</strong><small>Precio ficticio</small></span><button class="boton-anadir" type="button" data-anadir="7" aria-label="Añadir Sombra del torii al carrito">Añadir +</button></div></article><article class="tarjeta-producto" data-ficha="8">
+  <!-- Corazón de favoritos: app.js (sección 13) lo marca y lo guarda. -->
+  <button class="boton-favorito" type="button" data-favorito="8" aria-pressed="false" aria-label="Guardar en favoritos: Titán de hierro"><span aria-hidden="true">♥</span></button><a class="boton-tarjeta" href="titan-hierro.html" aria-label="Ver ficha de Titán de hierro"><div class="imagen-producto imagen-conceptual"><img src="8-titan-hierro.webp" width="1072" height="1072" loading="lazy" alt="Diseño conceptual de Titán de hierro en resina gris, visto desde cuatro ángulos"></div><div class="info-producto"><div><span class="etiqueta-producto">CIBERNÉTICA / DEMO</span><h3>Titán de hierro</h3><span class="estrellas-tarjeta" data-estrellas="8" role="img" aria-label="Sin valorar"></span></div><span class="flecha-producto" aria-hidden="true">↗</span></div></a><div class="compra-producto"><span><strong>100,00 €</strong><small>Precio ficticio</small></span><button class="boton-anadir" type="button" data-anadir="8" aria-label="Añadir Titán de hierro al carrito">Añadir +</button></div></article></div>
 
 <p class="nota-demo">Diseños conceptuales generados con IA. Precios y colecciones de ejemplo, sin disponibilidad comercial.</p>
+</section>
+
+<!-- DROP: cuenta atrás de demostración (app.js, sección 16).
+     La fecha es ficticia: se cambia en app.js buscando "fechaDrop". -->
+<section class="seccion-drop seccion" id="proximo-drop" aria-labelledby="titulo-drop">
+  <div class="drop-contenido">
+    <p class="antetitulo"><span class="antetitulo-linea"></span>DROP / 002</p>
+    <h2 id="titulo-drop">PRÓXIMO DROP</h2>
+    <p class="drop-descripcion">La siguiente figura oni está en camino. Esta cuenta atrás es una demostración en JavaScript.</p>
+    <div class="cuenta-atras" id="cuenta-atras" role="timer" aria-label="Cuenta atrás hasta el próximo drop">
+      <div class="unidad-tiempo"><strong id="drop-dias">--</strong><span>días</span></div>
+      <div class="unidad-tiempo"><strong id="drop-horas">--</strong><span>horas</span></div>
+      <div class="unidad-tiempo"><strong id="drop-minutos">--</strong><span>minutos</span></div>
+      <div class="unidad-tiempo"><strong id="drop-segundos">--</strong><span>segundos</span></div>
+    </div>
+    <p class="drop-estado" id="drop-estado" hidden>¡El drop ya está aquí!</p>
+    <p class="nota-demo">Fecha ficticia de demostración. Sin lanzamiento comercial real.</p>
+  </div>
 </section>
 
 <!-- MANIFIESTO: bloque de marca. La mascara oni de la izquierda
@@ -205,6 +254,7 @@
   <div class="pie-enlaces">
     <a href="index.html">Inicio</a>
     <a href="catalogo.html">Catálogo</a>
+    <a href="favoritos.html">Favoritos</a>
     <a href="colecciones.html">Colecciones</a>
     <a href="kuro-labs.html">Kuro Labs</a>
     <a href="noticias.html">Noticias</a>

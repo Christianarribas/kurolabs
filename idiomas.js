@@ -1273,6 +1273,252 @@ window.idiomasKuro = (() => {
     "es": "8 diseños de ejemplo",
     "en": "8 example designs",
     "eu": "8 adibideko diseinu"
+  },
+  /* Favoritos, valoraciones, galería de la ficha, cortina y próximo drop. */
+  "Favoritos": {
+    "es": "Favoritos",
+    "en": "Favourites",
+    "eu": "Gogokoak"
+  },
+  "Ver favoritos": {
+    "es": "Ver favoritos",
+    "en": "View favourites",
+    "eu": "Ikusi gogokoak"
+  },
+  "Ver favoritos: 0": {
+    "es": "Ver favoritos: 0",
+    "en": "View favourites: 0",
+    "eu": "Ikusi gogokoak: 0"
+  },
+  "Guardar en favoritos": {
+    "es": "Guardar en favoritos",
+    "en": "Save to favourites",
+    "eu": "Gorde gogokoetan"
+  },
+  "Quitar de favoritos": {
+    "es": "Quitar de favoritos",
+    "en": "Remove from favourites",
+    "eu": "Kendu gogokoetatik"
+  },
+  "Guardado en favoritos": {
+    "es": "Guardado en favoritos",
+    "en": "Saved to favourites",
+    "eu": "Gogokoetan gorde da"
+  },
+  "Quitado de favoritos": {
+    "es": "Quitado de favoritos",
+    "en": "Removed from favourites",
+    "eu": "Gogokoetatik kendu da"
+  },
+  "Kuro Labs — Mis favoritos": {
+    "es": "Kuro Labs — Mis favoritos",
+    "en": "Kuro Labs — My favourites",
+    "eu": "Kuro Labs — Nire gogokoak"
+  },
+  "MIS FAVORITOS": {
+    "es": "MIS FAVORITOS",
+    "en": "MY FAVOURITES",
+    "eu": "NIRE GOGOKOAK"
+  },
+  "FAVORITOS / DEMO": {
+    "es": "FAVORITOS / DEMO",
+    "en": "FAVOURITES / DEMO",
+    "eu": "GOGOKOAK / DEMO"
+  },
+  "FAVORITOS / DEMOSTRACIÓN": {
+    "es": "FAVORITOS / DEMOSTRACIÓN",
+    "en": "FAVOURITES / DEMO",
+    "eu": "GOGOKOAK / DEMOA"
+  },
+  "Tus diseños oni guardados con el corazón. Solo se guardan en este navegador.": {
+    "es": "Tus diseños oni guardados con el corazón. Solo se guardan en este navegador.",
+    "en": "Your oni designs saved with the heart. They are only stored in this browser.",
+    "eu": "Bihotzarekin gordetako zure oni diseinuak. Nabigatzaile honetan bakarrik gordetzen dira."
+  },
+  "diseños guardados": {
+    "es": "diseños guardados",
+    "en": "saved designs",
+    "eu": "diseinu gordeta"
+  },
+  "0 diseños guardados": {
+    "es": "0 diseños guardados",
+    "en": "0 saved designs",
+    "eu": "0 diseinu gordeta"
+  },
+  "Aún no has guardado ningún diseño.": {
+    "es": "Aún no has guardado ningún diseño.",
+    "en": "You have not saved any designs yet.",
+    "eu": "Oraindik ez duzu diseinurik gorde."
+  },
+  "Marca el corazón de cualquier figura del catálogo y aparecerá aquí.": {
+    "es": "Marca el corazón de cualquier figura del catálogo y aparecerá aquí.",
+    "en": "Tap the heart on any figure in the catalogue and it will appear here.",
+    "eu": "Markatu katalogoko edozein figuratako bihotza eta hemen agertuko da."
+  },
+  "Explorar catálogo": {
+    "es": "Explorar catálogo",
+    "en": "Browse the catalogue",
+    "eu": "Arakatu katalogoa"
+  },
+  "Los favoritos son una demo: se guardan en tu navegador con localStorage, sin cuenta ni servidor.": {
+    "es": "Los favoritos son una demo: se guardan en tu navegador con localStorage, sin cuenta ni servidor.",
+    "en": "Favourites are a demo: they are stored in your browser with localStorage, no account or server.",
+    "eu": "Gogokoak demo bat dira: zure nabigatzailean gordetzen dira localStorage erabiliz, konturik eta zerbitzaririk gabe."
+  },
+  "Tu valoración": {
+    "es": "Tu valoración",
+    "en": "Your rating",
+    "eu": "Zure balorazioa"
+  },
+  "Sin valorar": {
+    "es": "Sin valorar",
+    "en": "Not rated yet",
+    "eu": "Baloratu gabe"
+  },
+  "1 estrella de 5": {
+    "es": "1 estrella de 5",
+    "en": "1 star out of 5",
+    "eu": "5etik 1 izar"
+  },
+  "2 estrellas de 5": {
+    "es": "2 estrellas de 5",
+    "en": "2 stars out of 5",
+    "eu": "5etik 2 izar"
+  },
+  "3 estrellas de 5": {
+    "es": "3 estrellas de 5",
+    "en": "3 stars out of 5",
+    "eu": "5etik 3 izar"
+  },
+  "4 estrellas de 5": {
+    "es": "4 estrellas de 5",
+    "en": "4 stars out of 5",
+    "eu": "5etik 4 izar"
+  },
+  "5 estrellas de 5": {
+    "es": "5 estrellas de 5",
+    "en": "5 stars out of 5",
+    "eu": "5etik 5 izar"
+  },
+  "Demo: tu puntuación solo se guarda en este navegador.": {
+    "es": "Demo: tu puntuación solo se guarda en este navegador.",
+    "en": "Demo: your rating is only stored in this browser.",
+    "eu": "Demo: zure puntuazioa nabigatzaile honetan bakarrik gordetzen da."
+  },
+  "Ampliar la vista actual": {
+    "es": "Ampliar la vista actual",
+    "en": "Enlarge the current view",
+    "eu": "Handitu uneko ikuspegia"
+  },
+  "Vistas de la figura": {
+    "es": "Vistas de la figura",
+    "en": "Views of the figure",
+    "eu": "Figuraren ikuspegiak"
+  },
+  "Ver de frente": {
+    "es": "Ver de frente",
+    "en": "Front view",
+    "eu": "Aurrealdea ikusi"
+  },
+  "Ver de perfil": {
+    "es": "Ver de perfil",
+    "en": "Side view",
+    "eu": "Profila ikusi"
+  },
+  "Ver de espaldas": {
+    "es": "Ver de espaldas",
+    "en": "Back view",
+    "eu": "Bizkarraldea ikusi"
+  },
+  "Ver en perspectiva": {
+    "es": "Ver en perspectiva",
+    "en": "Three-quarter view",
+    "eu": "Perspektiban ikusi"
+  },
+  "Ver las cuatro vistas juntas": {
+    "es": "Ver las cuatro vistas juntas",
+    "en": "See all four views together",
+    "eu": "Ikusi lau ikuspegiak batera"
+  },
+  "Elige una vista y pulsa la foto para ampliarla.": {
+    "es": "Elige una vista y pulsa la foto para ampliarla.",
+    "en": "Choose a view and tap the photo to enlarge it.",
+    "eu": "Aukeratu ikuspegi bat eta sakatu argazkia handitzeko."
+  },
+  "de frente": {
+    "es": "de frente",
+    "en": "from the front",
+    "eu": "aurrealdetik"
+  },
+  "de perfil": {
+    "es": "de perfil",
+    "en": "from the side",
+    "eu": "profildetik"
+  },
+  "de espaldas": {
+    "es": "de espaldas",
+    "en": "from the back",
+    "eu": "bizkarraldetik"
+  },
+  "en perspectiva": {
+    "es": "en perspectiva",
+    "en": "in three-quarter view",
+    "eu": "perspektiban"
+  },
+  "en sus cuatro ángulos": {
+    "es": "en sus cuatro ángulos",
+    "en": "in its four angles",
+    "eu": "bere lau angeluetan"
+  },
+  "en resina gris sin pintar": {
+    "es": "en resina gris sin pintar",
+    "en": "in unpainted grey resin",
+    "eu": "erretxina grisez, pintatu gabe"
+  },
+  "PRÓXIMO DROP": {
+    "es": "PRÓXIMO DROP",
+    "en": "NEXT DROP",
+    "eu": "HURRENGO DROPA"
+  },
+  "La siguiente figura oni está en camino. Esta cuenta atrás es una demostración en JavaScript.": {
+    "es": "La siguiente figura oni está en camino. Esta cuenta atrás es una demostración en JavaScript.",
+    "en": "The next oni figure is on its way. This countdown is a JavaScript demo.",
+    "eu": "Hurrengo oni figura bidean dago. Atzerako kontaketa hau JavaScript demostrazio bat da."
+  },
+  "días": {
+    "es": "días",
+    "en": "days",
+    "eu": "egun"
+  },
+  "horas": {
+    "es": "horas",
+    "en": "hours",
+    "eu": "ordu"
+  },
+  "minutos": {
+    "es": "minutos",
+    "en": "minutes",
+    "eu": "minutu"
+  },
+  "segundos": {
+    "es": "segundos",
+    "en": "seconds",
+    "eu": "segundo"
+  },
+  "Cuenta atrás hasta el próximo drop": {
+    "es": "Cuenta atrás hasta el próximo drop",
+    "en": "Countdown to the next drop",
+    "eu": "Hurrengo droparako atzerako kontaketa"
+  },
+  "Fecha ficticia de demostración. Sin lanzamiento comercial real.": {
+    "es": "Fecha ficticia de demostración. Sin lanzamiento comercial real.",
+    "en": "Fictional demo date. No real commercial launch.",
+    "eu": "Fikziozko demostrazio-data. Ez dago benetako kaleratze komertzialik."
+  },
+  "¡El drop ya está aquí!": {
+    "es": "¡El drop ya está aquí!",
+    "en": "The drop is here!",
+    "eu": "Dropa hemen da!"
   }
 };
   const textosOriginales = new WeakMap();

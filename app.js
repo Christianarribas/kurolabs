@@ -16,6 +16,11 @@
      9. Formulario con validación, sin envío real.
     10. Zoom de imágenes accesible.
     11. Aparición de tarjetas al hacer scroll.
+    12. Cortina de carga (preloader) que desaparece al cargar.
+    13. Favoritos con corazón, página propia y contador.
+    14. Valoración con estrellas por figura (demo en localStorage).
+    15. (la galería de la ficha es la sección 4).
+    16. Cuenta atrás del próximo drop (fecha ficticia).
     Los idiomas se gestionan desde idiomas.js para separar sus textos.
 
    Las clases y los ids estan en castellano y coinciden con
@@ -48,15 +53,15 @@ document.addEventListener("DOMContentLoaded", () => {
      basta cambiar el texto de "nombre" y "etiqueta" de cada numero. */
   // Datos de DEMOSTRACIÓN: no son precios ni colecciones oficiales.
   const productos = {
-    1: { etiqueta: "ONI / 01", nombre: "Samurái", descripcion: "Diseño conceptual con dos espadas.", imagen: "1-samurai.webp", precio: 6500, coleccion: "Armadura" },
-    2: { etiqueta: "ONI / 02", nombre: "Oni con maza", descripcion: "Diseño conceptual con armadura pesada y maza.", imagen: "2-maza.webp", precio: 8500, coleccion: "Armadura" },
-    3: { etiqueta: "ONI / 03", nombre: "Ninja", descripcion: "Diseño conceptual con katana y capa.", imagen: "3-ninja.webp", precio: 4500, coleccion: "Sigilo" },
-    4: { etiqueta: "ONI / 04", nombre: "Señor de guerra", descripcion: "Diseño conceptual con arma de asta.", imagen: "4-senor-guerra.webp", precio: 9500, coleccion: "Armadura" },
+    1: { etiqueta: "ONI / 01", nombre: "Samurái", descripcion: "Diseño conceptual con dos espadas.", imagen: "1-samurai.webp", precio: 6500, coleccion: "Armadura", pagina: "samurai.html" },
+    2: { etiqueta: "ONI / 02", nombre: "Oni con maza", descripcion: "Diseño conceptual con armadura pesada y maza.", imagen: "2-maza.webp", precio: 8500, coleccion: "Armadura", pagina: "oni-maza.html" },
+    3: { etiqueta: "ONI / 03", nombre: "Ninja", descripcion: "Diseño conceptual con katana y capa.", imagen: "3-ninja.webp", precio: 4500, coleccion: "Sigilo", pagina: "ninja.html" },
+    4: { etiqueta: "ONI / 04", nombre: "Señor de guerra", descripcion: "Diseño conceptual con arma de asta.", imagen: "4-senor-guerra.webp", precio: 9500, coleccion: "Armadura", pagina: "senor-guerra.html" },
     // Los ids nuevos no cambian los antiguos: así conservamos las cestas guardadas.
-    5: { etiqueta: "ONI / 05", nombre: "Ronin del templo", descripcion: "Diseño conceptual con katana, capa blindada y articulaciones mecánicas.", imagen: "5-ronin-templo.webp", precio: 7500, coleccion: "Cibernética" },
-    6: { etiqueta: "ONI / 06", nombre: "Oni salvaje", descripcion: "Diseño conceptual con garras, exoesqueleto y guanteletes mecánicos.", imagen: "6-oni-salvaje.webp", precio: 8000, coleccion: "Cibernética" },
-    7: { etiqueta: "ONI / 07", nombre: "Sombra del torii", descripcion: "Diseño conceptual con capucha y dos cuchillos cortos.", imagen: "7-sombra-torii.webp", precio: 5500, coleccion: "Sigilo" },
-    8: { etiqueta: "ONI / 08", nombre: "Titán de hierro", descripcion: "Diseño conceptual con martillo, escudo y armadura mecánica pesada.", imagen: "8-titan-hierro.webp", precio: 10000, coleccion: "Cibernética" }
+    5: { etiqueta: "ONI / 05", nombre: "Ronin del templo", descripcion: "Diseño conceptual con katana, capa blindada y articulaciones mecánicas.", imagen: "5-ronin-templo.webp", precio: 7500, coleccion: "Cibernética", pagina: "ronin-templo.html" },
+    6: { etiqueta: "ONI / 06", nombre: "Oni salvaje", descripcion: "Diseño conceptual con garras, exoesqueleto y guanteletes mecánicos.", imagen: "6-oni-salvaje.webp", precio: 8000, coleccion: "Cibernética", pagina: "oni-salvaje.html" },
+    7: { etiqueta: "ONI / 07", nombre: "Sombra del torii", descripcion: "Diseño conceptual con capucha y dos cuchillos cortos.", imagen: "7-sombra-torii.webp", precio: 5500, coleccion: "Sigilo", pagina: "sombra-torii.html" },
+    8: { etiqueta: "ONI / 08", nombre: "Titán de hierro", descripcion: "Diseño conceptual con martillo, escudo y armadura mecánica pesada.", imagen: "8-titan-hierro.webp", precio: 10000, coleccion: "Cibernética", pagina: "titan-hierro.html" }
   };
 
   // Los datos originales permiten cambiar de idioma sin perder los textos españoles.
@@ -128,20 +133,37 @@ document.addEventListener("DOMContentLoaded", () => {
      Las tarjetas usan enlaces HTML a páginas reales: funcionan con teclado,
      permiten compartir cada figura y siguen navegando aunque JavaScript falle. */
 
-  /* ---------- 4. Miniaturas de la galeria ----------
-     Preparado para cuando el detalle de producto tenga varias
-     fotos. De momento solo marca la miniatura elegida con la
-     clase "activa" (el CSS le pone el borde rojo). */
-  miniaturas.forEach((miniatura) => {
-    miniatura.addEventListener("click", () => {
-      /* Quitamos la marca a todas antes de marcar la nueva,
-         para que nunca haya dos activas a la vez. */
-      miniaturas.forEach((elemento) => {
-        elemento.classList.remove("activa");
-      });
-      miniatura.classList.add("activa");
+  /* ---------- 4. Galería de vistas de la ficha ----------
+     Cada miniatura cambia la foto principal y el botón de ampliar,
+     así el zoom siempre abre la vista que estás viendo.
+     "data-texto-vista" guarda el nombre de la vista para el alt. */
+  const fotoPrincipal = document.querySelector("#foto-principal");
+  const botonAmpliar = document.querySelector(".foto-ampliable");
+  const galeriaFicha = document.querySelector(".miniaturas-galeria");
+  /* Al cambiar de vista hay que actualizar foto, alt y zoom a la vez,
+     y dejar marcada solo la miniatura elegida (clase "activa"). */
+  const mostrarVista = (miniatura) => {
+    if (!fotoPrincipal || !botonAmpliar || !galeriaFicha) return;
+    fotoPrincipal.src = miniatura.dataset.vista;
+    fotoPrincipal.alt = `${traducir(galeriaFicha.dataset.nombre)} ${traducir(miniatura.dataset.textoVista)}, ${traducir("en resina gris sin pintar")}`;
+    botonAmpliar.dataset.ampliar = miniatura.dataset.vista;
+    miniaturas.forEach((elemento) => {
+      elemento.classList.toggle("activa", elemento === miniatura);
+      elemento.setAttribute("aria-pressed", String(elemento === miniatura));
     });
+  };
+  miniaturas.forEach((miniatura) => {
+    miniatura.addEventListener("click", () => mostrarVista(miniatura));
   });
+  /* El traductor restaura el alt original al cambiar de idioma: lo
+     recomponemos para la vista que esté activa en ese momento. */
+  const refrescarAltGaleria = () => {
+    const activa = document.querySelector(".miniatura.activa");
+    if (activa && fotoPrincipal && galeriaFicha) {
+      fotoPrincipal.alt = `${traducir(galeriaFicha.dataset.nombre)} ${traducir(activa.dataset.textoVista)}, ${traducir("en resina gris sin pintar")}`;
+    }
+  };
+  refrescarAltGaleria();
 
   /* ---------- 5. Año del footer ----------
      Asi el copyright se actualiza solo cada año y no hay que
@@ -422,6 +444,222 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  /* ---------- 12. Cortina de carga (preloader) ----------
+     La cortina tapa la página mientras carga. Cuando el navegador
+     termina (evento "load") le ponemos la clase "oculta" y el CSS
+     la desvanece. El temporizador de seguridad la quita aunque
+     algo falle, para que la web nunca se quede bloqueada. */
+  const cortinaCarga = document.querySelector("#cortina-carga");
+  if (cortinaCarga) {
+    let cortinaQuitada = false;
+    const ocultarCortina = () => {
+      if (cortinaQuitada) return; // evitamos ocultarla dos veces
+      cortinaQuitada = true;
+      /* Una pequeña pausa deja ver la animación; con "reducir
+         movimiento" la quitamos al momento. */
+      const espera = movimientoReducido.matches ? 0 : 900;
+      setTimeout(() => {
+        cortinaCarga.classList.add("oculta");
+        /* Cuando acaba la transición la sacamos del HTML; el segundo
+           temporizador es la red de seguridad si no salta el evento. */
+        cortinaCarga.addEventListener("transitionend", () => cortinaCarga.remove(), { once: true });
+        setTimeout(() => cortinaCarga.remove(), 900);
+      }, espera);
+    };
+    if (document.readyState === "complete") ocultarCortina();
+    else {
+      window.addEventListener("load", ocultarCortina);
+      setTimeout(ocultarCortina, 4000); // red de seguridad
+    }
+  }
+
+  /* ---------- 13. Favoritos ----------
+     Guarda solo ids en localStorage (clave "kurolabs-favoritos").
+     El corazón de cada tarjeta y de la ficha marca o desmarca, el
+     contador de la cabecera se actualiza y la página favoritos.html
+     se dibuja entera desde aquí con los datos de "productos". */
+  const contadorFavoritos = document.querySelector("#contador-favoritos");
+  const enlaceFavoritos = document.querySelector("#enlace-favoritos");
+  const rejillaFavoritos = document.querySelector("#rejilla-favoritos");
+  let favoritos = [];
+  const recuperarFavoritos = () => {
+    favoritos = [];
+    try {
+      const guardados = JSON.parse(leerGuardado("kurolabs-favoritos") || "[]");
+      if (!Array.isArray(guardados)) return;
+      guardados.forEach((id) => {
+        /* Solo ids que existen en el catálogo y sin repetir. */
+        if (productos[id] && !favoritos.includes(id)) favoritos.push(id);
+      });
+    } catch (error) { /* Un dato dañado no debe romper la página. */ }
+  };
+  /* Página favoritos.html: dibuja una tarjeta por cada id guardado,
+     con el mismo aspecto que las del catálogo. */
+  const dibujarPaginaFavoritos = () => {
+    const vacio = document.querySelector("#favoritos-vacio");
+    const total = document.querySelector("#total-favoritos");
+    rejillaFavoritos.replaceChildren();
+    favoritos.forEach((id) => {
+      const producto = productos[id];
+      const tarjeta = document.createElement("article");
+      tarjeta.className = "tarjeta-producto";
+      tarjeta.dataset.ficha = id;
+      /* Esta plantilla usa SOLO nuestro catálogo fijo, nunca datos
+         escritos por un visitante. */
+      tarjeta.innerHTML = `<button class="boton-favorito" type="button" data-favorito="${id}" aria-pressed="false"><span aria-hidden="true">♥</span></button>
+  <a class="boton-tarjeta" href="${producto.pagina}">
+    <div class="imagen-producto imagen-conceptual"><img src="${producto.imagen}" width="1254" height="1254" loading="lazy" alt="${producto.nombre}"></div>
+    <div class="info-producto"><div><span class="etiqueta-producto">${traducir(producto.coleccion).toUpperCase()} / DEMO</span><h3>${producto.nombre}</h3><span class="estrellas-tarjeta" data-estrellas="${id}" role="img"></span></div><span class="flecha-producto" aria-hidden="true">↗</span></div>
+  </a>
+  <div class="compra-producto"><span><strong>${formatoEuros(producto.precio)}</strong><small>${traducir("Precio ficticio")}</small></span><button class="boton-anadir" type="button" data-anadir="${id}">${traducir("Añadir +")}</button></div>`;
+      rejillaFavoritos.append(tarjeta);
+    });
+    if (vacio) vacio.hidden = favoritos.length !== 0;
+    if (total) total.textContent = `${favoritos.length} ${traducir("diseños guardados")}`;
+    /* Las tarjetas son nuevas: hay que darles sus botones otra vez. */
+    rejillaFavoritos.querySelectorAll("[data-favorito]").forEach((boton) => {
+      boton.addEventListener("click", () => cambiarFavorito(boton.dataset.favorito));
+    });
+    rejillaFavoritos.querySelectorAll("[data-anadir]").forEach((boton) => {
+      boton.addEventListener("click", () => anadirProducto(boton.dataset.anadir));
+    });
+  };
+  /* Corazones y contador: la clase "marcado" pinta el corazón rojo
+     (sección 18 de style.css). */
+  const dibujarFavoritos = () => {
+    if (rejillaFavoritos) dibujarPaginaFavoritos();
+    document.querySelectorAll("[data-favorito]").forEach((boton) => {
+      const marcado = favoritos.includes(boton.dataset.favorito);
+      boton.classList.toggle("marcado", marcado);
+      boton.setAttribute("aria-pressed", String(marcado));
+      const nombre = productos[boton.dataset.favorito]?.nombre || "";
+      const texto = marcado ? traducir("Quitar de favoritos") : traducir("Guardar en favoritos");
+      boton.setAttribute("aria-label", `${texto}: ${nombre}`);
+      const textoVisible = boton.querySelector(".texto-favorito");
+      if (textoVisible) textoVisible.textContent = texto;
+    });
+    if (contadorFavoritos && enlaceFavoritos) {
+      contadorFavoritos.textContent = favoritos.length;
+      enlaceFavoritos.setAttribute("aria-label", `${traducir("Ver favoritos")}: ${favoritos.length}`);
+    }
+  };
+  const cambiarFavorito = (id) => {
+    if (!productos[id]) return;
+    let marcado;
+    if (favoritos.includes(id)) {
+      favoritos = favoritos.filter((favorito) => favorito !== id);
+      marcado = false;
+    } else {
+      favoritos.push(id);
+      marcado = true;
+    }
+    guardar("kurolabs-favoritos", JSON.stringify(favoritos));
+    dibujarFavoritos();
+    if (avisoCarrito) avisar(`${productos[id].nombre}: ${traducir(marcado ? "Guardado en favoritos" : "Quitado de favoritos")}`);
+  };
+  /* Los corazones fijos del HTML (catálogo, portada y fichas). Los de
+     favoritos.html se conectan al dibujar la página, arriba. */
+  document.querySelectorAll("[data-favorito]").forEach((boton) => {
+    boton.addEventListener("click", () => cambiarFavorito(boton.dataset.favorito));
+  });
+  /* Si tienes dos pestañas abiertas, se actualizan entre ellas. */
+  window.addEventListener("storage", (evento) => {
+    if (evento.key === "kurolabs-favoritos") { recuperarFavoritos(); dibujarFavoritos(); dibujarEstrellas(); }
+    if (evento.key === "kurolabs-valoraciones") { recuperarValoraciones(); dibujarEstrellas(); }
+  });
+
+  /* ---------- 14. Valoración con estrellas ----------
+     Demo sin servidor: solo guardas TU puntuación (de 1 a 5) en
+     localStorage ("kurolabs-valoraciones"). Las tarjetas muestran tu
+     nota con ★ llenas y ☆ vacías, y en cada ficha puntúas pulsando
+     las estrellas. */
+  let valoraciones = {};
+  const recuperarValoraciones = () => {
+    valoraciones = {};
+    try {
+      const guardadas = JSON.parse(leerGuardado("kurolabs-valoraciones") || "{}");
+      if (!guardadas || typeof guardadas !== "object" || Array.isArray(guardadas)) return;
+      Object.entries(guardadas).forEach(([id, nota]) => {
+        if (productos[id] && Number.isInteger(nota) && nota >= 1 && nota <= 5) valoraciones[id] = nota;
+      });
+    } catch (error) { /* Un dato dañado no debe romper la página. */ }
+  };
+  /* Las frases cambian en singular y plural, así que las guardamos
+     ya escritas en lugar de componerlas con el número. */
+  const textosNota = ["1 estrella de 5", "2 estrellas de 5", "3 estrellas de 5", "4 estrellas de 5", "5 estrellas de 5"];
+  const textoNota = (nota) => (nota ? `${traducir("Tu valoración")}: ${traducir(textosNota[nota - 1])}` : traducir("Sin valorar"));
+  const dibujarEstrellas = () => {
+    document.querySelectorAll(".estrellas-tarjeta").forEach((estrellas) => {
+      const nota = valoraciones[estrellas.dataset.estrellas] || 0;
+      estrellas.innerHTML = `<span class="estrellas-llenas">${"★".repeat(nota)}</span><span class="estrellas-vacias">${"☆".repeat(5 - nota)}</span>`;
+      estrellas.setAttribute("aria-label", textoNota(nota));
+    });
+    /* En la ficha, las estrellas son botones de un grupo de radio. */
+    const grupo = document.querySelector(".estrellas-interactivas");
+    if (grupo) {
+      const nota = valoraciones[grupo.closest(".valoracion-ficha").dataset.valoracionFicha] || 0;
+      grupo.querySelectorAll("[data-estrella]").forEach((boton) => {
+        const valor = Number(boton.dataset.estrella);
+        boton.textContent = valor <= nota ? "★" : "☆";
+        boton.classList.toggle("llena", valor <= nota);
+        boton.setAttribute("aria-checked", String(valor === nota));
+      });
+      const estado = document.querySelector(".valoracion-estado");
+      if (estado) estado.textContent = textoNota(nota);
+    }
+  };
+  const grupoEstrellas = document.querySelector(".estrellas-interactivas");
+  if (grupoEstrellas) {
+    const idFicha = grupoEstrellas.closest(".valoracion-ficha").dataset.valoracionFicha;
+    grupoEstrellas.querySelectorAll("[data-estrella]").forEach((boton) => {
+      boton.addEventListener("click", () => {
+        valoraciones[idFicha] = Number(boton.dataset.estrella);
+        guardar("kurolabs-valoraciones", JSON.stringify(valoraciones));
+        dibujarEstrellas();
+      });
+    });
+  }
+  /* Arranque de favoritos y valoraciones (se hace aquí para que
+     todas las funciones de arriba existan ya). */
+  recuperarFavoritos();
+  recuperarValoraciones();
+  dibujarFavoritos();
+  dibujarEstrellas();
+
+  /* ---------- 16. Cuenta atrás del próximo drop ----------
+     FECHA FICTICIA de demostración: para probar otra, cambia la
+     línea "fechaDrop". setInterval repite el cálculo cada 1000 ms
+     (1 segundo) y escribe los números en el HTML. */
+  const cuentaAtras = document.querySelector("#cuenta-atras");
+  if (cuentaAtras) {
+    const fechaDrop = new Date("2026-11-13T20:00:00+01:00").getTime(); // fecha ficticia
+    const dropDias = document.querySelector("#drop-dias");
+    const dropHoras = document.querySelector("#drop-horas");
+    const dropMinutos = document.querySelector("#drop-minutos");
+    const dropSegundos = document.querySelector("#drop-segundos");
+    const dropEstado = document.querySelector("#drop-estado");
+    let relojDrop; // se declara antes para poder pararlo desde la función
+    /* padStart rellena con un cero a la izquierda: 7 queda "07". */
+    const dosCifras = (numero) => String(numero).padStart(2, "0");
+    const actualizarCuentaAtras = () => {
+      const restante = fechaDrop - Date.now();
+      if (restante <= 0) {
+        /* Fecha pasada: ceros y mensaje, sin números negativos. */
+        [dropDias, dropHoras, dropMinutos, dropSegundos].forEach((unidad) => { unidad.textContent = "00"; });
+        if (dropEstado) dropEstado.hidden = false;
+        clearInterval(relojDrop);
+        return;
+      }
+      const segundosTotales = Math.floor(restante / 1000);
+      dropDias.textContent = dosCifras(Math.floor(segundosTotales / 86400));
+      dropHoras.textContent = dosCifras(Math.floor((segundosTotales % 86400) / 3600));
+      dropMinutos.textContent = dosCifras(Math.floor((segundosTotales % 3600) / 60));
+      dropSegundos.textContent = dosCifras(segundosTotales % 60);
+    };
+    actualizarCuentaAtras(); // primera pasada sin esperar al segundo 1
+    relojDrop = setInterval(actualizarCuentaAtras, 1000);
+  }
+
   // Cambiar idioma no borra la cesta ni los filtros; solo vuelve a dibujar sus textos.
   document.addEventListener("idioma-cambiado", () => {
     actualizarProductos();
@@ -429,6 +667,9 @@ document.addEventListener("DOMContentLoaded", () => {
     actualizarTema();
     dibujarCesta();
     filtrar();
+    dibujarFavoritos();
+    dibujarEstrellas();
+    refrescarAltGaleria();
     avisoCarrito.textContent = "";
     if (formularioContacto) {
       document.querySelector("#estado-formulario").textContent = "";

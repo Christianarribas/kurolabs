@@ -18,6 +18,11 @@
     13. TABLET / MOVIL ..... como se adapta a pantallas pequeñas
     14. ACCESIBILIDAD ...... respeta la opcion "reducir movimiento"
     15. GALERIA ONI ........ las 4 figuras de resina (solo index)
+    17. CORTINA DE CARGA ... preloader con la mascara oni al entrar
+    18. FAVORITOS .......... corazon en tarjetas, contador y su pagina
+    19. ESTRELLAS .......... valoracion de demostracion por figura
+    20. GALERIA FICHA ...... miniaturas con las vistas de cada figura
+    21. PROXIMO DROP ....... cuenta atras de demostracion
 
    IDEA CLAVE: las clases estan en castellano y se repiten en el
    HTML y en app.js. Si cambias un nombre, hay que cambiarlo en
@@ -2057,4 +2062,364 @@ h1, h2, h3, .antetitulo { overflow-wrap: anywhere; }
   .marca-logo { display: none; }
   .boton-menu { width: 32px; min-width: 32px; margin-left: 0; }
   :lang(eu) .seccion-encabezado h1, :lang(eu) .seccion-encabezado h2, :lang(eu) .seccion-contacto h2 { font-size: 32px; }
+}
+
+/* =================================
+17. CORTINA DE CARGA (PRELOADER)
+=================================
+
+   Pantalla de entrada con la mascara oni. app.js (seccion 12) le
+   pone la clase "oculta" cuando la pagina termina de cargar y la
+   transicion la desvanece. Si JavaScript no funciona, un noscript
+   en el head la esconde para no bloquear la web.
+*/
+
+.cortina-carga {
+position: fixed;
+inset: 0;
+z-index: 2000;
+display: grid;
+place-content: center;
+justify-items: center;
+gap: 1.6rem;
+background: var(--fondo);
+transition: opacity 0.5s ease, visibility 0s linear 0.5s;
+}
+
+.cortina-carga.oculta {
+opacity: 0;
+visibility: hidden;
+pointer-events: none;
+}
+
+/* La mascara es la misma del manifiesto (seccion 8), con un
+   latido suave y un brillo rojo detras para que se note viva. */
+.cortina-simbolo {
+animation: latido-oni 1.1s ease-in-out infinite;
+filter: drop-shadow(0 0 70px rgba(198, 40, 61, 0.45));
+}
+
+@keyframes latido-oni {
+0%, 100% { transform: scale(0.85); }
+50% { transform: scale(0.93); }
+}
+
+/* Cuernos y ojos algo mas visibles sobre el fondo oscuro. */
+.cortina-simbolo .cuerno {
+border-color: var(--rojo-vivo);
+}
+
+.cortina-nombre {
+margin: 0;
+font-weight: 800;
+letter-spacing: 0.35em;
+font-size: 1.1rem;
+}
+
+.cortina-nombre em {
+color: var(--rojo-vivo);
+font-style: normal;
+}
+
+/* Barra de progreso decorativa: crece una vez al cargar. */
+.cortina-barra {
+width: 180px;
+height: 2px;
+background: var(--superficie-clara);
+overflow: hidden;
+}
+
+.cortina-barra span {
+display: block;
+width: 100%;
+height: 100%;
+background: var(--rojo-vivo);
+transform: translateX(-100%);
+animation: barra-carga 1.4s ease forwards;
+}
+
+@keyframes barra-carga {
+to { transform: translateX(0); }
+}
+
+/* =================================
+18. FAVORITOS
+=================================
+
+   Corazon en cada tarjeta, boton en la ficha, contador en la
+   cabecera y la pagina favoritos.html. Los datos los guarda
+   app.js en localStorage (seccion 13).
+*/
+
+/* El contador copia el estilo del contador de la cesta. */
+#contador-favoritos {
+display: inline-block;
+min-width: 20px;
+color: var(--rojo-vivo);
+font-weight: 700;
+}
+
+/* Corazon de la tarjeta: flota sobre la esquina de la imagen.
+   La tarjeta necesita position: relative para anclarlo. */
+.tarjeta-producto {
+position: relative;
+}
+
+.boton-favorito {
+position: absolute;
+top: 10px;
+right: 10px;
+z-index: 2;
+width: 40px;
+height: 40px;
+display: grid;
+place-items: center;
+border: 1px solid var(--borde);
+border-radius: 50%;
+background: rgba(8, 9, 12, 0.75);
+color: #9297a3;
+font-size: 18px;
+line-height: 1;
+cursor: pointer;
+transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.boton-favorito:hover {
+color: var(--rojo-vivo);
+transform: scale(1.08);
+}
+
+/* app.js pone la clase "marcado" cuando el diseño esta guardado. */
+.boton-favorito.marcado {
+color: var(--rojo-vivo);
+border-color: var(--rojo);
+}
+
+/* En la ficha el favorito es un boton con texto junto a la cesta:
+   solo hereda los colores de "marcado", sin posicion flotante. */
+.boton-favorito-ficha.marcado {
+color: var(--rojo-vivo);
+border-color: var(--rojo);
+}
+
+/* Caja del estado vacio de favoritos.html. */
+.favoritos-vacio {
+padding: 48px 24px;
+border: 1px solid var(--borde);
+background: var(--superficie);
+text-align: center;
+}
+
+.favoritos-vacio p {
+color: var(--texto-suave);
+margin: 0 0 8px;
+}
+
+.favoritos-vacio .portada-botones {
+justify-content: center;
+margin-top: 20px;
+}
+
+/* =================================
+19. VALORACION CON ESTRELLAS
+=================================
+
+   Demo de reseñas: estrellas llenas y vacias (app.js, seccion 14).
+*/
+
+/* En las tarjetas solo se muestra tu nota, sin botones. */
+.estrellas-tarjeta {
+display: block;
+margin-top: 6px;
+font-size: 13px;
+letter-spacing: 2px;
+}
+
+.estrellas-llenas {
+color: var(--rojo-vivo);
+}
+
+.estrellas-vacias {
+color: var(--texto-apagado);
+}
+
+/* En la ficha son botones grandes dentro de un grupo de radio. */
+.valoracion-ficha {
+margin-top: 28px;
+padding-top: 24px;
+border-top: 1px solid var(--borde);
+}
+
+.valoracion-titulo {
+margin: 0 0 8px;
+font-size: 14px;
+font-weight: 700;
+}
+
+.estrellas-interactivas {
+display: flex;
+gap: 4px;
+}
+
+.estrellas-interactivas button {
+padding: 4px;
+border: 0;
+background: none;
+color: var(--texto-apagado);
+font-size: 30px;
+line-height: 1;
+cursor: pointer;
+transition: transform 0.15s ease, color 0.15s ease;
+}
+
+.estrellas-interactivas button:hover {
+transform: scale(1.15);
+}
+
+.estrellas-interactivas button.llena {
+color: var(--rojo-vivo);
+}
+
+.valoracion-estado {
+margin: 8px 0 0;
+color: var(--texto-suave);
+font-size: 13px;
+}
+
+.nota-valoracion {
+margin-top: 12px;
+}
+
+/* =================================
+20. GALERIA DE LA FICHA
+=================================
+
+   Miniaturas bajo la foto principal (app.js, seccion 4). La clase
+   "activa" marca la vista elegida con el borde rojo. Estas reglas
+   pisan a las de ".miniatura" (seccion 9) solo dentro de la galeria.
+*/
+
+.miniaturas-galeria {
+display: grid;
+grid-template-columns: repeat(5, 1fr);
+gap: 8px;
+margin-top: 8px;
+}
+
+.miniaturas-galeria .miniatura {
+height: auto;
+aspect-ratio: 1;
+padding: 0;
+overflow: hidden;
+background: #101115;
+}
+
+.miniaturas-galeria .miniatura img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+display: block;
+}
+
+.miniaturas-galeria .miniatura:hover,
+.miniaturas-galeria .miniatura.activa {
+border-color: var(--rojo-vivo);
+}
+
+/* =================================
+21. PROXIMO DROP
+=================================
+
+   Cuenta atras de demostracion (app.js, seccion 16). Los numeros
+   usan la fuente monoespaciada para que no "salten" los huecos
+   al cambiar cada segundo.
+*/
+
+.seccion-drop {
+border-top: 1px solid var(--borde);
+text-align: center;
+}
+
+.drop-contenido {
+max-width: 720px;
+margin: 0 auto;
+}
+
+.seccion-drop .antetitulo {
+justify-content: center;
+}
+
+.seccion-drop h2 {
+margin: 1rem 0;
+font-size: clamp(3rem, 7vw, 6.5rem);
+font-weight: 800;
+letter-spacing: -0.05em;
+line-height: 0.9;
+}
+
+.drop-descripcion {
+color: var(--texto-suave);
+margin-bottom: 2.5rem;
+}
+
+.cuenta-atras {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 12px;
+}
+
+.unidad-tiempo {
+padding: 20px 8px;
+border: 1px solid var(--borde);
+background: var(--superficie);
+}
+
+.unidad-tiempo strong {
+display: block;
+font-family: var(--fuente-mono);
+font-size: clamp(1.6rem, 5vw, 3.2rem);
+color: var(--rojo-vivo);
+}
+
+.unidad-tiempo span {
+color: var(--texto-apagado);
+font-size: 12px;
+letter-spacing: 0.15em;
+text-transform: uppercase;
+}
+
+.drop-estado {
+margin-top: 1.5rem;
+color: var(--rojo-vivo);
+font-weight: 700;
+}
+
+/* Ajustes moviles de las secciones nuevas (17-21). */
+@media (max-width: 800px) {
+.miniaturas-galeria {
+gap: 6px;
+}
+
+.cuenta-atras {
+gap: 8px;
+}
+
+.unidad-tiempo {
+padding: 14px 4px;
+}
+
+.unidad-tiempo span {
+font-size: 10px;
+letter-spacing: 0.08em;
+}
+}
+
+@media (max-width: 480px) {
+.boton-favoritos-cabecera {
+padding: 8px;
+}
+
+.cuenta-atras {
+grid-template-columns: repeat(2, 1fr);
+}
 }

@@ -15,8 +15,21 @@
        try/catch permite abrir la web aunque el navegador bloquee el almacenamiento. -->
   <script>try { if (localStorage.getItem("kurolabs-tema") === "claro") document.documentElement.dataset.tema = "claro"; } catch (error) { /* Seguimos con el tema oscuro. */ }</script>
   <link rel="stylesheet" href="style.css">
+  <!-- Si JavaScript no carga, escondemos la cortina para no bloquear la web. -->
+  <noscript><style>.cortina-carga{display:none}</style></noscript>
 </head>
 <body>
+<!-- CORTINA DE CARGA: portada animada con la máscara oni de CSS. app.js
+     (sección 12) le pone la clase "oculta" cuando la página termina de
+     cargar; si JavaScript no funciona, el noscript del head la esconde. -->
+<div class="cortina-carga" id="cortina-carga" aria-hidden="true">
+  <div class="cortina-simbolo simbolo-manifiesto">
+    <span class="cuerno cuerno-izquierdo"></span><span class="cuerno-derecho cuerno"></span>
+    <span class="mascara"><span class="mascara-ojo mascara-ojo-izquierdo"></span><span class="mascara-ojo mascara-ojo-derecho"></span><span class="mascara-boca"></span></span>
+  </div>
+  <p class="cortina-nombre">KURO <em>LABS</em></p>
+  <span class="cortina-barra"><span></span></span>
+</div>
 <div class="ruido-fondo" aria-hidden="true"></div>
 
 <!-- CABECERA: barra fija de arriba con logo, menu y boton.
@@ -30,6 +43,7 @@
   <nav class="nav-principal" id="nav-principal" aria-label="Navegación principal">
     <a href="index.html">Inicio</a>
     <a href="catalogo.html">Catálogo</a>
+    <a href="favoritos.html">Favoritos</a>
     <a href="colecciones.html">Colecciones</a>
     <a href="kuro-labs.html">Kuro Labs</a>
     <a href="noticias.html">Noticias</a>
@@ -39,6 +53,7 @@
   <div class="acciones-cabecera">
     <!-- El idioma usa códigos estables: traducir la etiqueta no cambia la selección. -->
     <label class="control-idioma" for="selector-idioma"><span class="solo-lectores">Idioma</span><select id="selector-idioma" aria-label="Idioma"><option value="es" lang="es">ES</option><option value="en" lang="en">EN</option><option value="eu" lang="eu">EU</option></select></label>
+    <a class="boton-carrito boton-favoritos-cabecera" id="enlace-favoritos" href="favoritos.html" aria-label="Ver favoritos: 0">♥ <span id="contador-favoritos">0</span></a>
     <button class="boton-tema" id="boton-tema" type="button" aria-label="Activar modo claro" aria-pressed="false">Claro ◐</button>
     <button class="boton-carrito" id="abrir-carrito" type="button" aria-label="Abrir carrito, 0 artículos">Cesta <span id="contador-carrito">0</span></button>
   </div>
@@ -107,6 +122,7 @@
   <div class="pie-enlaces">
     <a href="index.html">Inicio</a>
     <a href="catalogo.html">Catálogo</a>
+    <a href="favoritos.html">Favoritos</a>
     <a href="colecciones.html">Colecciones</a>
     <a href="kuro-labs.html">Kuro Labs</a>
     <a href="noticias.html">Noticias</a>
