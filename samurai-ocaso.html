@@ -1,0 +1,145 @@
+<!--
+  KURO LABS - samurai-ocaso.html
+  El aspecto esta en style.css y la logica (menu, modal...) en
+  app.js. Las clases y los ids estan en castellano y coinciden
+  en los tres sitios: si cambias un nombre, cambialo en todos.
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kuro Labs - Diseño oni tradicional, sin tecnología.">
+  <title>Kuro Labs - Samurái del ocaso</title>
+  <!-- Leer el tema antes del CSS evita un destello oscuro si elegiste el claro.
+       try/catch permite abrir la web aunque el navegador bloquee el almacenamiento. -->
+  <script>try { if (localStorage.getItem("kurolabs-tema") === "claro") document.documentElement.dataset.tema = "claro"; } catch (error) { /* Seguimos con el tema oscuro. */ }</script>
+  <!-- La cortina de carga solo sale en la primera página de la sesión: si ya se vio,
+       marcamos <html> con "sin-cortina" antes de pintar nada para que no parpadee. -->
+  <script>try { if (sessionStorage.getItem("kurolabs-cortina-vista")) document.documentElement.classList.add("sin-cortina"); } catch (error) { /* Sin almacenamiento, la cortina sale siempre. */ }</script>
+  <link rel="stylesheet" href="style.css">
+  <!-- Si JavaScript no carga, escondemos la cortina para no bloquear la web. -->
+  <noscript><style>.cortina-carga{display:none}</style></noscript>
+</head>
+<body>
+<!-- CORTINA DE CARGA: portada animada con la máscara oni de CSS. app.js
+     (sección 12) le pone la clase "oculta" cuando la página termina de
+     cargar; si JavaScript no funciona, el noscript del head la esconde. -->
+<div class="cortina-carga" id="cortina-carga" aria-hidden="true">
+  <img class="cortina-logo" src="logo-kurolabs.webp" alt="" width="960" height="892">
+  <span class="cortina-barra"><span></span></span>
+</div>
+<div class="ruido-fondo" aria-hidden="true"></div>
+
+<!-- CABECERA: barra fija de arriba con logo, menu y boton.
+     Es igual en las 5 paginas; si la cambias, cambiala en todas. -->
+<header class="cabecera">
+  <a class="marca" href="index.html" aria-label="Kuro Labs, inicio">
+    <span class="marca-logo" aria-hidden="true"><span></span><span></span></span>
+    <span class="marca-nombre">KURO <em>LABS</em></span>
+  </a>
+
+    <!-- Menu principal. En el movil se esconde y se abre con el
+       boton hamburguesa (eso lo hace app.js con la clase "abierto"). -->
+<nav class="nav-principal" id="nav-principal" aria-label="Navegación principal">
+    <a href="index.html">Inicio</a>
+    <a href="catalogo.html">Catálogo</a>
+    <a href="galeria.html">Galería</a>
+    <a href="favoritos.html">Favoritos</a>
+    <a href="colecciones.html">Colecciones</a>
+    <a href="drop.html">Próximo drop</a>
+    <a href="kuro-labs.html">Kuro Labs</a>
+    <a href="noticias.html">Noticias</a>
+    <a href="kuro-labs.html#contacto">Contacto</a>
+  </nav>
+
+  <div class="acciones-cabecera">
+    <!-- El idioma usa códigos estables: traducir la etiqueta no cambia la selección. -->
+    <label class="control-idioma" for="selector-idioma"><span class="solo-lectores">Idioma</span><select id="selector-idioma" aria-label="Idioma"><option value="es" lang="es">ES</option><option value="en" lang="en">EN</option><option value="eu" lang="eu">EU</option></select></label>
+    <a class="boton-carrito boton-favoritos-cabecera" id="enlace-favoritos" href="favoritos.html" aria-label="Ver favoritos: 0">♥ <span id="contador-favoritos">0</span></a>
+    <button class="boton-tema" id="boton-tema" type="button" aria-label="Activar modo claro" aria-pressed="false">Claro ◐</button>
+    <button class="boton-carrito" id="abrir-carrito" type="button" aria-label="Abrir carrito, 0 artículos">Cesta <span id="contador-carrito">0</span></button>
+  </div>
+
+    <!-- Boton hamburguesa: solo se ve en pantallas pequeñas
+       (en ordenador el CSS lo esconde con display: none). -->
+<button class="boton-menu" type="button" aria-label="Abrir menú"
+    aria-expanded="false" aria-controls="nav-principal">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<main>
+<section class="seccion ficha-detalle" aria-labelledby="titulo-figura">
+<a class="volver-catalogo" href="oni-tradicional.html">← Volver al catálogo</a>
+<div class="detalle-distribucion">
+<div class="detalle-galeria">
+  <!-- La imagen principal es la aprobada; las vistas adicionales son orientativas. -->
+  <button class="foto-ampliable" type="button" data-ampliar="25-samurai-ocaso-perspectiva.webp" aria-label="Ampliar la vista actual"><img id="foto-principal" src="25-samurai-ocaso-perspectiva.webp" width="627" height="627" alt="Samurái del ocaso en su vista principal aprobada"></button>
+  <!-- Miniaturas: cada botón muestra una vista. La clase "activa" marca la
+       elegida y el CSS le pone el borde rojo (sección 20 de style.css). -->
+  <div class="miniaturas-galeria" role="group" aria-label="Vistas de la figura" data-nombre="Samurái del ocaso">
+    <button class="miniatura" type="button" data-vista="25-samurai-ocaso-frente.webp" data-texto-vista="de frente" aria-pressed="false" aria-label="Ver de frente"><img src="25-samurai-ocaso-frente.webp" width="627" height="627" loading="lazy" alt=""></button>
+    <button class="miniatura" type="button" data-vista="25-samurai-ocaso-perfil.webp" data-texto-vista="de perfil" aria-pressed="false" aria-label="Ver de perfil"><img src="25-samurai-ocaso-perfil.webp" width="627" height="627" loading="lazy" alt=""></button>
+    <button class="miniatura" type="button" data-vista="25-samurai-ocaso-espalda.webp" data-texto-vista="de espaldas" aria-pressed="false" aria-label="Ver de espaldas"><img src="25-samurai-ocaso-espalda.webp" width="627" height="627" loading="lazy" alt=""></button>
+    <button class="miniatura activa" type="button" data-vista="25-samurai-ocaso-perspectiva.webp" data-texto-vista="en perspectiva" aria-pressed="true" aria-label="Ver en perspectiva"><img src="25-samurai-ocaso-perspectiva.webp" width="627" height="627" loading="lazy" alt=""></button>
+    <button class="miniatura" type="button" data-vista="25-samurai-ocaso.webp" data-texto-vista="en sus cuatro ángulos" aria-pressed="false" aria-label="Ver las cuatro vistas juntas"><img src="25-samurai-ocaso.webp" width="1254" height="1254" loading="lazy" alt=""></button>
+  </div>
+  <p class="ayuda-foto">Elige una vista y pulsa la foto para ampliarla.</p><p class="nota-demo">Vista principal aprobada. Los otros ángulos son variaciones conceptuales y pueden mostrar pequeñas diferencias. No son planos ni archivos STL.</p>
+</div>
+<div class="detalle-contenido"><p class="antetitulo">ONI TRADICIONAL / 07 · DEMO</p><h1 id="titulo-figura">Samurái del ocaso</h1><p class="detalle-descripcion">Un samurái oni con armadura de inspiración histórica, cordones esculpidos y katana al costado.</p><p class="detalle-precio">Sin precio · diseño conceptual</p><p class="nota-demo">Sin venta ni reserva</p>
+<button class="boton boton-contorno boton-favorito-ficha" type="button" data-favorito="25" aria-pressed="false" aria-label="Guardar en favoritos: Samurái del ocaso"><span aria-hidden="true">♥</span> <span class="texto-favorito">Guardar en favoritos</span></button>
+<!-- Valoración con estrellas (app.js, sección 14): demo que guarda
+     tu puntuación en este navegador con localStorage, sin servidor. -->
+<div class="valoracion-ficha" data-valoracion-ficha="25">
+  <p class="valoracion-titulo" id="titulo-valoracion-25">Tu valoración</p>
+  <div class="estrellas-interactivas" role="radiogroup" aria-labelledby="titulo-valoracion-25">
+    <button type="button" role="radio" aria-checked="false" data-estrella="1" aria-label="1 estrella de 5">☆</button>
+    <button type="button" role="radio" aria-checked="false" data-estrella="2" aria-label="2 estrellas de 5">☆</button>
+    <button type="button" role="radio" aria-checked="false" data-estrella="3" aria-label="3 estrellas de 5">☆</button>
+    <button type="button" role="radio" aria-checked="false" data-estrella="4" aria-label="4 estrellas de 5">☆</button>
+    <button type="button" role="radio" aria-checked="false" data-estrella="5" aria-label="5 estrellas de 5">☆</button>
+  </div>
+  <p class="valoracion-estado" aria-live="polite">Sin valorar</p>
+  <p class="nota-demo nota-valoracion">Demo: tu puntuación solo se guarda en este navegador.</p>
+</div>
+<dl class="detalle-datos"><div><dt>Concepto</dt><dd>Inspiración japonesa</dd></div><div><dt>Acabado visual</dt><dd>Resina gris sin pintar</dd></div><div><dt>Rasgo principal</dt><dd>Katana y armadura tradicional</dd></div><div><dt>Estado</dt><dd>Diseño conceptual / demo</dd></div></dl>
+<p class="nota-demo">Imágenes conceptuales generadas con IA. No son modelos 3D ni archivos STL imprimibles; las vistas son orientativas, no planos ortográficos. Sin precio ni disponibilidad comercial.</p></div></div>
+<div class="otros-disenos"><h2>Más oni tradicionales</h2><div class="enlaces-disenos"><a class="tarjeta-relacionada" href="dama-abanico.html"><img src="26-dama-abanico-perspectiva.webp" alt="Dama del abanico" width="1072" height="1072" loading="lazy"><span>Dama del abanico ↗</span></a><a class="tarjeta-relacionada" href="pescador-rio.html"><img src="27-pescador-rio-perspectiva.webp" alt="Pescador del río" width="1072" height="1072" loading="lazy"><span>Pescador del río ↗</span></a><a class="tarjeta-relacionada" href="portador-farol.html"><img src="28-portador-farol-perspectiva.webp" alt="Portador del farol" width="1072" height="1072" loading="lazy"><span>Portador del farol ↗</span></a></div></div></section></main>
+<footer class="pie">
+  <div class="pie-marca">
+    <span class="marca-nombre">KURO <em>LABS</em></span>
+    <p>FUTURE OBJECTS / ONI AESTHETICS</p>
+  </div>
+  <div class="pie-enlaces">
+    <a href="index.html">Inicio</a>
+    <a href="catalogo.html">Catálogo</a>
+    <a href="galeria.html">Galería</a>
+    <a href="favoritos.html">Favoritos</a>
+    <a href="colecciones.html">Colecciones</a>
+    <a href="drop.html">Próximo drop</a>
+    <a href="kuro-labs.html">Kuro Labs</a>
+    <a href="noticias.html">Noticias</a>
+    <a href="kuro-labs.html#contacto">Contacto</a>
+  </div>
+  <div class="pie-info">
+    <span>© <span id="anio-actual"></span> KURO LABS</span>
+    <span>ALL RIGHTS RESERVED</span>
+  </div>
+</footer>
+<!-- El script va al final del body para que el HTML cargue primero
+     y la pagina se vea antes de que JavaScript empiece a trabajar. -->
+<!-- dialog aporta cierre con Escape, foco y bloqueo del fondo sin librerías. -->
+<dialog class="carrito" id="carrito" aria-labelledby="titulo-carrito">
+  <div class="carrito-cabecera"><div><p class="antetitulo">CESTA / DEMO</p><h2 id="titulo-carrito">Tu carrito</h2></div><button class="boton-secundario" id="cerrar-carrito" type="button" aria-label="Cerrar carrito">✕</button></div>
+  <p class="nota-demo">Simulación de portfolio. Precios ficticios, sin venta ni pago.</p>
+  <div id="lineas-carrito"></div>
+  <div class="carrito-total"><span>Total de ejemplo</span><strong id="total-carrito">0,00 €</strong></div>
+  <button class="boton-secundario" id="vaciar-carrito" type="button">Vaciar carrito</button>
+</dialog>
+<p class="aviso-carrito" id="aviso-carrito" role="status" aria-live="polite"></p>
+<!-- dialog conserva el foco y permite salir con Escape sin programar una trampa de teclado. -->
+<dialog class="visor-imagen" id="visor-imagen" aria-labelledby="titulo-visor"><div class="visor-barra"><h2 id="titulo-visor">Vista ampliada</h2><button class="boton-secundario" id="cerrar-visor" type="button" aria-label="Cerrar imagen">✕</button></div><img id="imagen-visor" alt=""><p class="nota-demo">Imagen conceptual generada con IA. Vistas orientativas, no planos para impresión 3D.</p></dialog>
+<script src="idiomas.js"></script><script src="app.js"></script>
+</body>
+</html>

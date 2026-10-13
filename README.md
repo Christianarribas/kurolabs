@@ -66,3 +66,6 @@ Pruebas de las nuevas funciones: busca "samurai" sin tilde y combina Hasta 50 �
 
 Los dos conceptos nuevos son Ronin del templo (75 € ficticios) y Oni salvaje (80 € ficticios), en versiones futuristas. Sus imágenes WebP conservan las cuatro vistas y no son modelos 3D ni STL.
 Sombra del torii se añade en su versión original (55 € ficticios), dentro de Sigilo. Titán de hierro se añade en su versión original (100 € ficticios), dentro de Cibernética.
+
+## Oni tradicional
+18 conceptos adicionales sin tecnología. Fichas y colección propias. Identificaciones 19 a 36. Sin precio, venta ni reserva; favoritos y valoraciones locales. Vistas orientativas, no modelos 3D ni STL.

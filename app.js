@@ -72,7 +72,26 @@ document.addEventListener("DOMContentLoaded", () => {
     15: { etiqueta: "ONI / 15", nombre: "Kappa mecánico", descripcion: "Diseño conceptual con caparazón blindado y tridente.", imagen: "15-kappa-mecanico.webp", precio: 7500, coleccion: "Cibernética", pagina: "kappa-mecanico.html" },
     16: { etiqueta: "ONI / 16", nombre: "Cazador de kusarigama", descripcion: "Diseño conceptual con kusarigama y capa rasgada.", imagen: "16-cazador-kusarigama.webp", precio: 6000, coleccion: "Sigilo", pagina: "cazador-kusarigama.html" },
     17: { etiqueta: "ONI / 17", nombre: "Shinobi de humo", descripcion: "Diseño conceptual con dos hojas cortas y humo esculpido.", imagen: "17-shinobi-humo.webp", precio: 5500, coleccion: "Sigilo", pagina: "shinobi-humo.html" },
-    18: { etiqueta: "ONI / 18", nombre: "Emperador oni", descripcion: "Diseño conceptual con espadón y capa imperial.", imagen: "18-emperador-oni.webp", precio: 10000, coleccion: "Armadura", pagina: "emperador-oni.html" }
+    18: { etiqueta: "ONI / 18", nombre: "Emperador oni", descripcion: "Diseño conceptual con espadón y capa imperial.", imagen: "18-emperador-oni.webp", precio: 10000, coleccion: "Armadura", pagina: "emperador-oni.html" },
+    // Los nuevos conceptos no tienen precio ni venta.
+    19: {"etiqueta": "ONI / 19", "nombre": "Guardián del kanabō", "descripcion": "Un oni de fuerza bruta con maza al hombro, cinturón de cuerda y peana de piedra tallada.", "imagen": "19-guardian-kanabo-perspectiva.webp", "precio": null, "coleccion": "Oni tradicional", "pagina": "guardian-kanabo.html"},
+    20: {"etiqueta": "ONI / 20", "nombre": "Rōnin del santuario", "descripcion": "Un guerrero errante con kimono desgastado y katana sobre los escalones de un santuario.", "imagen": "20-ronin-santuario-perspectiva.webp", "precio": null, "coleccion": "Oni tradicional", "pagina": "ronin-santuario.html"},
+    21: {"etiqueta": "ONI / 21", "nombre": "Monje del monte", "descripcion": "Un monje oni con túnica, cuentas de oración y bastón de anillos, en una pose serena.", "imagen": "21-monje-monte-perspectiva.webp", "precio": null, "coleccion": "Oni tradicional", "pagina": "monje-monte.html"},
+    22: {"etiqueta": "ONI / 22", "nombre": "Oni del taiko", "descripcion": "Un oni festivo junto a un tambor de madera, con dos baquetas y adornos de cuerda en su peana.", "imagen": "22-oni-taiko-perspectiva.webp", "precio": null, "coleccion": "Oni tradicional", "pagina": "oni-taiko.html"},
+    23: {"etiqueta": "ONI / 23", "nombre": "Arquero del bambú", "descripcion": "Un arquero oni con arco de madera, carcaj y ropas de tela sobre una peana con raíces de bambú.", "imagen": "23-arquero-bambu-perspectiva.webp", "precio": null, "coleccion": "Oni tradicional", "pagina": "arquero-bambu.html"},
+    24: {"etiqueta": "ONI / 24", "nombre": "Guardiana del santuario", "descripcion": "Una guardiana oni con naginata, kimono de relieves florales y peana de escalones y hojas.", "imagen": "24-guardiana-santuario-perspectiva.webp", "precio": null, "coleccion": "Oni tradicional", "pagina": "guardiana-santuario.html"},
+    25: {"etiqueta": "ONI / 25", "nombre": "Samurái del ocaso", "descripcion": "Un samurái oni con armadura de inspiración histórica, cordones esculpidos y katana al costado.", "imagen": "25-samurai-ocaso-perspectiva.webp", "precio": null, "coleccion": "Oni tradicional", "pagina": "samurai-ocaso.html"},
+    26: {"etiqueta": "ONI / 26", "nombre": "Dama del abanico", "descripcion": "Una oni de porte elegante con abanico abierto, peinado ceremonial y kimono de motivos florales.", "imagen": "26-dama-abanico-perspectiva.webp", "precio": null, "coleccion": "Oni tradicional", "pagina": "dama-abanico.html"},
+    27: {"etiqueta": "ONI / 27", "nombre": "Pescador del río", "descripcion": "Un pescador oni veterano con caña de bambú y cesta de peces sobre una orilla esculpida en piedra.", "imagen": "27-pescador-rio-perspectiva.webp", "precio": null, "coleccion": "Oni tradicional", "pagina": "pescador-rio.html"},
+    28: {"etiqueta": "ONI / 28", "nombre": "Portador del farol", "descripcion": "Un oni viajero con túnica larga, farol de pliegues y abanico cerrado. No lleva luz ni mecanismos.", "imagen": "28-portador-farol-perspectiva.webp", "precio": null, "coleccion": "Oni tradicional", "pagina": "portador-farol.html"},
+    29: {"etiqueta": "ONI / 29", "nombre": "Coloso del sumo", "descripcion": "Un oni corpulento en guardia de sumo, con cinturón de tela y peana de textura arenosa.", "imagen": "29-coloso-sumo-perspectiva.webp", "precio": null, "coleccion": "Oni tradicional", "pagina": "coloso-sumo.html"},
+    30: {"etiqueta": "ONI / 30", "nombre": "Cazador de la cadena", "descripcion": "Un cazador oni con hoz de mango corto, cadena y peso, vestido con telas y vendas tradicionales.", "imagen": "30-cazador-cadena-perspectiva.webp", "precio": null, "coleccion": "Oni tradicional", "pagina": "cazador-cadena.html"},
+    31: {"etiqueta": "ONI / 31", "nombre": "Músico del crepúsculo", "descripcion": "Un músico oni sentado con un instrumento inspirado en la biwa y una púa, entre pliegues de tela.", "imagen": "31-musico-crepusculo-perspectiva.webp", "precio": null, "coleccion": "Oni tradicional", "pagina": "musico-crepusculo.html"},
+    32: {"etiqueta": "ONI / 32", "nombre": "Shinobi de las ruinas", "descripcion": "Un shinobi oni agachado, con capucha de tela y katana sostenida con ambas manos sobre ruinas de piedra.", "imagen": "32-shinobi-ruinas-perspectiva.webp", "precio": null, "coleccion": "Oni tradicional", "pagina": "shinobi-ruinas.html"},
+    33: {"etiqueta": "ONI / 33", "nombre": "Maestro del sake", "descripcion": "Un oni de gesto alegre que abraza una tinaja, junto a un cuenco y un pequeño barril de madera.", "imagen": "33-maestro-sake-perspectiva.webp", "precio": null, "coleccion": "Oni tradicional", "pagina": "maestro-sake.html"},
+    34: {"etiqueta": "ONI / 34", "nombre": "Guardián del lobo", "descripcion": "Un guardián oni con lanza y un lobo a su lado, sobre una peana de raíces y rocas del bosque.", "imagen": "34-guardian-lobo-perspectiva.webp", "precio": null, "coleccion": "Oni tradicional", "pagina": "guardian-lobo.html"},
+    35: {"etiqueta": "ONI / 35", "nombre": "Sacerdotisa del bosque", "descripcion": "Una sacerdotisa oni con ropas de santuario y una vara de tiras de papel esculpidas, en actitud solemne.", "imagen": "35-sacerdotisa-bosque-perspectiva.webp", "precio": null, "coleccion": "Oni tradicional", "pagina": "sacerdotisa-bosque.html"},
+    36: {"etiqueta": "ONI / 36", "nombre": "Rey de la montaña", "descripcion": "Un rey oni sentado en un trono de roca, con kimono de nubes, manto de piel y gran maza tradicional.", "imagen": "36-rey-montana-perspectiva.webp", "precio": null, "coleccion": "Oni tradicional", "pagina": "rey-montana.html"}
   };
 
   // Los datos originales permiten cambiar de idioma sin perder los textos españoles.
@@ -229,7 +248,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const guardada = JSON.parse(leerGuardado("kurolabs-cesta") || "{}");
       if (!guardada || typeof guardada !== "object" || Array.isArray(guardada)) return;
       Object.entries(guardada).forEach(([id, cantidad]) => {
-        if (productos[id] && Number.isInteger(cantidad) && cantidad > 0) cesta[id] = Math.min(cantidad, 99);
+        if (productos[id] && productos[id].precio !== null && Number.isInteger(cantidad) && cantidad > 0) cesta[id] = Math.min(cantidad, 99);
       });
     } catch (error) { /* Un dato dañado no debe romper la página. */ }
   };
@@ -270,7 +289,7 @@ document.addEventListener("DOMContentLoaded", () => {
     dibujarCesta();
   };
   const anadirProducto = (id) => {
-    if (!productos[id]) return;
+    if (!productos[id] || productos[id].precio === null) return;
     if ((cesta[id] || 0) >= 99) { avisar(traducir("Máximo de 99 unidades por diseño.")); return; }
     cesta[id] = (cesta[id] || 0) + 1;
     guardarCesta();
@@ -339,7 +358,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document.querySelectorAll("[data-ficha]").forEach((tarjeta) => {
         const producto = productos[tarjeta.dataset.ficha];
         const coincideColeccion = filtroColeccion.value === "todas" || producto.coleccion === filtroColeccion.value;
-        const coincidePrecio = filtroPrecio.value === "todos" || producto.precio <= Number(filtroPrecio.value) * 100;
+        const coincidePrecio = filtroPrecio.value === "todos" || (filtroPrecio.value === "sin-precio" ? producto.precio === null : producto.precio !== null && producto.precio <= Number(filtroPrecio.value) * 100);
         const original = productosOriginales[tarjeta.dataset.ficha];
         const textoBusqueda = [original.nombre, producto.nombre, original.descripcion, traducir(original.descripcion), original.coleccion, traducir(original.coleccion)].join(" ");
         const coincideTexto = normalizar(textoBusqueda).includes(normalizar(buscadorCatalogo.value.trim()));
@@ -530,7 +549,7 @@ document.addEventListener("DOMContentLoaded", () => {
     <div class="imagen-producto imagen-conceptual"><img src="${producto.imagen}" width="1254" height="1254" loading="lazy" alt="${producto.nombre}"></div>
     <div class="info-producto"><div><span class="etiqueta-producto">${traducir(producto.coleccion).toUpperCase()} / DEMO</span><h3>${producto.nombre}</h3><span class="estrellas-tarjeta" data-estrellas="${id}" role="img"></span></div><span class="flecha-producto" aria-hidden="true">↗</span></div>
   </a>
-  <div class="compra-producto"><span><strong>${formatoEuros(producto.precio)}</strong><small>${traducir("Precio ficticio")}</small></span><button class="boton-anadir" type="button" data-anadir="${id}">${traducir("Añadir +")}</button></div>`;
+  <div class="compra-producto"><span><strong>${producto.precio === null ? traducir("Sin precio") : formatoEuros(producto.precio)}</strong><small>${producto.precio === null ? traducir("Diseño conceptual / demo") : traducir("Precio ficticio")}</small></span>${producto.precio === null ? `<a class="enlace-concepto" href="${producto.pagina}">${traducir("Ver sus vistas ↗")}</a>` : `<button class="boton-anadir" type="button" data-anadir="${id}">${traducir("Añadir +")}</button>`}</div>`;
       rejillaFavoritos.append(tarjeta);
     });
     if (vacio) vacio.hidden = favoritos.length !== 0;

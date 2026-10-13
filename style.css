@@ -2626,3 +2626,12 @@ html[lang="en"] .archivo-intro h1 { font-size:clamp(50px,5.7vw,82px); }
  .archivo-cabecera { gap:16px; align-items:center; }
  .archivo-cabecera span:last-child { flex-shrink:0; }
 }
+
+/* La colección tradicional conserva el estilo y permite nombres largos. */
+.coleccion-tradicional h1 {font-size:clamp(2.5rem,6vw,5rem);line-height:1.05;overflow-wrap:anywhere;}
+.enlace-concepto {font-size:.85rem;font-weight:700;color:var(--texto);text-decoration:none;min-height:44px;display:inline-flex;align-items:center;}
+.adelanto-tradicional {border-top:1px solid var(--borde);}
+.adelanto-tradicional > .boton {margin-top:2rem;}
+.adelanto-tradicional .rejilla-productos {grid-template-columns:repeat(3,minmax(0,1fr));}
+.info-producto h3 {overflow-wrap:anywhere;}
+@media(max-width:700px){.adelanto-tradicional .rejilla-productos {grid-template-columns:1fr;}}
