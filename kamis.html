@@ -1,0 +1,108 @@
+<!--
+  KURO LABS - kamis.html
+  El aspecto esta en style.css y la logica (menu, modal...) en
+  app.js. Las clases y los ids estan en castellano y coinciden
+  en los tres sitios: si cambias un nombre, cambialo en todos.
+-->
+<!DOCTYPE html>
+<html lang="es" translate="no">
+<head>
+  <!-- El navegador no debe traducir la página por su cuenta: la web ya trae ES/EN/EU propios. -->
+  <meta name="google" content="notranslate">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kuro Labs - Colección yokai, el bestiario japonés en resina gris.">
+  <title>Kuro Labs - Kamis</title>
+  <!-- Leer el tema antes del CSS evita un destello oscuro si elegiste el claro.
+       try/catch permite abrir la web aunque el navegador bloquee el almacenamiento. -->
+  <script>try { if (localStorage.getItem("kurolabs-tema") === "claro") document.documentElement.dataset.tema = "claro"; } catch (error) { /* Seguimos con el tema oscuro. */ }</script>
+  <!-- La cortina de carga solo sale en la primera página de la sesión: si ya se vio,
+       marcamos <html> con "sin-cortina" antes de pintar nada para que no parpadee. -->
+  <script>try { if (sessionStorage.getItem("kurolabs-cortina-vista")) document.documentElement.classList.add("sin-cortina"); } catch (error) { /* Sin almacenamiento, la cortina sale siempre. */ }</script>
+  <link rel="stylesheet" href="style.css">
+  <!-- Si JavaScript no carga, escondemos la cortina para no bloquear la web. -->
+  <noscript><style>.cortina-carga{display:none}</style></noscript>
+</head>
+<body>
+<!-- CORTINA DE CARGA: portada animada con la máscara oni de CSS. app.js
+     (sección 12) le pone la clase "oculta" cuando la página termina de
+     cargar; si JavaScript no funciona, el noscript del head la esconde. -->
+<div class="cortina-carga" id="cortina-carga" aria-hidden="true">
+  <img class="cortina-logo" src="logo-kurolabs.webp" alt="" width="960" height="892">
+  <span class="cortina-barra"><span></span></span>
+</div>
+<div class="ruido-fondo" aria-hidden="true"></div>
+
+<!-- CABECERA: barra fija de arriba con logo, menu y boton.
+     Es igual en las 5 paginas; si la cambias, cambiala en todas. -->
+<header class="cabecera">
+  <a class="marca" href="index.html" aria-label="Kuro Labs, inicio">
+    <span class="marca-logo" aria-hidden="true"><span></span><span></span></span>
+    <span class="marca-nombre">KURO <em>LABS</em></span>
+  </a>
+
+  <nav class="nav-principal" id="nav-principal" aria-label="Navegación principal">
+    <a href="index.html">Inicio</a>
+    <a href="catalogo.html">Catálogo</a>
+    <a href="galeria.html">Galería</a>
+    <a href="favoritos.html">Favoritos</a>
+    <a href="colecciones.html">Colecciones</a>
+    <a href="drop.html">Próximo drop</a>
+    <a href="kuro-labs.html">Kuro Labs</a>
+    <a href="noticias.html">Noticias</a>
+    <a href="kuro-labs.html#contacto">Contacto</a>
+  </nav>
+
+  <div class="acciones-cabecera">
+    <!-- El idioma usa códigos estables: traducir la etiqueta no cambia la selección. -->
+    <label class="control-idioma" for="selector-idioma"><span class="solo-lectores">Idioma</span><select id="selector-idioma" aria-label="Idioma"><option value="es" lang="es">ES</option><option value="en" lang="en">EN</option><option value="eu" lang="eu">EU</option></select></label>
+    <a class="boton-carrito boton-favoritos-cabecera" id="enlace-favoritos" href="favoritos.html" aria-label="Ver favoritos: 0">♥ <span id="contador-favoritos">0</span></a>
+    <button class="boton-tema" id="boton-tema" type="button" aria-label="Activar modo claro" aria-pressed="false">Claro ◐</button>
+    <button class="boton-carrito" id="abrir-carrito" type="button" aria-label="Abrir carrito, 0 artículos">Cesta <span id="contador-carrito">0</span></button>
+  </div>
+
+    <!-- Boton hamburguesa: solo se ve en pantallas pequeñas
+       (en ordenador el CSS lo esconde con display: none). -->
+<button class="boton-menu" type="button" aria-label="Abrir menú"
+    aria-expanded="false" aria-controls="nav-principal">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<main class="coleccion-tradicional"><section class="seccion"><a class="volver-catalogo" href="colecciones.html">← Colecciones</a><div class="seccion-encabezado"><div><p class="antetitulo">KAMIS / 18</p><h1>Dioses del trueno y del viento.<br>El Japón sagrado.</h1></div><p class="seccion-intro">Una colección de 18 kamis del sintoísmo: Amaterasu, Susanoo, Raijin, Fujin y muchos más. Los dioses de Japón en resina gris, sin piezas mecánicas. Se publican poco a poco: ya hay 3.</p></div><div class="barra-catalogo"><span class="estado-catalogo"><i></i>KAMIS</span><span>3 DE 18 DISEÑOS</span></div><div class="rejilla-productos"><article class="tarjeta-producto" data-ficha="55"><button class="boton-favorito" type="button" data-favorito="55" aria-pressed="false" aria-label="Guardar en favoritos: Amaterasu"><span aria-hidden="true">♥</span></button><a class="boton-tarjeta" href="amaterasu.html" aria-label="Ver ficha de Amaterasu"><div class="imagen-producto imagen-conceptual"><img src="55-amaterasu-frente.webp" width="959" height="1198" loading="lazy" alt="Amaterasu"></div><div class="info-producto"><div><span class="etiqueta-producto">KAMIS</span><h3>Amaterasu</h3><span class="estrellas-tarjeta" data-estrellas="55" role="img" aria-label="Sin valorar"></span></div><span class="flecha-producto" aria-hidden="true">↗</span></div></a><div class="compra-producto"><span><small>Sin precio · diseño conceptual</small></span><a class="enlace-concepto" href="amaterasu.html">Ver sus vistas ↗</a></div></article><article class="tarjeta-producto" data-ficha="56"><button class="boton-favorito" type="button" data-favorito="56" aria-pressed="false" aria-label="Guardar en favoritos: Tsukuyomi"><span aria-hidden="true">♥</span></button><a class="boton-tarjeta" href="tsukuyomi.html" aria-label="Ver ficha de Tsukuyomi"><div class="imagen-producto imagen-conceptual"><img src="56-tsukuyomi-frente.webp" width="959" height="1198" loading="lazy" alt="Tsukuyomi"></div><div class="info-producto"><div><span class="etiqueta-producto">KAMIS</span><h3>Tsukuyomi</h3><span class="estrellas-tarjeta" data-estrellas="56" role="img" aria-label="Sin valorar"></span></div><span class="flecha-producto" aria-hidden="true">↗</span></div></a><div class="compra-producto"><span><small>Sin precio · diseño conceptual</small></span><a class="enlace-concepto" href="tsukuyomi.html">Ver sus vistas ↗</a></div></article><article class="tarjeta-producto" data-ficha="57"><button class="boton-favorito" type="button" data-favorito="57" aria-pressed="false" aria-label="Guardar en favoritos: Susanoo"><span aria-hidden="true">♥</span></button><a class="boton-tarjeta" href="susanoo.html" aria-label="Ver ficha de Susanoo"><div class="imagen-producto imagen-conceptual"><img src="57-susanoo-frente.webp" width="959" height="1198" loading="lazy" alt="Susanoo"></div><div class="info-producto"><div><span class="etiqueta-producto">KAMIS</span><h3>Susanoo</h3><span class="estrellas-tarjeta" data-estrellas="57" role="img" aria-label="Sin valorar"></span></div><span class="flecha-producto" aria-hidden="true">↗</span></div></a><div class="compra-producto"><span><small>Sin precio · diseño conceptual</small></span><a class="enlace-concepto" href="susanoo.html">Ver sus vistas ↗</a></div></article></div></section></main><footer class="pie">
+  <div class="pie-marca">
+    <span class="marca-nombre">KURO <em>LABS</em></span>
+    <p>FUTURE OBJECTS / ONI AESTHETICS</p>
+  </div>
+  <div class="pie-enlaces">
+    <a href="index.html">Inicio</a>
+    <a href="catalogo.html">Catálogo</a>
+    <a href="galeria.html">Galería</a>
+    <a href="favoritos.html">Favoritos</a>
+    <a href="colecciones.html">Colecciones</a>
+    <a href="drop.html">Próximo drop</a>
+    <a href="kuro-labs.html">Kuro Labs</a>
+    <a href="noticias.html">Noticias</a>
+    <a href="kuro-labs.html#contacto">Contacto</a>
+  </div>
+  <div class="pie-info">
+    <span>© <span id="anio-actual"></span> KURO LABS</span>
+    <span>ALL RIGHTS RESERVED</span>
+  </div>
+</footer>
+<!-- El script va al final del body para que el HTML cargue primero
+     y la pagina se vea antes de que JavaScript empiece a trabajar. -->
+<!-- dialog aporta cierre con Escape, foco y bloqueo del fondo sin librerías. -->
+<dialog class="carrito" id="carrito" aria-labelledby="titulo-carrito">
+  <div class="carrito-cabecera"><div><p class="antetitulo">CESTA / DEMO</p><h2 id="titulo-carrito">Tu carrito</h2></div><button class="boton-secundario" id="cerrar-carrito" type="button" aria-label="Cerrar carrito">✕</button></div>
+  <p class="nota-demo">Simulación de portfolio. Precios ficticios, sin venta ni pago.</p>
+  <div id="lineas-carrito"></div>
+  <div class="carrito-total"><span>Total de ejemplo</span><strong id="total-carrito">0,00 €</strong></div>
+  <button class="boton-secundario" id="vaciar-carrito" type="button">Vaciar carrito</button>
+</dialog>
+<p class="aviso-carrito" id="aviso-carrito" role="status" aria-live="polite"></p>
+<!-- dialog conserva el foco y permite salir con Escape sin programar una trampa de teclado. -->
+<dialog class="visor-imagen" id="visor-imagen" aria-labelledby="titulo-visor"><div class="visor-barra"><h2 id="titulo-visor">Vista ampliada</h2><button class="boton-secundario" id="cerrar-visor" type="button" aria-label="Cerrar imagen">✕</button></div><img id="imagen-visor" alt=""><p class="nota-demo">Imagen conceptual generada con IA. Vistas orientativas, no planos para impresión 3D.</p></dialog>
+<script src="idiomas.js"></script><script src="app.js"></script>
+</body>
+</html>

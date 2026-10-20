@@ -2796,6 +2796,37 @@ window.idiomasKuro = (() => {
 "Biwa-bokuboku ↗": {"es": "Biwa-bokuboku ↗", "en": "Biwa-bokuboku ↗", "eu": "Biwa-bokuboku ↗"},
 "Biwa-bokuboku en su vista principal aprobada": {"es": "Biwa-bokuboku en su vista principal aprobada", "en": "Biwa-bokuboku in its approved main view", "eu": "Biwa-bokuboku onartutako ikuspegi nagusian"},
 
+
+// Colección Kamis (figuras 55-57).
+"Dioses del trueno y del viento.": {"es": "Dioses del trueno y del viento.", "en": "Gods of thunder and wind.", "eu": "Trumoiaren eta haizearen jainkoak."},
+"El Japón sagrado.": {"es": "El Japón sagrado.", "en": "Sacred Japan.", "eu": "Japonia sakratua."},
+"Una colección de 18 kamis del sintoísmo: Amaterasu, Susanoo, Raijin, Fujin y muchos más. Los dioses de Japón en resina gris, sin piezas mecánicas. Se publican poco a poco: ya hay 3.": {"es": "Una colección de 18 kamis del sintoísmo: Amaterasu, Susanoo, Raijin, Fujin y muchos más. Los dioses de Japón en resina gris, sin piezas mecánicas. Se publican poco a poco: ya hay 3.", "en": "A collection of 18 Shinto kamis: Amaterasu, Susanoo, Raijin, Fujin and many more. The gods of Japan in grey resin, with no mechanical parts. They are released little by little: 3 are ready.", "eu": "Sintoismoko 18 kamiren bilduma: Amaterasu, Susanoo, Raijin, Fujin eta beste asko. Japoniako jainkoak erretxina grisean, pieza mekanikorik gabe. Pixkanaka argitaratzen dira: dagoeneko 3 daude."},
+"Una colección de 18 kamis del sintoísmo, en resina gris, sin piezas mecánicas. Llegan poco a poco: ya hay 3.": {"es": "Una colección de 18 kamis del sintoísmo, en resina gris, sin piezas mecánicas. Llegan poco a poco: ya hay 3.", "en": "A collection of 18 Shinto kamis in grey resin, with no mechanical parts. They arrive little by little: 3 are ready.", "eu": "Sintoismoko 18 kamiren bilduma, erretxina grisean, pieza mekanikorik gabe. Pixkanaka iristen dira: dagoeneko 3 daude."},
+"KAMIS": {"es": "KAMIS", "en": "KAMIS", "eu": "KAMIAK"},
+"KAMIS / 18": {"es": "KAMIS / 18", "en": "KAMIS / 18", "eu": "KAMIAK / 18"},
+"3 DE 18 DISEÑOS": {"es": "3 DE 18 DISEÑOS", "en": "3 OF 18 DESIGNS", "eu": "18 DISEINUTIK 3"},
+"Más kamis": {"es": "Más kamis", "en": "More kamis", "eu": "Kami gehiago"},
+"Kuro Labs - Kamis": {"es": "Kuro Labs - Kamis", "en": "Kuro Labs - Kamis", "eu": "Kuro Labs - Kamiak"},
+"Dioses del sintoísmo (kamis)": {"es": "Dioses del sintoísmo (kamis)", "en": "Shinto gods (kamis)", "eu": "Sintoismoko jainkoak (kamiak)"},
+"KAMIS / 01 · DEMO": {"es": "KAMIS / 01 · DEMO", "en": "KAMIS / 01 · DEMO", "eu": "KAMIAK / 01 · DEMO"},
+"La diosa del sol, con halo de rayos, espejo sagrado y rama de sakaki, sobre un torii y un sol naciente.": {"es": "La diosa del sol, con halo de rayos, espejo sagrado y rama de sakaki, sobre un torii y un sol naciente.", "en": "The sun goddess, with a halo of rays, a sacred mirror and a sakaki branch, on a torii gate and a rising sun.", "eu": "Eguzki-jainkosa, printzen halo batekin, ispilu sakratu batekin eta sakaki-adar batekin, torii eta eguzki aterri baten gainean."},
+"Halo solar y espejo sagrado": {"es": "Halo solar y espejo sagrado", "en": "Solar halo and sacred mirror", "eu": "Eguzki-halo eta ispilu sakratua"},
+"Kuro Labs - Amaterasu": {"es": "Kuro Labs - Amaterasu", "en": "Kuro Labs - Amaterasu", "eu": "Kuro Labs - Amaterasu"},
+"Ver ficha de Amaterasu": {"es": "Ver ficha de Amaterasu", "en": "View details of Amaterasu", "eu": "Amaterasu: ikusi fitxa"},
+"Guardar en favoritos: Amaterasu": {"es": "Guardar en favoritos: Amaterasu", "en": "Save to favourites: Amaterasu", "eu": "Amaterasu: gorde gogokoetan"},
+"KAMIS / 02 · DEMO": {"es": "KAMIS / 02 · DEMO", "en": "KAMIS / 02 · DEMO", "eu": "KAMIAK / 02 · DEMO"},
+"El dios de la luna, con dos lunas crecientes a la espalda, espada ceremonial y lotos sobre nubes.": {"es": "El dios de la luna, con dos lunas crecientes a la espalda, espada ceremonial y lotos sobre nubes.", "en": "The moon god, with two crescent moons behind him, a ceremonial sword and lotus flowers on clouds.", "eu": "Ilargi-jainkoa, bizkarrean bi ilargi ertz dituela, ezpata zeremoniala eta lotoak hodeien gainean."},
+"Lunas crecientes y espada": {"es": "Lunas crecientes y espada", "en": "Crescent moons and sword", "eu": "Ilargi ertzak eta ezpata"},
+"Kuro Labs - Tsukuyomi": {"es": "Kuro Labs - Tsukuyomi", "en": "Kuro Labs - Tsukuyomi", "eu": "Kuro Labs - Tsukuyomi"},
+"Ver ficha de Tsukuyomi": {"es": "Ver ficha de Tsukuyomi", "en": "View details of Tsukuyomi", "eu": "Tsukuyomi: ikusi fitxa"},
+"Guardar en favoritos: Tsukuyomi": {"es": "Guardar en favoritos: Tsukuyomi", "en": "Save to favourites: Tsukuyomi", "eu": "Tsukuyomi: gorde gogokoetan"},
+"KAMIS / 03 · DEMO": {"es": "KAMIS / 03 · DEMO", "en": "KAMIS / 03 · DEMO", "eu": "KAMIAK / 03 · DEMO"},
+"El dios de la tormenta, de melena al viento y espada en alto, sobre la serpiente vencida entre olas.": {"es": "El dios de la tormenta, de melena al viento y espada en alto, sobre la serpiente vencida entre olas.", "en": "The storm god, with wind-blown hair and a raised sword, standing on the slain serpent among waves.", "eu": "Ekaitz-jainkoa, ilea haizean eta ezpata altxatuta, uhinen artean sugegaitzaren gainean."},
+"Espada Kusanagi y serpiente": {"es": "Espada Kusanagi y serpiente", "en": "Kusanagi sword and serpent", "eu": "Kusanagi ezpata eta sugea"},
+"Kuro Labs - Susanoo": {"es": "Kuro Labs - Susanoo", "en": "Kuro Labs - Susanoo", "eu": "Kuro Labs - Susanoo"},
+"Ver ficha de Susanoo": {"es": "Ver ficha de Susanoo", "en": "View details of Susanoo", "eu": "Susanoo: ikusi fitxa"},
+"Guardar en favoritos: Susanoo": {"es": "Guardar en favoritos: Susanoo", "en": "Save to favourites: Susanoo", "eu": "Susanoo: gorde gogokoetan"},
+"Diseño de un kami, dios del sintoísmo, en resina gris.": {"es": "Diseño de un kami, dios del sintoísmo, en resina gris.", "en": "Design of a kami, a Shinto god, in grey resin.", "eu": "Kami baten diseinua, sintoismoko jainkoa, erretxina grisean."},
 };
   const textosOriginales = new WeakMap();
   const atributosOriginales = new WeakMap();

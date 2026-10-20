@@ -109,7 +109,10 @@ document.addEventListener("DOMContentLoaded", () => {
     51: {"etiqueta": "YOKAI / 51", "nombre": "Wanyūdō", "descripcion": "La rueda de carro en llamas, con un rostro en el eje, rodando sobre un camino roto.", "imagen": "51-wanyudo.webp", "precio": null, "coleccion": "Yokai", "pagina": "wanyudo.html"},
     52: {"etiqueta": "YOKAI / 52", "nombre": "Hitotsume-kozō", "descripcion": "El niño monje tuerto, con cuenco de limosna y bastón, sobre los escalones musgosos de un templo.", "imagen": "52-hitotsume-kozo.webp", "precio": null, "coleccion": "Yokai", "pagina": "hitotsume-kozo.html"},
     53: {"etiqueta": "YOKAI / 53", "nombre": "Nurarihyon", "descripcion": "El comandante de los yokai, de cabeza alargada, con pipa kiseru y copa de sake en su porche.", "imagen": "53-nurarihyon.webp", "precio": null, "coleccion": "Yokai", "pagina": "nurarihyon.html"},
-    54: {"etiqueta": "YOKAI / 54", "nombre": "Biwa-bokuboku", "descripcion": "El laúd biwa que cobró vida, de cara gruñona y plectro en mano, entre pergaminos de música.", "imagen": "54-biwa-bokuboku.webp", "precio": null, "coleccion": "Yokai", "pagina": "biwa-bokuboku.html"}
+    54: {"etiqueta": "YOKAI / 54", "nombre": "Biwa-bokuboku", "descripcion": "El laúd biwa que cobró vida, de cara gruñona y plectro en mano, entre pergaminos de música.", "imagen": "54-biwa-bokuboku.webp", "precio": null, "coleccion": "Yokai", "pagina": "biwa-bokuboku.html"},
+    55: {"etiqueta": "KAMIS / 55", "nombre": "Amaterasu", "descripcion": "La diosa del sol, con halo de rayos, espejo sagrado y rama de sakaki, sobre un torii y un sol naciente.", "imagen": "55-amaterasu-frente.webp", "precio": null, "coleccion": "Kamis", "pagina": "amaterasu.html"},
+    56: {"etiqueta": "KAMIS / 56", "nombre": "Tsukuyomi", "descripcion": "El dios de la luna, con dos lunas crecientes a la espalda, espada ceremonial y lotos sobre nubes.", "imagen": "56-tsukuyomi-frente.webp", "precio": null, "coleccion": "Kamis", "pagina": "tsukuyomi.html"},
+    57: {"etiqueta": "KAMIS / 57", "nombre": "Susanoo", "descripcion": "El dios de la tormenta, de melena al viento y espada en alto, sobre la serpiente vencida entre olas.", "imagen": "57-susanoo-frente.webp", "precio": null, "coleccion": "Kamis", "pagina": "susanoo.html"}
   };
 
   // Los datos originales permiten cambiar de idioma sin perder los textos españoles.
