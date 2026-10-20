@@ -2827,6 +2827,23 @@ window.idiomasKuro = (() => {
 "Ver ficha de Susanoo": {"es": "Ver ficha de Susanoo", "en": "View details of Susanoo", "eu": "Susanoo: ikusi fitxa"},
 "Guardar en favoritos: Susanoo": {"es": "Guardar en favoritos: Susanoo", "en": "Save to favourites: Susanoo", "eu": "Susanoo: gorde gogokoetan"},
 "Diseño de un kami, dios del sintoísmo, en resina gris.": {"es": "Diseño de un kami, dios del sintoísmo, en resina gris.", "en": "Design of a kami, a Shinto god, in grey resin.", "eu": "Kami baten diseinua, sintoismoko jainkoa, erretxina grisean."},
+
+// Contadores a 57 y kamis en catálogo/galería.
+"57 DISEÑOS": {"es": "57 DISEÑOS", "en": "57 DESIGNS", "eu": "57 DISEINU"},
+"04 / 57 DISEÑOS": {"es": "04 / 57 DISEÑOS", "en": "04 / 57 DESIGNS", "eu": "04 / 57 DISEINU"},
+"57 figuras.": {"es": "57 figuras.", "en": "57 figures.", "eu": "57 irudi."},
+"57 DISEÑOS / SIN COLOR": {"es": "57 DISEÑOS / SIN COLOR", "en": "57 DESIGNS / UNPAINTED", "eu": "57 DISEINU / MARGOTU GABE"},
+"57 diseños de ejemplo": {"es": "57 diseños de ejemplo", "en": "57 example designs", "eu": "57 adibide-diseinu"},
+"Kamis": {"es": "Kamis", "en": "Kamis", "eu": "Kamiak"},
+"Halo solar y espejo": {"es": "Halo solar y espejo", "en": "Solar halo and mirror", "eu": "Eguzki-halo eta ispilua"},
+"Ampliar vistas de Amaterasu": {"es": "Ampliar vistas de Amaterasu", "en": "Enlarge views of Amaterasu", "eu": "Amaterasu: handitu bistak"},
+"55 / KAMIS ↗": {"es": "55 / KAMIS ↗", "en": "55 / KAMIS ↗", "eu": "55 / KAMIAK ↗"},
+"Lunas y espada": {"es": "Lunas y espada", "en": "Moons and sword", "eu": "Ilargiak eta ezpata"},
+"Ampliar vistas de Tsukuyomi": {"es": "Ampliar vistas de Tsukuyomi", "en": "Enlarge views of Tsukuyomi", "eu": "Tsukuyomi: handitu bistak"},
+"56 / KAMIS ↗": {"es": "56 / KAMIS ↗", "en": "56 / KAMIS ↗", "eu": "56 / KAMIAK ↗"},
+"Espada y serpiente": {"es": "Espada y serpiente", "en": "Sword and serpent", "eu": "Ezpata eta sugea"},
+"Ampliar vistas de Susanoo": {"es": "Ampliar vistas de Susanoo", "en": "Enlarge views of Susanoo", "eu": "Susanoo: handitu bistak"},
+"57 / KAMIS ↗": {"es": "57 / KAMIS ↗", "en": "57 / KAMIS ↗", "eu": "57 / KAMIAK ↗"},
 };
   const textosOriginales = new WeakMap();
   const atributosOriginales = new WeakMap();
