@@ -730,12 +730,15 @@ background: var(--rojo);
 box-shadow: 0 0 12px var(--rojo);
 }
 
+/* Las tarjetas van separadas por 1rem para que las figuras respiren
+   (antes iban pegadas: un hueco de 1px dejaba ver el fondo del
+   contenedor como linea divisoria). Sigue siendo Grid, que reparte
+   las columnas solo; los menus, botones y el interior de las
+   tarjetas ya usan Flexbox. */
 .rejilla-productos {
 display: grid;
 grid-template-columns: repeat(3, 1fr);
-gap: 1px;
-background: var(--borde);
-border: 1px solid var(--borde);
+gap: 1rem;
 }
 
 .tarjeta-producto {
