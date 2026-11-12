@@ -11,7 +11,21 @@
   <meta name="google" content="notranslate">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Kuro Labs - Diseño oni tradicional, sin tecnología.">
+  <meta name="description" content="Coloso del sumo, figura oni de Kuro Labs. Un oni corpulento en guardia de sumo, con cinturón de tela y peana de textura arenosa.">
+  <!-- SEO: cada pagina tiene su propia description, su URL canonica y sus
+       etiquetas Open Graph/Twitter para verse bien en Google y al compartir. -->
+  <link rel="canonical" href="https://christianarribas.github.io/kurolabs/coloso-sumo.html">
+  <meta property="og:site_name" content="Kuro Labs">
+  <meta property="og:title" content="Kuro Labs - Coloso del sumo">
+  <meta property="og:description" content="Coloso del sumo, figura oni de Kuro Labs. Un oni corpulento en guardia de sumo, con cinturón de tela y peana de textura arenosa.">
+  <meta property="og:type" content="product">
+  <meta property="og:url" content="https://christianarribas.github.io/kurolabs/coloso-sumo.html">
+  <meta property="og:image" content="https://christianarribas.github.io/kurolabs/29-coloso-sumo-perspectiva.webp">
+  <meta property="og:locale" content="es_ES">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Kuro Labs - Coloso del sumo">
+  <meta name="twitter:description" content="Coloso del sumo, figura oni de Kuro Labs. Un oni corpulento en guardia de sumo, con cinturón de tela y peana de textura arenosa.">
+  <meta name="twitter:image" content="https://christianarribas.github.io/kurolabs/29-coloso-sumo-perspectiva.webp">
   <title>Kuro Labs - Coloso del sumo</title>
   <!-- Leer el tema antes del CSS evita un destello oscuro si elegiste el claro.
        try/catch permite abrir la web aunque el navegador bloquee el almacenamiento. -->
@@ -22,6 +36,24 @@
   <link rel="stylesheet" href="style.css">
   <!-- Si JavaScript no carga, escondemos la cortina para no bloquear la web. -->
   <noscript><style>.cortina-carga{display:none}</style></noscript>
+  <!-- Datos estructurados (JSON-LD): Google entiende que esto es un
+       producto y puede mostrar nombre, foto y precio en los resultados.
+       OJO: precio y stock son ficticios, es una demo de portfolio. -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Coloso del sumo",
+  "description": "Un oni corpulento en guardia de sumo, con cinturón de tela y peana de textura arenosa.",
+  "image": "https://christianarribas.github.io/kurolabs/29-coloso-sumo-perspectiva.webp",
+  "url": "https://christianarribas.github.io/kurolabs/coloso-sumo.html",
+  "brand": {
+    "@type": "Brand",
+    "name": "Kuro Labs"
+  },
+  "category": "Figura oni (demo)"
+}
+  </script>
 </head>
 <body>
 <!-- CORTINA DE CARGA: portada animada con la máscara oni de CSS. app.js

@@ -11,7 +11,21 @@
   <meta name="google" content="notranslate">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Kuro Labs - Diseño de un kami, dios del sintoísmo, en resina gris.">
+  <meta name="description" content="Ebisu, figura kamis de Kuro Labs. El dios de la fortuna y los pescadores, sonriente, con caña de pescar y un gran pez tai, sobre las olas.">
+  <!-- SEO: cada pagina tiene su propia description, su URL canonica y sus
+       etiquetas Open Graph/Twitter para verse bien en Google y al compartir. -->
+  <link rel="canonical" href="https://christianarribas.github.io/kurolabs/ebisu.html">
+  <meta property="og:site_name" content="Kuro Labs">
+  <meta property="og:title" content="Kuro Labs - Ebisu">
+  <meta property="og:description" content="Ebisu, figura kamis de Kuro Labs. El dios de la fortuna y los pescadores, sonriente, con caña de pescar y un gran pez tai, sobre las olas.">
+  <meta property="og:type" content="product">
+  <meta property="og:url" content="https://christianarribas.github.io/kurolabs/ebisu.html">
+  <meta property="og:image" content="https://christianarribas.github.io/kurolabs/65-ebisu-frente.webp">
+  <meta property="og:locale" content="es_ES">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Kuro Labs - Ebisu">
+  <meta name="twitter:description" content="Ebisu, figura kamis de Kuro Labs. El dios de la fortuna y los pescadores, sonriente, con caña de pescar y un gran pez tai, sobre las olas.">
+  <meta name="twitter:image" content="https://christianarribas.github.io/kurolabs/65-ebisu-frente.webp">
   <title>Kuro Labs - Ebisu</title>
   <!-- Leer el tema antes del CSS evita un destello oscuro si elegiste el claro.
        try/catch permite abrir la web aunque el navegador bloquee el almacenamiento. -->
@@ -22,6 +36,24 @@
   <link rel="stylesheet" href="style.css">
   <!-- Si JavaScript no carga, escondemos la cortina para no bloquear la web. -->
   <noscript><style>.cortina-carga{display:none}</style></noscript>
+  <!-- Datos estructurados (JSON-LD): Google entiende que esto es un
+       producto y puede mostrar nombre, foto y precio en los resultados.
+       OJO: precio y stock son ficticios, es una demo de portfolio. -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Ebisu",
+  "description": "El dios de la fortuna y los pescadores, sonriente, con caña de pescar y un gran pez tai, sobre las olas.",
+  "image": "https://christianarribas.github.io/kurolabs/65-ebisu-frente.webp",
+  "url": "https://christianarribas.github.io/kurolabs/ebisu.html",
+  "brand": {
+    "@type": "Brand",
+    "name": "Kuro Labs"
+  },
+  "category": "Figura kamis (demo)"
+}
+  </script>
 </head>
 <body>
 <!-- CORTINA DE CARGA: portada animada con la máscara oni de CSS. app.js
