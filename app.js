@@ -315,7 +315,7 @@ document.addEventListener("DOMContentLoaded", () => {
       lineasCarrito.append(vacio);
     }
     contadorCarrito.textContent = unidades;
-    botonAbrirCarrito.setAttribute("aria-label", `${traducir("Abrir carrito")}: ${unidades} ${traducir("artículos")}`);
+    botonAbrirCarrito.setAttribute("aria-label", `${botonAbrirCarrito.firstChild.textContent.trim()}: ${unidades} ${traducir("artículos")}`);
     totalCarrito.textContent = formatoEuros(total);
     botonVaciarCarrito.disabled = unidades === 0;
     window.idiomasKuro.aplicar(lineasCarrito);

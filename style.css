@@ -45,7 +45,7 @@
 
 --texto: #f1eee8;
 --texto-suave: #9297a3;
---texto-apagado: #5f6470;
+--texto-apagado: #8c93a0;
 
 --rojo: #c6283d;
 --rojo-vivo: #f04455;
@@ -2658,3 +2658,8 @@ html[lang="en"] .archivo-intro h1 { font-size:clamp(50px,5.7vw,82px); }
 .adelanto-tradicional .rejilla-productos {grid-template-columns:repeat(3,minmax(0,1fr));}
 .info-producto h3 {overflow-wrap:anywhere;}
 @media(max-width:700px){.adelanto-tradicional .rejilla-productos {grid-template-columns:1fr;}}
+
+/* Accesibilidad: enlace "saltar al contenido". Invisible hasta que recibe el foco con Tab. */
+.saltar-contenido { position:fixed; top:8px; left:8px; z-index:10000; padding:12px 18px; background:#fff; color:#000; font-weight:700; transform:translateY(-200%); }
+.saltar-contenido:focus { transform:none; outline:3px solid var(--rojo-vivo); }
+#contenido:focus { outline:none; }
