@@ -109,10 +109,18 @@
 <a class="volver-catalogo" href="yokai.html">← Volver al catálogo</a>
 <div class="detalle-distribucion">
 <div class="detalle-galeria">
-  <!-- Vista frontal aprobada por el usuario. A diferencia de las oni, los yokai
-       tienen de momento una sola vista: no hay miniaturas que cambiar. -->
-  <button class="foto-ampliable" type="button" data-ampliar="52-hitotsume-kozo.webp" aria-label="Ampliar la vista actual"><img id="foto-principal" src="52-hitotsume-kozo.webp" width="959" height="1198" alt="Hitotsume-kozō en su vista principal aprobada"></button>
-  <p class="ayuda-foto">Pulsa la foto para ampliarla.</p><p class="nota-demo">Vista principal aprobada. Es una imagen conceptual, no un plano ni un archivo STL.</p>
+  <!-- La foto grande cambia al pulsar una miniatura (app.js, sección 4).
+       Vistas: frente (la aprobada), perfil, espalda, perspectiva y el conjunto
+       de los cuatro ángulos. Las imágenes nuevas están en la carpeta img-yokai. -->
+  <button class="foto-ampliable" type="button" data-ampliar="52-hitotsume-kozo.webp" aria-label="Ampliar la vista actual"><img id="foto-principal" src="52-hitotsume-kozo.webp" width="959" height="1198" alt="Hitotsume-kozō de frente, en resina gris sin pintar"></button>
+  <div class="miniaturas-galeria" role="group" aria-label="Vistas de la figura" data-nombre="Hitotsume-kozō">
+    <button class="miniatura activa" type="button" data-vista="52-hitotsume-kozo.webp" data-texto-vista="de frente" aria-pressed="true" aria-label="Ver de frente"><img src="52-hitotsume-kozo.webp" width="1122" height="1402" loading="lazy" alt=""></button>
+    <button class="miniatura" type="button" data-vista="img-yokai/52-hitotsume-kozo-perfil.webp" data-texto-vista="de perfil" aria-pressed="false" aria-label="Ver de perfil"><img src="img-yokai/52-hitotsume-kozo-perfil.webp" width="1122" height="1402" loading="lazy" alt=""></button>
+    <button class="miniatura" type="button" data-vista="img-yokai/52-hitotsume-kozo-espalda.webp" data-texto-vista="de espaldas" aria-pressed="false" aria-label="Ver de espaldas"><img src="img-yokai/52-hitotsume-kozo-espalda.webp" width="1122" height="1402" loading="lazy" alt=""></button>
+    <button class="miniatura" type="button" data-vista="img-yokai/52-hitotsume-kozo-perspectiva.webp" data-texto-vista="en perspectiva" aria-pressed="false" aria-label="Ver en perspectiva"><img src="img-yokai/52-hitotsume-kozo-perspectiva.webp" width="1122" height="1402" loading="lazy" alt=""></button>
+    <button class="miniatura" type="button" data-vista="img-yokai/52-hitotsume-kozo-compuesta.webp" data-texto-vista="en sus cuatro ángulos" aria-pressed="false" aria-label="Ver las cuatro vistas juntas"><img src="img-yokai/52-hitotsume-kozo-compuesta.webp" width="1281" height="1600" loading="lazy" alt=""></button>
+  </div>
+  <p class="ayuda-foto">Elige una vista y pulsa la foto para ampliarla.</p><p class="nota-demo">Vista principal aprobada. Los otros ángulos son variaciones conceptuales y pueden mostrar pequeñas diferencias. No son planos ni archivos STL.</p>
 </div>
 <div class="detalle-contenido"><p class="antetitulo">YOKAI / 16 · DEMO</p><h1 id="titulo-figura">Hitotsume-kozō</h1><p class="detalle-descripcion">El niño monje tuerto, con cuenco de limosna y bastón, sobre los escalones musgosos de un templo.</p><p class="detalle-precio">Sin precio · diseño conceptual</p><p class="nota-demo">Sin venta ni reserva</p>
 <button class="boton boton-contorno boton-favorito-ficha" type="button" data-favorito="52" aria-pressed="false" aria-label="Guardar en favoritos: Hitotsume-kozō"><span aria-hidden="true">♥</span> <span class="texto-favorito">Guardar en favoritos</span></button>
