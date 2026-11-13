@@ -583,7 +583,7 @@ document.addEventListener("DOMContentLoaded", () => {
       tarjeta.innerHTML = `<button class="boton-favorito" type="button" data-favorito="${id}" aria-pressed="false"><span aria-hidden="true">♥</span></button>
   <a class="boton-tarjeta" href="${producto.pagina}">
     <div class="imagen-producto imagen-conceptual"><img src="${producto.imagen}" width="1254" height="1254" loading="lazy" alt="${producto.nombre}"></div>
-    <div class="info-producto"><div><span class="etiqueta-producto">${traducir(producto.coleccion).toUpperCase()} / DEMO</span><h3>${producto.nombre}</h3><span class="estrellas-tarjeta" data-estrellas="${id}" role="img"></span></div><span class="flecha-producto" aria-hidden="true">↗</span></div>
+    <div class="info-producto"><div><span class="etiqueta-producto">${traducir(producto.coleccion).toUpperCase()} / DEMO</span><h2>${producto.nombre}</h2><span class="estrellas-tarjeta" data-estrellas="${id}" role="img"></span></div><span class="flecha-producto" aria-hidden="true">↗</span></div>
   </a>
   <div class="compra-producto"><span><strong>${producto.precio === null ? traducir("Sin precio") : formatoEuros(producto.precio)}</strong><small>${producto.precio === null ? traducir("Diseño conceptual / demo") : traducir("Precio ficticio")}</small></span>${producto.precio === null ? `<a class="enlace-concepto" href="${producto.pagina}">${traducir("Ver sus vistas ↗")}</a>` : `<button class="boton-anadir" type="button" data-anadir="${id}">${traducir("Añadir +")}</button>`}</div>`;
       rejillaFavoritos.append(tarjeta);

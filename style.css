@@ -865,7 +865,7 @@ font-size: 0.52rem;
 letter-spacing: 0.13em;
 }
 
-.info-producto h3 {
+.info-producto h3, .info-producto h2 {
 color: var(--texto);
 font-size: 0.88rem;
 font-weight: 700;
@@ -1893,7 +1893,7 @@ animation-duration: 0.01ms !important;
 */
 
 /* Oni concept gallery */
-.seccion-oni{scroll-margin-top:100px}.rejilla-oni{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}.tarjeta-oni{margin:0;border:1px solid var(--borde-fuerte);background:var(--superficie)}.tarjeta-oni a{display:block;overflow:hidden}.tarjeta-oni img{width:100%;height:auto;display:block;aspect-ratio:1;object-fit:contain;transition:transform .3s}.tarjeta-oni a:hover img{transform:scale(1.015)}.tarjeta-oni a:focus-visible{outline:3px solid var(--rojo-vivo);outline-offset:3px}.tarjeta-oni figcaption{padding:20px 24px;display:flex;justify-content:space-between;gap:16px;align-items:center}.tarjeta-oni h3{font-size:22px}.tarjeta-oni p{color:var(--texto-suave);font-size:14px}.tarjeta-oni small{font-family:var(--fuente-mono);color:var(--rojo-vivo)}.nota-oni{color:var(--texto-suave);font-size:14px;margin-top:20px;max-width:780px}@media(max-width:650px){.rejilla-oni{grid-template-columns:1fr;gap:20px}.tarjeta-oni figcaption{padding:16px}.tarjeta-oni h3{font-size:20px}}
+.seccion-oni{scroll-margin-top:100px}.rejilla-oni{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}.tarjeta-oni{margin:0;border:1px solid var(--borde-fuerte);background:var(--superficie)}.tarjeta-oni a{display:block;overflow:hidden}.tarjeta-oni img{width:100%;height:auto;display:block;aspect-ratio:1;object-fit:contain;transition:transform .3s}.tarjeta-oni a:hover img{transform:scale(1.015)}.tarjeta-oni a:focus-visible{outline:3px solid var(--rojo-vivo);outline-offset:3px}.tarjeta-oni figcaption{padding:20px 24px;display:flex;justify-content:space-between;gap:16px;align-items:center}.tarjeta-oni h3,.tarjeta-oni h2{font-size:22px}.tarjeta-oni p{color:var(--texto-suave);font-size:14px}.tarjeta-oni small{font-family:var(--fuente-mono);color:var(--rojo-vivo)}.nota-oni{color:var(--texto-suave);font-size:14px;margin-top:20px;max-width:780px}@media(max-width:650px){.rejilla-oni{grid-template-columns:1fr;gap:20px}.tarjeta-oni figcaption{padding:16px}.tarjeta-oni h3,.tarjeta-oni h2{font-size:20px}}
 
 /* ---------- 16. TIENDA DE DEMOSTRACIÓN ----------
    El tema claro cambia variables, no cada elemento uno a uno.
@@ -2545,7 +2545,7 @@ contorno, grises y rojo, y damos a la imagen de portada un fondo claro.
 /* TARJETAS DE CATÁLOGO: texto y valoraciones más fáciles de leer.
    Mantiene el contenido dentro de las tres columnas de escritorio y
    aprovecha el ancho completo de tarjeta en móvil. */
-.info-producto h3 { font-size: 1.1rem; line-height: 1.25; }
+.info-producto h3, .info-producto h2 { font-size: 1.1rem; line-height: 1.25; }
 .etiqueta-producto { font-size: 0.63rem; }
 .estrellas-tarjeta { font-size: 18px; letter-spacing: 3px; line-height: 1.3; }
 .compra-producto strong { font-size: 24px; }
@@ -2656,7 +2656,7 @@ html[lang="en"] .archivo-intro h1 { font-size:clamp(50px,5.7vw,82px); }
 .adelanto-tradicional {border-top:1px solid var(--borde);}
 .adelanto-tradicional > .boton {margin-top:2rem;}
 .adelanto-tradicional .rejilla-productos {grid-template-columns:repeat(3,minmax(0,1fr));}
-.info-producto h3 {overflow-wrap:anywhere;}
+.info-producto h3, .info-producto h2 {overflow-wrap:anywhere;}
 @media(max-width:700px){.adelanto-tradicional .rejilla-productos {grid-template-columns:1fr;}}
 
 /* Accesibilidad: enlace "saltar al contenido". Invisible hasta que recibe el foco con Tab. */
