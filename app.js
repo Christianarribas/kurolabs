@@ -110,24 +110,24 @@ document.addEventListener("DOMContentLoaded", () => {
     52: {"etiqueta": "YOKAI / 52", "nombre": "Hitotsume-kozō", "descripcion": "El niño monje tuerto, con cuenco de limosna y bastón, sobre los escalones musgosos de un templo.", "imagen": "52-hitotsume-kozo.webp", "precio": null, "coleccion": "Yokai", "pagina": "hitotsume-kozo.html"},
     53: {"etiqueta": "YOKAI / 53", "nombre": "Nurarihyon", "descripcion": "El comandante de los yokai, de cabeza alargada, con pipa kiseru y copa de sake en su porche.", "imagen": "53-nurarihyon.webp", "precio": null, "coleccion": "Yokai", "pagina": "nurarihyon.html"},
     54: {"etiqueta": "YOKAI / 54", "nombre": "Biwa-bokuboku", "descripcion": "El laúd biwa que cobró vida, de cara gruñona y plectro en mano, entre pergaminos de música.", "imagen": "54-biwa-bokuboku.webp", "precio": null, "coleccion": "Yokai", "pagina": "biwa-bokuboku.html"},
-    55: {"etiqueta": "KAMIS / 55", "nombre": "Amaterasu", "descripcion": "La diosa del sol, con halo de rayos, espejo sagrado y rama de sakaki, sobre un torii y un sol naciente.", "imagen": "55-amaterasu-frente.webp", "precio": null, "coleccion": "Kamis", "pagina": "amaterasu.html"},
-    56: {"etiqueta": "KAMIS / 56", "nombre": "Tsukuyomi", "descripcion": "El dios de la luna, con dos lunas crecientes a la espalda, espada ceremonial y lotos sobre nubes.", "imagen": "56-tsukuyomi-frente.webp", "precio": null, "coleccion": "Kamis", "pagina": "tsukuyomi.html"},
-    57: {"etiqueta": "KAMIS / 57", "nombre": "Susanoo", "descripcion": "El dios de la tormenta, de melena al viento y espada en alto, sobre la serpiente vencida entre olas.", "imagen": "57-susanoo-frente.webp", "precio": null, "coleccion": "Kamis", "pagina": "susanoo.html"},
-    58: {"etiqueta": "KAMIS / 58", "nombre": "Raijin", "descripcion": "El dios del trueno, con su anillo de tambores taiko y el martillo en alto, sobre nubes de tormenta y relámpagos.", "imagen": "58-raijin-frente.webp", "precio": null, "coleccion": "Kamis", "pagina": "raijin.html"},
-    59: {"etiqueta": "KAMIS / 59", "nombre": "Fujin", "descripcion": "El dios del viento, con la gran bolsa de los vientos al hombro y telas ondeando en espiral, sobre remolinos de aire.", "imagen": "59-fujin-frente.webp", "precio": null, "coleccion": "Kamis", "pagina": "fujin.html"},
-    60: {"etiqueta": "KAMIS / 60", "nombre": "Inari", "descripcion": "La deidad de los arrozales y los zorros, con gavillas de arroz en la mano y dos kitsune a sus pies, junto a un pequeño torii.", "imagen": "60-inari-frente.webp", "precio": null, "coleccion": "Kamis", "pagina": "inari.html"},
-    61: {"etiqueta": "KAMIS / 61", "nombre": "Hachiman", "descripcion": "El dios de la guerra y de los arqueros, con armadura de samurái, arco yumi y carcaj de flechas, entre estandartes de batalla.", "imagen": "61-hachiman-frente.webp", "precio": null, "coleccion": "Kamis", "pagina": "hachiman.html"},
-    62: {"etiqueta": "KAMIS / 62", "nombre": "Ryujin", "descripcion": "El dios dragón del mar, enroscado sobre las olas con la perla de las mareas entre sus garras.", "imagen": "62-ryujin-frente.webp", "precio": null, "coleccion": "Kamis", "pagina": "ryujin.html"},
-    63: {"etiqueta": "KAMIS / 63", "nombre": "Izanagi", "descripcion": "El dios creador, de túnica ceremonial y lanza Ame-no-Nuboko, de pie sobre olas primordiales y nubes.", "imagen": "63-izanagi-frente.webp", "precio": null, "coleccion": "Kamis", "pagina": "izanagi.html"},
-    64: {"etiqueta": "KAMIS / 64", "nombre": "Izanami", "descripcion": "La diosa creadora y señora de Yomi, de túnica ceremonial y joyas magatama, entre nubes y olas primordiales.", "imagen": "64-izanami-frente.webp", "precio": null, "coleccion": "Kamis", "pagina": "izanami.html"},
-    65: {"etiqueta": "KAMIS / 65", "nombre": "Ebisu", "descripcion": "El dios de la fortuna y los pescadores, sonriente, con caña de pescar y un gran pez tai, sobre las olas.", "imagen": "65-ebisu-frente.webp", "precio": null, "coleccion": "Kamis", "pagina": "ebisu.html"},
-    66: {"etiqueta": "KAMIS / 66", "nombre": "Benzaiten", "descripcion": "La diosa de la música y las artes, con biwa al hombro y una serpiente blanca a sus pies, sobre las olas.", "imagen": "66-benzaiten-frente.webp", "precio": null, "coleccion": "Kamis", "pagina": "benzaiten.html"},
-    67: {"etiqueta": "KAMIS / 67", "nombre": "Bishamonten", "descripcion": "El dios de la guerra y la fortuna, con armadura de samurái, lanza y pagoda en las manos, sobre dos demonios yaksha sometidos.", "imagen": "67-bishamonten-frente.webp", "precio": null, "coleccion": "Kamis", "pagina": "bishamonten.html"},
-    68: {"etiqueta": "KAMIS / 68", "nombre": "Daikokuten", "descripcion": "El dios de la riqueza y la cosecha, sonriente, con el mazo mágico y un saco de arroz, de pie sobre dos fardos de arroz.", "imagen": "68-daikokuten-frente.webp", "precio": null, "coleccion": "Kamis", "pagina": "daikokuten.html"},
-    69: {"etiqueta": "KAMIS / 69", "nombre": "Tenjin", "descripcion": "La deidad de los estudios y la caligrafía, con ropajes de la corte Heian y sombrero eboshi, rama de ciruelo en flor y su toro a los pies.", "imagen": "69-tenjin-frente.webp", "precio": null, "coleccion": "Kamis", "pagina": "tenjin.html"},
-    70: {"etiqueta": "KAMIS / 70", "nombre": "Kagutsuchi", "descripcion": "El dios del fuego, un guerrero feroz envuelto en llamas esculpidas, con espada flamígera, sobre una base de rocas ígneas.", "imagen": "70-kagutsuchi-frente.webp", "precio": null, "coleccion": "Kamis", "pagina": "kagutsuchi.html"},
-    71: {"etiqueta": "KAMIS / 71", "nombre": "Ukemochi", "descripcion": "La diosa de la comida y la abundancia, serena, con gavillas de arroz y un cuenco, sobre una base de cosecha.", "imagen": "71-ukemochi-frente.webp", "precio": null, "coleccion": "Kamis", "pagina": "ukemochi.html"},
-    72: {"etiqueta": "KAMIS / 72", "nombre": "Ame-no-Uzume", "descripcion": "La diosa de la danza y la alegría, bailando sobre el cubo volcado, con campanillas suzu y una rama de sakaki.", "imagen": "72-ame-no-uzume-frente.webp", "precio": null, "coleccion": "Kamis", "pagina": "ame-no-uzume.html"}
+    55: {"etiqueta": "KAMIS / 55", "nombre": "Amaterasu", "descripcion": "La diosa del sol, con halo de rayos, espejo sagrado y rama de sakaki, sobre un torii y un sol naciente.", "imagen": "55-amaterasu-frente.webp", "precio": null, "coleccion": "Kamis", "pagina": "amaterasu.html", "novedad": true},
+    56: {"etiqueta": "KAMIS / 56", "nombre": "Tsukuyomi", "descripcion": "El dios de la luna, con dos lunas crecientes a la espalda, espada ceremonial y lotos sobre nubes.", "imagen": "56-tsukuyomi-frente.webp", "precio": null, "coleccion": "Kamis", "pagina": "tsukuyomi.html", "novedad": true},
+    57: {"etiqueta": "KAMIS / 57", "nombre": "Susanoo", "descripcion": "El dios de la tormenta, de melena al viento y espada en alto, sobre la serpiente vencida entre olas.", "imagen": "57-susanoo-frente.webp", "precio": null, "coleccion": "Kamis", "pagina": "susanoo.html", "novedad": true},
+    58: {"etiqueta": "KAMIS / 58", "nombre": "Raijin", "descripcion": "El dios del trueno, con su anillo de tambores taiko y el martillo en alto, sobre nubes de tormenta y relámpagos.", "imagen": "58-raijin-frente.webp", "precio": null, "coleccion": "Kamis", "pagina": "raijin.html", "novedad": true},
+    59: {"etiqueta": "KAMIS / 59", "nombre": "Fujin", "descripcion": "El dios del viento, con la gran bolsa de los vientos al hombro y telas ondeando en espiral, sobre remolinos de aire.", "imagen": "59-fujin-frente.webp", "precio": null, "coleccion": "Kamis", "pagina": "fujin.html", "novedad": true},
+    60: {"etiqueta": "KAMIS / 60", "nombre": "Inari", "descripcion": "La deidad de los arrozales y los zorros, con gavillas de arroz en la mano y dos kitsune a sus pies, junto a un pequeño torii.", "imagen": "60-inari-frente.webp", "precio": null, "coleccion": "Kamis", "pagina": "inari.html", "novedad": true},
+    61: {"etiqueta": "KAMIS / 61", "nombre": "Hachiman", "descripcion": "El dios de la guerra y de los arqueros, con armadura de samurái, arco yumi y carcaj de flechas, entre estandartes de batalla.", "imagen": "61-hachiman-frente.webp", "precio": null, "coleccion": "Kamis", "pagina": "hachiman.html", "novedad": true},
+    62: {"etiqueta": "KAMIS / 62", "nombre": "Ryujin", "descripcion": "El dios dragón del mar, enroscado sobre las olas con la perla de las mareas entre sus garras.", "imagen": "62-ryujin-frente.webp", "precio": null, "coleccion": "Kamis", "pagina": "ryujin.html", "novedad": true},
+    63: {"etiqueta": "KAMIS / 63", "nombre": "Izanagi", "descripcion": "El dios creador, de túnica ceremonial y lanza Ame-no-Nuboko, de pie sobre olas primordiales y nubes.", "imagen": "63-izanagi-frente.webp", "precio": null, "coleccion": "Kamis", "pagina": "izanagi.html", "novedad": true},
+    64: {"etiqueta": "KAMIS / 64", "nombre": "Izanami", "descripcion": "La diosa creadora y señora de Yomi, de túnica ceremonial y joyas magatama, entre nubes y olas primordiales.", "imagen": "64-izanami-frente.webp", "precio": null, "coleccion": "Kamis", "pagina": "izanami.html", "novedad": true},
+    65: {"etiqueta": "KAMIS / 65", "nombre": "Ebisu", "descripcion": "El dios de la fortuna y los pescadores, sonriente, con caña de pescar y un gran pez tai, sobre las olas.", "imagen": "65-ebisu-frente.webp", "precio": null, "coleccion": "Kamis", "pagina": "ebisu.html", "novedad": true},
+    66: {"etiqueta": "KAMIS / 66", "nombre": "Benzaiten", "descripcion": "La diosa de la música y las artes, con biwa al hombro y una serpiente blanca a sus pies, sobre las olas.", "imagen": "66-benzaiten-frente.webp", "precio": null, "coleccion": "Kamis", "pagina": "benzaiten.html", "novedad": true},
+    67: {"etiqueta": "KAMIS / 67", "nombre": "Bishamonten", "descripcion": "El dios de la guerra y la fortuna, con armadura de samurái, lanza y pagoda en las manos, sobre dos demonios yaksha sometidos.", "imagen": "67-bishamonten-frente.webp", "precio": null, "coleccion": "Kamis", "pagina": "bishamonten.html", "novedad": true},
+    68: {"etiqueta": "KAMIS / 68", "nombre": "Daikokuten", "descripcion": "El dios de la riqueza y la cosecha, sonriente, con el mazo mágico y un saco de arroz, de pie sobre dos fardos de arroz.", "imagen": "68-daikokuten-frente.webp", "precio": null, "coleccion": "Kamis", "pagina": "daikokuten.html", "novedad": true},
+    69: {"etiqueta": "KAMIS / 69", "nombre": "Tenjin", "descripcion": "La deidad de los estudios y la caligrafía, con ropajes de la corte Heian y sombrero eboshi, rama de ciruelo en flor y su toro a los pies.", "imagen": "69-tenjin-frente.webp", "precio": null, "coleccion": "Kamis", "pagina": "tenjin.html", "novedad": true},
+    70: {"etiqueta": "KAMIS / 70", "nombre": "Kagutsuchi", "descripcion": "El dios del fuego, un guerrero feroz envuelto en llamas esculpidas, con espada flamígera, sobre una base de rocas ígneas.", "imagen": "70-kagutsuchi-frente.webp", "precio": null, "coleccion": "Kamis", "pagina": "kagutsuchi.html", "novedad": true},
+    71: {"etiqueta": "KAMIS / 71", "nombre": "Ukemochi", "descripcion": "La diosa de la comida y la abundancia, serena, con gavillas de arroz y un cuenco, sobre una base de cosecha.", "imagen": "71-ukemochi-frente.webp", "precio": null, "coleccion": "Kamis", "pagina": "ukemochi.html", "novedad": true},
+    72: {"etiqueta": "KAMIS / 72", "nombre": "Ame-no-Uzume", "descripcion": "La diosa de la danza y la alegría, bailando sobre el cubo volcado, con campanillas suzu y una rama de sakaki.", "imagen": "72-ame-no-uzume-frente.webp", "precio": null, "coleccion": "Kamis", "pagina": "ame-no-uzume.html", "novedad": true}
   };
 
   // Los datos originales permiten cambiar de idioma sin perder los textos españoles.
@@ -380,37 +380,71 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  /* ---------- 8. Filtros combinados ----------
-     Ambos deben coincidir (&&). hidden conserva las tarjetas y
-     sus botones, así no hay que reconstruirlas al cambiar filtros. */
+  /* ---------- 8. Filtros combinados y ordenación ----------
+     Todos los filtros deben coincidir (&&). hidden conserva las tarjetas y
+     sus botones, así no hay que reconstruirlas al cambiar filtros.
+     El selector de orden recoloca las tarjetas sin recargar: se guarda
+     el orden original al cargar para poder volver a él. */
   const filtroColeccion = document.querySelector("#filtro-coleccion");
   const filtroPrecio = document.querySelector("#filtro-precio");
+  const filtroNovedades = document.querySelector("#filtro-novedades");
+  const ordenCatalogo = document.querySelector("#orden-catalogo");
   const buscadorCatalogo = document.querySelector("#buscador-catalogo");
   const normalizar = (texto) => texto.toLocaleLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
   let filtrar = () => {};
   if (filtroColeccion && filtroPrecio) {
+    const rejilla = document.querySelector(".rejilla-productos");
+    // Orden de fábrica de las tarjetas, para el modo "Orden original".
+    const ordenOriginal = [...rejilla.querySelectorAll("[data-ficha]")];
+    const compararOriginal = (a, b) => ordenOriginal.indexOf(a) - ordenOriginal.indexOf(b);
+    const comparadores = {
+      "original": compararOriginal,
+      "novedades": (a, b) =>
+        (productos[b.dataset.ficha].novedad ? 1 : 0) - (productos[a.dataset.ficha].novedad ? 1 : 0)
+        || compararOriginal(a, b),
+      "precio-asc": (a, b) =>
+        (productos[a.dataset.ficha].precio ?? Infinity) - (productos[b.dataset.ficha].precio ?? Infinity)
+        || compararOriginal(a, b),
+      "precio-desc": (a, b) =>
+        (productos[b.dataset.ficha].precio ?? -Infinity) - (productos[a.dataset.ficha].precio ?? -Infinity)
+        || compararOriginal(a, b),
+      "nombre": (a, b) =>
+        productos[a.dataset.ficha].nombre.localeCompare(productos[b.dataset.ficha].nombre, "es")
+        || compararOriginal(a, b),
+    };
     filtrar = () => {
       let visibles = 0;
       document.querySelectorAll("[data-ficha]").forEach((tarjeta) => {
         const producto = productos[tarjeta.dataset.ficha];
         const coincideColeccion = filtroColeccion.value === "todas" || producto.coleccion === filtroColeccion.value;
         const coincidePrecio = filtroPrecio.value === "todos" || (filtroPrecio.value === "sin-precio" ? producto.precio === null : producto.precio !== null && producto.precio <= Number(filtroPrecio.value) * 100);
+        const coincideNovedad = !filtroNovedades || filtroNovedades.value === "todas" || Boolean(producto.novedad);
         const original = productosOriginales[tarjeta.dataset.ficha];
         const textoBusqueda = [original.nombre, producto.nombre, original.descripcion, traducir(original.descripcion), original.coleccion, traducir(original.coleccion)].join(" ");
         const coincideTexto = normalizar(textoBusqueda).includes(normalizar(buscadorCatalogo.value.trim()));
-        tarjeta.hidden = !(coincideColeccion && coincidePrecio && coincideTexto);
+        tarjeta.hidden = !(coincideColeccion && coincidePrecio && coincideNovedad && coincideTexto);
         if (!tarjeta.hidden) visibles++;
       });
+      /* Recolocar sin destruir las tarjetas: appendChild mueve el nodo
+         que ya existe, así se conservan favoritos y valoraciones. */
+      if (ordenCatalogo && rejilla) {
+        const orden = comparadores[ordenCatalogo.value] || comparadores.original;
+        [...rejilla.querySelectorAll("[data-ficha]")].sort(orden).forEach((tarjeta) => rejilla.appendChild(tarjeta));
+      }
       document.querySelector("#resultado-filtros").textContent = `${visibles} / ${Object.keys(productos).length} ${traducir("diseños de ejemplo")}`;
       document.querySelector("#sin-resultados").hidden = visibles !== 0;
     };
     buscadorCatalogo.addEventListener("input", filtrar);
     filtroColeccion.addEventListener("change", filtrar);
     filtroPrecio.addEventListener("change", filtrar);
+    if (filtroNovedades) filtroNovedades.addEventListener("change", filtrar);
+    if (ordenCatalogo) ordenCatalogo.addEventListener("change", filtrar);
     document.querySelector("#restablecer-filtros").addEventListener("click", () => {
       buscadorCatalogo.value = "";
       filtroColeccion.value = "todas";
       filtroPrecio.value = "todos";
+      if (filtroNovedades) filtroNovedades.value = "todas";
+      if (ordenCatalogo) ordenCatalogo.value = "original";
       filtrar();
     });
     filtrar();

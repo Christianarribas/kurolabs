@@ -23,6 +23,8 @@
     19. ESTRELLAS .......... valoracion de demostracion por figura
     20. GALERIA FICHA ...... miniaturas con las vistas de cada figura
     21. PROXIMO DROP ....... cuenta atras de demostracion
+    22. ANIMACIONES ........ zoom suave al pasar por las fotos
+    23. NOVEDADES Y LORE ... insignia "Nuevo" y folclore de cada yokai
 
    IDEA CLAVE: las clases estan en castellano y se repiten en el
    HTML y en app.js. Si cambias un nombre, hay que cambiarlo en
@@ -2663,3 +2665,132 @@ html[lang="en"] .archivo-intro h1 { font-size:clamp(50px,5.7vw,82px); }
 .saltar-contenido { position:fixed; top:8px; left:8px; z-index:10000; padding:12px 18px; background:#fff; color:#000; font-weight:700; transform:translateY(-200%); }
 .saltar-contenido:focus { transform:none; outline:3px solid var(--rojo-vivo); }
 #contenido:focus { outline:none; }
+
+/* =================================
+22. ANIMACIONES SUAVES EN LAS FOTOS
+=================================
+
+   Zoom sutil al pasar el raton (o al mantener pulsado en el movil)
+   por las fotos de la tienda. Todo con transform y transition,
+   sin librerias. La regla global de "prefers-reduced-motion" (seccion 14)
+   ya desconecta estas animaciones para quien las desactive en su sistema.
+*/
+
+/* Tarjetas del catalogo y de las colecciones: la foto crece un poquito
+   y se desenfoca el brillo de fondo. .imagen-producto ya tiene
+   overflow: hidden, asi que el zoom nunca se sale de su caja. */
+.tarjeta-producto .imagen-producto img {
+transition: transform 0.6s cubic-bezier(0.2, 0.6, 0.2, 1);
+}
+
+.boton-tarjeta:hover .imagen-producto img,
+.boton-tarjeta:focus-visible .imagen-producto img {
+transform: scale(1.05);
+}
+
+/* Al dedo: respuesta corta al mantener pulsado, antes de navegar. */
+.boton-tarjeta:active .imagen-producto img {
+transform: scale(1.03);
+transition-duration: 0.25s;
+}
+
+/* Miniaturas de la galeria de cada ficha: se levantan un pelin y
+   su foto hace el mismo zoom suave. */
+.miniaturas-galeria .miniatura {
+transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.miniaturas-galeria .miniatura img {
+transition: transform 0.5s ease;
+}
+
+.miniaturas-galeria .miniatura:hover,
+.miniaturas-galeria .miniatura:focus-visible {
+transform: translateY(-3px);
+box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+}
+
+.miniaturas-galeria .miniatura:hover img,
+.miniaturas-galeria .miniatura:focus-visible img {
+transform: scale(1.08);
+}
+
+/* Foto grande de la ficha: un zoom muy leve invita a ampliarla. */
+.foto-ampliable { overflow: hidden; }
+
+.foto-ampliable img {
+transition: transform 0.6s cubic-bezier(0.2, 0.6, 0.2, 1);
+}
+
+.foto-ampliable:hover img,
+.foto-ampliable:focus-visible img {
+transform: scale(1.02);
+}
+
+/* Tarjetas "Mas ..." al final de cada ficha. */
+.tarjeta-relacionada { overflow: hidden; }
+
+.tarjeta-relacionada img {
+transition: transform 0.6s cubic-bezier(0.2, 0.6, 0.2, 1);
+}
+
+.tarjeta-relacionada:hover img,
+.tarjeta-relacionada:focus-visible img {
+transform: scale(1.05);
+}
+
+/* =================================
+23. NOVEDADES Y LORE
+=================================
+
+   Insignia "Nuevo" de las tarjetas y la seccion de lore (folclore
+   real) de las fichas yokai.
+*/
+
+.insignia-novedad {
+position: absolute;
+top: 12px;
+left: 12px;
+z-index: 2;
+padding: 5px 9px;
+border-radius: 2px;
+background: var(--rojo);
+color: #fff;
+font-size: 0.65rem;
+font-weight: 700;
+letter-spacing: 0.12em;
+text-transform: uppercase;
+pointer-events: none;
+}
+
+/* La barra de filtros crece (6 controles): que envuelva en vez de apretar. */
+.filtros-catalogo { flex-wrap: wrap; }
+.filtros-catalogo label { flex: 1 1 160px; }
+
+/* Bloque de lore de las fichas yokai: tarjeta ancha bajo la galeria,
+   con el borde rojo de la marca a la izquierda. */
+.lore-yokai {
+margin-top: 56px;
+padding: 28px 32px;
+background: var(--superficie);
+border: 1px solid var(--borde);
+border-left: 3px solid var(--rojo);
+}
+
+.lore-yokai h2 {
+margin: 8px 0 16px;
+font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+}
+
+.lore-yokai p:not(.antetitulo) {
+max-width: 70ch;
+line-height: 1.8;
+color: var(--texto);
+margin: 0 0 14px;
+}
+
+.lore-yokai p:last-child { margin-bottom: 0; }
+
+@media (max-width: 800px) {
+.lore-yokai { padding: 20px; margin-top: 40px; }
+}

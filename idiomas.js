@@ -1300,6 +1300,51 @@ window.idiomasKuro = (() => {
     "en": "Up to €100",
     "eu": "100 € arte"
   },
+  "Novedades": {
+    "es": "Novedades",
+    "en": "New arrivals",
+    "eu": "Berriak"
+  },
+  "Solo novedades": {
+    "es": "Solo novedades",
+    "en": "Only new arrivals",
+    "eu": "Berriak soilik"
+  },
+  "Ordenar": {
+    "es": "Ordenar",
+    "en": "Sort",
+    "eu": "Ordenatu"
+  },
+  "Orden original": {
+    "es": "Orden original",
+    "en": "Original order",
+    "eu": "Jatorrizko ordena"
+  },
+  "Novedades primero": {
+    "es": "Novedades primero",
+    "en": "Newest first",
+    "eu": "Berriak lehenengo"
+  },
+  "Precio: de menor a mayor": {
+    "es": "Precio: de menor a mayor",
+    "en": "Price: low to high",
+    "eu": "Prezioa: txikitik handira"
+  },
+  "Precio: de mayor a menor": {
+    "es": "Precio: de mayor a menor",
+    "en": "Price: high to low",
+    "eu": "Prezioa: handitik txikira"
+  },
+  "Nombre A-Z": {
+    "es": "Nombre A-Z",
+    "en": "Name A-Z",
+    "eu": "Izena A-Z"
+  },
+  "Nuevo": {
+    "es": "Nuevo",
+    "en": "New",
+    "eu": "Berria"
+  },
   "Restablecer": {
     "es": "Restablecer",
     "en": "Reset",
